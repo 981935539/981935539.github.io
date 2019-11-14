@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/</loc>
+    
+    <lastmod>2019-11-14T19:02:58.419Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://iace.fun/contact/index.html</loc>
     
     <lastmod>2019-11-14T18:15:01.491Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://iace.fun/about/index.html</loc>
     
     <lastmod>2019-11-14T16:42:36.497Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iace.fun/2019/11/14/first-article/</loc>
-    
-    <lastmod>2019-11-14T15:11:23.208Z</lastmod>
     
   </url>
   
