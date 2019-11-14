@@ -10,12 +10,15 @@
     <meta name="360-site-verification" content>
     <meta name="description" content="
 
+前言​    准备工作
+
+Github账号
+node.js、hexo、npm安装
+
 一、安装node.js
 下载windows版node.js
 下载地址: https://nodejs.org/en/download/
-选择Windows Installer(.msi) 64-bit
-
-双击node-v12.13.0-">
+选择Window">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -414,8 +417,16 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/随笔/" target="_blank">
-                            <span class="chip bg-color">随笔</span>
+                        <a href="/tags/Github/" target="_blank">
+                            <span class="chip bg-color">Github</span>
+                        </a>
+                        
+                        <a href="/tags/Heox/" target="_blank">
+                            <span class="chip bg-color">Heox</span>
+                        </a>
+                        
+                        <a href="/tags/node-js/" target="_blank">
+                            <span class="chip bg-color">node.js</span>
                         </a>
                         
                     </div>
@@ -452,14 +463,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    362
+                    682
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -477,6 +488,11 @@
             <div id="articleContent">
                 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=4913023&auto=1&height=66"></iframe>
 
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    <strong>准备工作</strong></p>
+<ul>
+<li>Github账号</li>
+<li>node.js、hexo、npm安装</li>
+</ul>
 <h1 id="一、安装node-js"><a href="#一、安装node-js" class="headerlink" title="一、安装node.js"></a>一、安装node.js</h1><ol>
 <li><p>下载windows版node.js</p>
 <p>下载地址: <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></p>
@@ -492,7 +508,7 @@
 </li>
 </ol>
 <h1 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h1><ol>
-<li><p>在创建文件夹Blob, 例如:  F:\LearnSpace\Blog</p>
+<li><p>先创建hexo的安装目录, 例如:  F:\LearnSpace\Blog</p>
 </li>
 <li><p>cd Blob  进入Blob目录</p>
 </li>
@@ -515,24 +531,56 @@
 <li><p>ctrl + c   关闭本地服务器</p>
 </li>
 </ol>
-<h1 id="三、连接Github与本地"><a href="#三、连接Github与本地" class="headerlink" title="三、连接Github与本地"></a>三、连接Github与本地</h1><p>​    编辑F:\LearnSpace\Blog\blog下的_config.yml, 修改最后一行的配置</p>
+<h1 id="三、连接Github与本地"><a href="#三、连接Github与本地" class="headerlink" title="三、连接Github与本地"></a>三、连接Github与本地</h1><ol>
+<li><p>新建一个名为<code>你的github用户名.github.io</code>的仓库，比如说，如果你的<code>Github</code>用户名是test，那么你就新建<code>test.github.io</code>的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是<code>http://test.github.io</code> 了。</p>
+<p>点击<code>Settings</code>，向下拉到最后有个<code>GitHub Pages</code>，点击<code>Choose a theme</code>选择一个主题。然后等一会儿，再回到<code>GitHub Pages</code>, 就会像下面一样</p>
+<p><img src="2.png" alt></p>
+</li>
+<li><p>修改配置文件</p>
+<p>编辑blog根目录下的<code>_config.yml</code>, 修改最后一行的配置</p>
+</li>
+</ol>
 <pre><code>deploy:
   type: git
   repository: https://github.com/981935539/981935539.github.io.git
-  branch: master</code></pre><p>安装Git部署插件: npm install hexo-deployer-git –save</p>
+  branch: master</code></pre><ol start="3">
+<li>安装Git部署插件: <code>npm install hexo-deployer-git --save</code></li>
+</ol>
 <h1 id="四、编辑第一篇博客"><a href="#四、编辑第一篇博客" class="headerlink" title="四、编辑第一篇博客"></a>四、编辑第一篇博客</h1><pre><code>hexo new post &quot;first-article&quot;  # 创建第一篇博客
 hexo g  # 生成静态网页
 hexo s  # 本地预览效果
-hexo d  # 上传github</code></pre><h1 id="五、绑定域名"><a href="#五、绑定域名" class="headerlink" title="五、绑定域名"></a>五、绑定域名</h1><ol>
+hexo d  # 上传github</code></pre><p>此时可以在github.io主页就能看到发布的文章啦。</p>
+<h1 id="五、绑定域名"><a href="#五、绑定域名" class="headerlink" title="五、绑定域名"></a>五、绑定域名</h1><ol>
 <li>以阿里云为例，如下图所示，添加两条解析记录:</li>
 </ol>
-<p>​    <img src="Hexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" alt></p>
+<p>​    <img src="1.png" alt></p>
 <ol start="2">
-<li>然后打开你的github博客项目，点击<code>settings</code>，拉到下面<code>Custom domain</code>处，填上你自己的域名，保存</li>
-<li>这时候你的F:\LearnSpace\Blog\hexo-matery\source 会出现一个CNAME的文件</li>
+<li><p>然后打开你的Github博客项目，点击<code>settings</code>，拉到下面<code>Custom domain</code>处，填上你自己的域名，保存</p>
+</li>
+<li><p>这时候你的<code>F:\LearnSpace\Blog\blob\source</code> 会出现一个CNAME的文件</p>
+</li>
+<li><p>如果没有CNAME文件</p>
+<p>打开你本地博客<code>/source</code>目录，我的是<code>F:\LearnSpace\Blog\blob\source</code>，新建<code>CNAME</code>文件，注意没有后缀。然后在里面写上你的域名，保存。最后运行<code>hexo g</code>、<code>hexo d</code>上传到Github。</p>
+</li>
 </ol>
-<p>卸载hexo :  npm uninstall hexo-cli -g</p>
+<h1 id="六、hexo常用命令"><a href="#六、hexo常用命令" class="headerlink" title="六、hexo常用命令"></a>六、hexo常用命令</h1><pre><code>npm install hexo-cli -g      # 安装hexo
+npm uninstall hexo-cli -g      # 卸载hexo
 
+hexo generate #生成静态页面至public目录
+hexo server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）
+hexo deploy #部署到GitHub
+hexo help  # 查看帮助
+hexo version  #查看Hexo的版本
+
+# 缩写
+hexo n == hexo new
+hexo g == hexo generate
+hexo s == hexo server
+hexo d == hexo deploy
+
+# 组合
+hexo s -g #生成并本地预览
+hexo d -g #生成并上传</code></pre>
             </div>
             <hr />
 
@@ -1035,12 +1083,15 @@ hexo d  # 上传github</code></pre><h1 id="五、绑定域名"><a href="#五、�
                         
                             
 
+前言​    准备工作
+
+Github账号
+node.js、hexo、npm安装
+
 一、安装node.js
 下载windows版node.js
 下载地址: https://nodejs.org/en/download/
-选择Windows Installer(.msi) 64-bit
-
-双击node-v12.13.0-
+选择Window
                         
                     </div>
                     <div class="publish-info">
@@ -1063,8 +1114,16 @@ hexo d  # 上传github</code></pre><h1 id="五、绑定域名"><a href="#五、�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/Github/" target="_blank">
+                        <span class="chip bg-color">Github</span>
+                    </a>
+                    
+                    <a href="/tags/Heox/" target="_blank">
+                        <span class="chip bg-color">Heox</span>
+                    </a>
+                    
+                    <a href="/tags/node-js/" target="_blank">
+                        <span class="chip bg-color">node.js</span>
                     </a>
                     
                 </div>
@@ -1092,12 +1151,15 @@ hexo d  # 上传github</code></pre><h1 id="五、绑定域名"><a href="#五、�
                         
                             
 
+前言​    准备工作
+
+Github账号
+node.js、hexo、npm安装
+
 一、安装node.js
 下载windows版node.js
 下载地址: https://nodejs.org/en/download/
-选择Windows Installer(.msi) 64-bit
-
-双击node-v12.13.0-
+选择Window
                         
                     </div>
                     <div class="publish-info">
@@ -1120,8 +1182,16 @@ hexo d  # 上传github</code></pre><h1 id="五、绑定域名"><a href="#五、�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/Github/" target="_blank">
+                        <span class="chip bg-color">Github</span>
+                    </a>
+                    
+                    <a href="/tags/Heox/" target="_blank">
+                        <span class="chip bg-color">Heox</span>
+                    </a>
+                    
+                    <a href="/tags/node-js/" target="_blank">
+                        <span class="chip bg-color">node.js</span>
                     </a>
                     
                 </div>
@@ -1283,7 +1353,7 @@ hexo d  # 上传github</code></pre><h1 id="五、绑定域名"><a href="#五、�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">362</span>
+            <span class="white-color">682</span>
             
 
             <br>
