@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2019-11-14T19:59:37.840Z</updated>
+  <updated>2019-11-15T12:02:00.248Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/"/>
     <id>https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/</id>
     <published>2019-11-14T19:02:58.000Z</published>
-    <updated>2019-11-14T19:59:37.840Z</updated>
+    <updated>2019-11-15T12:02:00.248Z</updated>
     
     <summary type="html">
     
@@ -40,7 +40,7 @@
     
       <category term="Github" scheme="https://iace.fun/tags/Github/"/>
     
-      <category term="Heox" scheme="https://iace.fun/tags/Heox/"/>
+      <category term="Hexo" scheme="https://iace.fun/tags/Hexo/"/>
     
       <category term="node.js" scheme="https://iace.fun/tags/node-js/"/>
     
