@@ -2,58 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/</loc>
+    <loc>https://iace.fun/2019/11/23/shu-ju-jie-gou-yu-suan-fa-zhi-shu/</loc>
     
-    <lastmod>2019-11-15T12:02:00.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iace.fun/contact/index.html</loc>
-    
-    <lastmod>2019-11-14T18:15:01.491Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iace.fun/friends/index.html</loc>
-    
-    <lastmod>2019-11-14T18:14:10.893Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iace.fun/about/index.html</loc>
-    
-    <lastmod>2019-11-14T16:42:36.497Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iace.fun/404.html</loc>
-    
-    <lastmod>2019-09-26T05:13:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iace.fun/categories/index.html</loc>
-    
-    <lastmod>2019-09-26T05:13:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iace.fun/archives/index.html</loc>
-    
-    <lastmod>2019-09-26T05:13:10.000Z</lastmod>
+    <lastmod>2019-11-23T16:57:07.847Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://iace.fun/tags/index.html</loc>
     
-    <lastmod>2019-09-26T05:13:10.000Z</lastmod>
+    <lastmod>2019-11-18T09:12:25.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/friends/index.html</loc>
+    
+    <lastmod>2019-11-18T09:12:25.939Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/contact/index.html</loc>
+    
+    <lastmod>2019-11-18T09:12:25.938Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/categories/index.html</loc>
+    
+    <lastmod>2019-11-18T09:12:25.937Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/archives/index.html</loc>
+    
+    <lastmod>2019-11-18T09:12:25.935Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/about/index.html</loc>
+    
+    <lastmod>2019-11-18T09:12:25.934Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/</loc>
+    
+    <lastmod>2019-11-18T09:12:25.933Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/2019/11/18/cmake-yong-fa-zong-jie/</loc>
+    
+    <lastmod>2019-11-18T09:12:25.932Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iace.fun/404.html</loc>
+    
+    <lastmod>2019-11-18T09:12:25.929Z</lastmod>
     
   </url>
   
