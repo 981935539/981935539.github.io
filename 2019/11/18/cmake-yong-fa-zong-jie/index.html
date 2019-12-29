@@ -297,7 +297,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.4k
+                    7.6k
                 </div>
                 
 
@@ -792,11 +792,12 @@ add_executable(<name> [WIN32] [MACOSX_BUNDLE]
 <name>可执行文件名, <name>与逻辑目标名称相对应，并且在项目中必须是全局唯一的。构建的可执行文件的实际文件名是基于本机平台（例如<name>.exe或<name>）的约定构造的 。
 默认情况下，将在与调用命令的源树目录相对应的构建树目录中创建可执行文件。
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="add-subdirectory"><a href="#add-subdirectory" class="headerlink" title="add_subdirectory"></a>add_subdirectory</h3><pre><code>在构建中添加一个子目录。
+<h3 id="add-subdirectory"><a href="#add-subdirectory" class="headerlink" title="add_subdirectory"></a>add_subdirectory</h3><pre class="line-numbers language-shell"><code class="language-shell">在构建中添加一个子目录。
 add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
 将一个子目录添加到构建中。source_dir指定源CMakeLists.txt和代码文件所在的目录。binary_dir指定了输出文件放置的目录以及编译输出的路径。EXCLUDE_FROM_ALL 参数的含义是将这个目录从编译过程中排除，比如，工程的 example，可能就需要工程构建完成后，再进入 example 目录单独进行构建(当然，你也可以通过定义依赖来解决此类问题)。
 如果没有指定binary_dir,那么编译结果(包括中间结果)都将存放在
-build/source_dir 目录(这个目录跟原有的 source_dir 目录对应)，指定binary_dir 目录后，相当于在编译时将 source_dir 重命名为binary_dir，所有的中间结果和目标二进制都将存放在binary_dir 目录。</code></pre><h3 id="subdirs"><a href="#subdirs" class="headerlink" title="subdirs"></a>subdirs</h3><pre><code>构建多个子目录
+build/source_dir 目录(这个目录跟原有的 source_dir 目录对应)，指定binary_dir 目录后，相当于在编译时将 source_dir 重命名为binary_dir，所有的中间结果和目标二进制都将存放在binary_dir 目录。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="subdirs"><a href="#subdirs" class="headerlink" title="subdirs"></a>subdirs</h3><pre class="line-numbers language-shell"><code class="language-shell">构建多个子目录
 subdirs(dir1 dir2 ...[EXCLUDE_FROM_ALL exclude_dir1 exclude_dir2 ...]
         [PREORDER] )
 
@@ -805,7 +806,8 @@ subdirs(dir1 dir2 ...[EXCLUDE_FROM_ALL exclude_dir1 exclude_dir2 ...]
 来指定最终的目标二进制的位置(指最终生成的 hello 或者最终的共享库，不包含编译生成的中间文件)
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
-在第一节我们提到了&lt;projectname&gt;_BINARY_DIR 和 PROJECT_BINARY_DIR 变量，他们指的编译发生的当前目录，如果是内部编译，就相当于 PROJECT_SOURCE_DIR 也就是工程代码所在目录，如果是外部编译，指的是外部编译所在目录，也就是本例中的两个指令分别定义了：可执行二进制的输出路径为 build/bin 和库的输出路径为 build/lib.</code></pre><h3 id="add-library"><a href="#add-library" class="headerlink" title="add_library"></a>add_library</h3><pre><code>ADD_LIBRARY(libname [SHARED|STATIC|MODULE]
+在第一节我们提到了<projectname>_BINARY_DIR 和 PROJECT_BINARY_DIR 变量，他们指的编译发生的当前目录，如果是内部编译，就相当于 PROJECT_SOURCE_DIR 也就是工程代码所在目录，如果是外部编译，指的是外部编译所在目录，也就是本例中的两个指令分别定义了：可执行二进制的输出路径为 build/bin 和库的输出路径为 build/lib.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="add-library"><a href="#add-library" class="headerlink" title="add_library"></a>add_library</h3><pre class="line-numbers language-shell"><code class="language-shell">ADD_LIBRARY(libname [SHARED|STATIC|MODULE]
 [EXCLUDE_FROM_ALL]
 source1 source2 ... sourceN)
 你不需要写全 libhello.so，只需要填写 hello 即可，cmake 系统会自动为你生成
@@ -815,7 +817,8 @@ SHARED，动态库
 STATIC，静态库
 MODULE，在使用 dyld 的系统有效，如果不支持 dyld，则被当作 SHARED 对待。
 EXCLUDE_FROM_ALL 参数的意思是这个库不会被默认构建，除非有其他的组件依赖或者手
-工构建。</code></pre><h3 id="include-directories"><a href="#include-directories" class="headerlink" title="include_directories"></a>include_directories</h3><pre><code>将include目录添加到构建中
+工构建。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="include-directories"><a href="#include-directories" class="headerlink" title="include_directories"></a>include_directories</h3><pre class="line-numbers language-shell"><code class="language-shell">将include目录添加到构建中
 include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
 将给定目录添加到编译器用于搜索头文件的路径中。
 这条指令可以用来向工程添加多个特定的头文件搜索路径，路径之间用空格分割，如果路径
@@ -823,8 +826,9 @@ include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
 后面，你可以通过两种方式来进行控制搜索路径添加的方式：
 １，CMAKE_INCLUDE_DIRECTORIES_BEFORE，通过 SET 这个 cmake 变量为 on，可以
 将添加的头文件搜索路径放在已有路径的前面。
-２，通过 AFTER 或者 BEFORE 参数，也可以控制是追加还是置前。</code></pre><h3 id="target-link-libraries-amp-link-directories"><a href="#target-link-libraries-amp-link-directories" class="headerlink" title="target_link_libraries &amp; link_directories"></a>target_link_libraries &amp; link_directories</h3><pre><code>TARGET_LINK_LIBRARIES(target library1
-&lt;debug | optimized&gt; library2
+２，通过 AFTER 或者 BEFORE 参数，也可以控制是追加还是置前。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="target-link-libraries-amp-link-directories"><a href="#target-link-libraries-amp-link-directories" class="headerlink" title="target_link_libraries &amp; link_directories"></a>target_link_libraries &amp; link_directories</h3><pre class="line-numbers language-shell"><code class="language-shell">TARGET_LINK_LIBRARIES(target library1
+<debug | optimized> library2
 ...)
 这个指令可以用来为 target 添加需要链接的共享库，本例中是一个可执行文件，但是同样
 可以用于为自己编写的共享库添加共享库链接。
@@ -832,13 +836,35 @@ include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
 src/CMakeLists.txt 中添加如下指令：
 TARGET_LINK_LIBRARIES(main hello)
 也可以写成
-TARGET_LINK_LIBRARIES(main libhello.so)</code></pre><h3 id="ADD-DEFINITIONS"><a href="#ADD-DEFINITIONS" class="headerlink" title="ADD_DEFINITIONS"></a>ADD_DEFINITIONS</h3><p>向 C/C++编译器添加-D 定义，比如:<br>ADD_DEFINITIONS(-DENABLE_DEBUG -DABC)，参数之间用空格分割。<br>如果你的代码中定义了#ifdef ENABLE_DEBUG #endif，这个代码块就会生效。如果要添加其他的编译器开关，可以通过 CMAKE_C_FLAGS 变量和 CMAKE_CXX_FLAGS 变量设置。</p>
-<h3 id="ADD-DEPENDENCIES"><a href="#ADD-DEPENDENCIES" class="headerlink" title="ADD_DEPENDENCIES"></a>ADD_DEPENDENCIES</h3><p>定义 target 依赖的其他 target，确保在编译本 target 之前，其他的 target 已经被构建。<br>ADD_DEPENDENCIES(target-name depend-target1<br>depend-target2 …)</p>
-<h3 id="ADD-TEST-与-ENABLE-TESTING-指令。"><a href="#ADD-TEST-与-ENABLE-TESTING-指令。" class="headerlink" title="ADD_TEST 与 ENABLE_TESTING 指令。"></a>ADD_TEST 与 ENABLE_TESTING 指令。</h3><p>ENABLE_TESTING 指令用来控制 Makefile 是否构建 test 目标，涉及工程所有目录。语法很简单，没有任何参数，ENABLE_TESTING()，一般情况这个指令放在工程的主CMakeLists.txt 中.<br>ADD_TEST 指令的语法是:<br>    <code>ADD_TEST(testname Exename arg1 arg2 ...)</code><br>testname 是自定义的 test 名称，Exename 可以是构建的目标文件也可以是外部脚本等等。后面连接传递给可执行文件的参数。如果没有在同一个 CMakeLists.txt 中打开<br>    ENABLE_TESTING()指令，任何 ADD_TEST 都是无效的。<br>比如我们前面的 Helloworld 例子，可以在工程主 CMakeLists.txt 中添加</p>
-<p>ADD_TEST(mytest ${PROJECT_BINARY_DIR}/bin/main)<br>ENABLE_TESTING()<br>生成 Makefile 后，就可以运行 make test 来执行测试了。</p>
-<h3 id="AUX-SOURCE-DIRECTORY"><a href="#AUX-SOURCE-DIRECTORY" class="headerlink" title="AUX_SOURCE_DIRECTORY"></a>AUX_SOURCE_DIRECTORY</h3><p>基本语法是：<br>AUX_SOURCE_DIRECTORY(dir VARIABLE)<br>作用是发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来<br>自动构建源文件列表。因为目前 cmake 还不能自动发现新添加的源文件。<br>比如<br>AUX_SOURCE_DIRECTORY(. SRC_LIST)<br>ADD_EXECUTABLE(main ${SRC_LIST})<br>你也可以通过后面提到的 FOREACH 指令来处理这个 LIST</p>
+TARGET_LINK_LIBRARIES(main libhello.so)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ADD-DEFINITIONS"><a href="#ADD-DEFINITIONS" class="headerlink" title="ADD_DEFINITIONS"></a>ADD_DEFINITIONS</h3><pre class="line-numbers language-shell"><code class="language-shell">向 C/C++编译器添加-D 定义，比如:
+ADD_DEFINITIONS(-DENABLE_DEBUG -DABC)，参数之间用空格分割。
+如果你的代码中定义了#ifdef ENABLE_DEBUG #endif，这个代码块就会生效。如果要添加其他的编译器开关，可以通过 CMAKE_C_FLAGS 变量和 CMAKE_CXX_FLAGS 变量设置。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="ADD-DEPENDENCIES"><a href="#ADD-DEPENDENCIES" class="headerlink" title="ADD_DEPENDENCIES"></a>ADD_DEPENDENCIES</h3><pre class="line-numbers language-shell"><code class="language-shell">定义 target 依赖的其他 target，确保在编译本 target 之前，其他的 target 已经被构建。
+ADD_DEPENDENCIES(target-name depend-target1
+depend-target2 ...)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="ADD-TEST-与-ENABLE-TESTING-指令。"><a href="#ADD-TEST-与-ENABLE-TESTING-指令。" class="headerlink" title="ADD_TEST 与 ENABLE_TESTING 指令。"></a>ADD_TEST 与 ENABLE_TESTING 指令。</h3><pre class="line-numbers language-shell"><code class="language-shell">ENABLE_TESTING 指令用来控制 Makefile 是否构建 test 目标，涉及工程所有目录。语法很简单，没有任何参数，ENABLE_TESTING()，一般情况这个指令放在工程的主CMakeLists.txt 中.
+ADD_TEST 指令的语法是:
+    `ADD_TEST(testname Exename arg1 arg2 ...)`
+testname 是自定义的 test 名称，Exename 可以是构建的目标文件也可以是外部脚本等等。后面连接传递给可执行文件的参数。如果没有在同一个 CMakeLists.txt 中打开
+    ENABLE_TESTING()指令，任何 ADD_TEST 都是无效的。
+比如我们前面的 Helloworld 例子，可以在工程主 CMakeLists.txt 中添加
+
+ADD_TEST(mytest ${PROJECT_BINARY_DIR}/bin/main)
+ENABLE_TESTING()
+生成 Makefile 后，就可以运行 make test 来执行测试了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="AUX-SOURCE-DIRECTORY"><a href="#AUX-SOURCE-DIRECTORY" class="headerlink" title="AUX_SOURCE_DIRECTORY"></a>AUX_SOURCE_DIRECTORY</h3><pre class="line-numbers language-shell"><code class="language-shell">基本语法是：
+AUX_SOURCE_DIRECTORY(dir VARIABLE)
+作用是发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来
+自动构建源文件列表。因为目前 cmake 还不能自动发现新添加的源文件。
+比如
+AUX_SOURCE_DIRECTORY(. SRC_LIST)
+ADD_EXECUTABLE(main ${SRC_LIST})
+你也可以通过后面提到的 FOREACH 指令来处理这个 LIST<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>###　CMAKE_MINIMUM_REQUIRED</p>
-<p>其语法为 CMAKE_MINIMUM_REQUIRED(VERSION versionNumber [FATAL_ERROR])<br>比如 CMAKE_MINIMUM_REQUIRED(VERSION 2.5 FATAL_ERROR)<br>如果 cmake 版本小与 2.5，则出现严重错误，整个过程中止。</p>
+<pre class="line-numbers language-sehll"><code class="language-sehll">其语法为 CMAKE_MINIMUM_REQUIRED(VERSION versionNumber [FATAL_ERROR])
+比如 CMAKE_MINIMUM_REQUIRED(VERSION 2.5 FATAL_ERROR)
+如果 cmake 版本小与 2.5，则出现严重错误，整个过程中止。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="EXEC-PROGRAM"><a href="#EXEC-PROGRAM" class="headerlink" title="EXEC_PROGRAM"></a>EXEC_PROGRAM</h3><p>在 CMakeLists.txt 处理过程中执行命令，并不会在生成的 Makefile 中执行。具体语法为：</p>
 <pre class="line-numbers language-shell"><code class="language-shell">EXEC_PROGRAM(Executable [directory in which to run]
 [ARGS <arguments to executable>]
@@ -860,7 +886,12 @@ FILE(RELATIVE_PATH variable directory file)
 FILE(TO_CMAKE_PATH path result)
 FILE(TO_NATIVE_PATH path result)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里的语法都比较简单，不在展开介绍了。</p>
-<h3 id="INCLUDE-指令"><a href="#INCLUDE-指令" class="headerlink" title="INCLUDE 指令"></a>INCLUDE 指令</h3><p>用来载入 CMakeLists.txt 文件，也用于载入预定义的 cmake 模块.<br>    INCLUDE(file1 [OPTIONAL])<br>    INCLUDE(module [OPTIONAL])<br>OPTIONAL 参数的作用是文件不存在也不会产生错误。<br>你可以指定载入一个文件，如果定义的是一个模块，那么将在 CMAKE_MODULE_PATH 中搜索这个模块并载入。<br>载入的内容将在处理到 INCLUDE 语句是直接执行。</p>
+<h3 id="INCLUDE-指令"><a href="#INCLUDE-指令" class="headerlink" title="INCLUDE 指令"></a>INCLUDE 指令</h3><pre class="line-numbers language-shell"><code class="language-shell">用来载入 CMakeLists.txt 文件，也用于载入预定义的 cmake 模块.
+    INCLUDE(file1 [OPTIONAL])
+    INCLUDE(module [OPTIONAL])
+OPTIONAL 参数的作用是文件不存在也不会产生错误。
+你可以指定载入一个文件，如果定义的是一个模块，那么将在 CMAKE_MODULE_PATH 中搜索这个模块并载入。
+载入的内容将在处理到 INCLUDE 语句是直接执行。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-控制指令："><a href="#2-控制指令：" class="headerlink" title="2. 控制指令："></a>2. 控制指令：</h2><h3 id="1-IF-指令"><a href="#1-IF-指令" class="headerlink" title="1. IF 指令"></a>1. IF 指令</h3><p>基本语法为：</p>
 <pre class="line-numbers language-shell"><code class="language-shell">IF(expression)
 
@@ -926,7 +957,35 @@ ENDFOREACH(A)
 11
 14
 这个指令需要注意的是，知道遇到 ENDFOREACH 指令，整个语句块才会得到真正的执行。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="十、参考"><a href="#十、参考" class="headerlink" title="十、参考"></a>十、参考</h1><ol>
+<h1 id="十、CMakeLists配置模板"><a href="#十、CMakeLists配置模板" class="headerlink" title="十、CMakeLists配置模板"></a>十、<code>CMakeLists</code>配置模板</h1><h2 id="１-基本配置"><a href="#１-基本配置" class="headerlink" title="１.基本配置"></a>１.基本配置</h2><pre class="line-numbers language-shell"><code class="language-shell">cmake_minimum_required(VERSION 3.14)
+project(XXX_Project)
+
+# 设置CMAKE版本
+set(CMAKE_CXX_STANDARD 14)
+
+# 设置输出目录为 build/Debug/bin build/Debug/lib
+# 并缓存路径
+set(OUTPUT_DIRECTORY_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIRECTORY_ROOT}/bin" CACHE PATH "Runtime directory" FORCE)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${OUTPUT_DIRECTORY_ROOT}/lib" CACHE PATH "Library directory" FORCE)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${OUTPUT_DIRECTORY_ROOT}/lib" CACHE PATH "Archive directory" FORCE)
+
+# 添加src子目录
+add_subdirectory(src)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="２-依赖库相关配置"><a href="#２-依赖库相关配置" class="headerlink" title="２.依赖库相关配置"></a>２.依赖库相关配置</h2><p><strong><code>OPenCV</code>依赖库</strong></p>
+<p>将<code>OpenCV</code>依赖库下的<code>share/OpenCV</code>中，<code>OpenCVConfig.cmake</code>复制一份叫<code>FindOpenCV.cmake</code>，然后在根目录的CMakeLists.txt添加如下配置</p>
+<pre class="line-numbers language-shell"><code class="language-shell">#　添加make文件搜索路径
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ~/3rdparty/OpenCV-3.4.7/share/OpenCV)
+
+# 查找cmake文件，并初始化变量
+find_package(OpenCV REQUIRED)
+# 添加头文件搜索路径
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+# 给执行程序添加链接库
+add_executable(XXXXMain main.cpp)
+target_link_libraries(XXXXMain ${OpenCV_LIBS})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="十一、参考"><a href="#十一、参考" class="headerlink" title="十一、参考"></a>十一、参考</h1><ol>
 <li>[<a href="http://file.ncnynl.com/ros/CMake%20Practice.pdf]" target="_blank" rel="noopener">http://file.ncnynl.com/ros/CMake%20Practice.pdf]</a>(<a href="http://file.ncnynl.com/ros/CMake" target="_blank" rel="noopener">http://file.ncnynl.com/ros/CMake</a> Practice.pdf)</li>
 <li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" target="_blank" rel="noopener">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></li>
 </ol>
@@ -1422,7 +1481,7 @@ ENDFOREACH(A)
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="数据结构与算法之树">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="数据结构与算法之树">
                         
                         <span class="card-title">数据结构与算法之树</span>
                     </div>
@@ -1478,7 +1537,7 @@ ENDFOREACH(A)
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hexo+Github博客搭建">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Hexo+Github博客搭建">
                         
                         <span class="card-title">Hexo+Github博客搭建</span>
                     </div>
@@ -1689,7 +1748,7 @@ node.js、hexo、npm安装
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">10k</span>
+            <span class="white-color">26.2k</span>
             
 
             <br>

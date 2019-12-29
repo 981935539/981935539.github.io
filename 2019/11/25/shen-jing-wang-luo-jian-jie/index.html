@@ -1,0 +1,1603 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="神经网络简介, Ace 自然语言处理 深度学习">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="360-site-verification" content>
+    <meta name="description" content="一、感知器​    感知器(perceptron)是由美国学者FrankRoseblatt在1957年提出来的。为何我们现在还要学习这一很久以前就有的算法呢？因为感知机也是作为神经网络（深度学习）的起源的算法。因此，学习感知机的构造也就是学">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>神经网络简介 | 杨青海的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">杨青海的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">杨青海的博客</div>
+        <div class="logo-desc">
+            
+            计算机科学与技术 | 计算机视觉
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/981935539" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/981935539" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        神经网络简介
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/ML/" target="_blank">
+                            <span class="chip bg-color">ML</span>
+                        </a>
+                        
+                        <a href="/tags/DL/" target="_blank">
+                            <span class="chip bg-color">DL</span>
+                        </a>
+                        
+                        <a href="/tags/ANN/" target="_blank">
+                            <span class="chip bg-color">ANN</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/深度学习/" class="post-category" target="_blank">
+                            深度学习
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-11-25
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Ace
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="一、感知器"><a href="#一、感知器" class="headerlink" title="一、感知器"></a>一、感知器</h1><p>​    感知器(perceptron)是由美国学者FrankRoseblatt在1957年提出来的。为何我们现在还要学习这一很久以前就有的算法呢？因为感知机也是作为神经网络（深度学习）的起源的算法。因此，学习感知机的构造也就是学习通向神经网络和深度学习的一种重要思想。</p>
+<h2 id="1-什么是感知器"><a href="#1-什么是感知器" class="headerlink" title="1.什么是感知器"></a>1.什么是感知器</h2><p>​    感知机接收多个输入，生成一个输出，输出只有两种1和0。</p>
+<p>​    <img src="p1.png" alt></p>
+<p>​                                    <strong>图1.1 有两个输入的感知机</strong></p>
+<p>图1-1是一个接收两个输入的感知机. $x_1$、$x_2$是输入，$y$是输出，$w_1$、$w_2$是权重。图中的○称为神经元或者节点。输入被送往神经元时，会被分别乘以固定的权重$(w_1x_1,  w_2x_2)$。神经元会计算传送过来的输入的总和，只有当这个总和超过了某个界限值时，才会输出1。这也称为“神经元被激活” 。这里将这个界限值称为阈值，用符号θ表示。<br>$$<br>y =<br>\begin{cases}<br>1, &amp; (w_1x_1 + w_2x_2) &gt; \theta \<br>0, &amp; (w_1x_1 + w_2x_2) \leq \theta<br>\end{cases}<br>$$<br>权重越大，对应该权重的信号的重要性就越高。</p>
+<h2 id="2-逻辑运算"><a href="#2-逻辑运算" class="headerlink" title="2.逻辑运算"></a>2.逻辑运算</h2><p>使用感知器可以解决简单的逻辑运算，与门(AND), 与非门(NOT AND), 或门(OR).</p>
+<p>​    <img src="p2.png" alt></p>
+<p>​                                        <strong>1-2 与门真值表</strong></p>
+<p>满足图2-2的条件的参数的选择方法有无数多个。比如，当<br>$(w_1, w_2, θ) = (0.5, 0.5, 0.7) $时，可以满足图 2-1的条件。</p>
+<p>我们看着真值表这种“训练数据”，人工考虑（想到）了参数的值。而机器学习的课题就是将这个决定参数值的工作交由计算机自动进行。 学习是确定合适的参数的过程，而人要做的是思考感知机的构造（模型），并把训练数据交给计算机。</p>
+<h2 id="3-偏置和权重"><a href="#3-偏置和权重" class="headerlink" title="3.偏置和权重"></a>3.偏置和权重</h2><p>$$<br>y =\begin{cases}1, &amp; (b + w_1x_1 + w_2x_2) &gt; 0 \\0, &amp; (b + w_1x_1 + w_2x_2) \leq 0\end{cases}<br>$$</p>
+<p>令$b = -\theta$， $b$称为偏置，$w_1$和$w_2$称为权重, 但是请注意，偏置和权重$w_1$、$w_2$的作用是不一样的。具体地说， $w_1$和$w_2$是控制输入的重要性的参数，而偏置是调整神经元被激活的容易程度（输出为1的程度）的参数。有时也会将$b$、$w_1$、$w_2$这些参数统称为权重。</p>
+<h2 id="4-单层感知机的局限性"><a href="#4-单层感知机的局限性" class="headerlink" title="4.单层感知机的局限性"></a>4.单层感知机的局限性</h2><p>单层感知机的局限性就在于它只能表示由一条直线分割的空间,无法表示用曲线分割的空间。弯曲的曲线无法用感知机表示</p>
+<p>​    <img src="p3.png" alt></p>
+<p>​        <strong>图1-3　○和△表示异或门的输出。可否通过一条直线作出分割○和△的空间呢？</strong></p>
+<p>​    <img src="p4.png" alt></p>
+<p>​                    <strong>图1-4　使用曲线可以分开○和△</strong></p>
+<h2 id="5-多层感知机"><a href="#5-多层感知机" class="headerlink" title="5.多层感知机"></a>5.多层感知机</h2><p>​    单层感知机虽然不能表示异或，但多层感知机的叠加却可以。</p>
+<p>​    <img src="p5.png" alt></p>
+<p>​                        <strong>图1-5　通过组合与门、与非门、或门实现异或门</strong></p>
+<p>​    <img src="p6.png" alt></p>
+<p>​                    <strong>图2-6　用感知机表示异或门</strong>            </p>
+<p>叠加了多层的感知机也称为多层感知机（multi-layered perceptron）。异或可以通过多层感知机实现。</p>
+<p>图2-6中的感知机总共由3层构成，但是因为拥有权重的层实质上只有2层（第0层和第1层之间，第1层和第2层之间），所以称为“2层感知机”。不过，有的文献认为图2-6的感知机是由3层构成的，因而将其称为“3层感知机”。</p>
+<h2 id="6-感知机与计算机"><a href="#6-感知机与计算机" class="headerlink" title="6.感知机与计算机"></a>6.感知机与计算机</h2><p>​    多层感知机能够进行复杂的表示，甚至可以构建计算机。那么，什么构造的感知机才能表示计算机呢？层级多深才可以构建计算机呢？</p>
+<p>​    <strong>理论上</strong>可以说2层感知机就能构建计算机。这是因为，已有研究证明，2层感知机（严格地说是激活函数使用了非线性的sigmoid函数的感知机）可以表示任意函数。但是，使用2层感知机的构造，通过设定合适的权重来构建计算机是一件非常累人的事情。</p>
+<p>​    实际上，在用与非门等低层的元件构建计算机的情况下，分阶段地制作所需的零件（模块）会比较自然，即先实现与门和或门，然后实现半加器和全加器，接着实现算数逻辑单元(ALU), 然后实现CPU。因此，通过感知机表示计算机时，使用叠加了多层的构造来实现是比较自然的流程。</p>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7.总结"></a>7.总结</h2><p>​    感知机从算法的角度来说就是单位阶跃函数+线性回归算法。</p>
+<h1 id="二、神经网路"><a href="#二、神经网路" class="headerlink" title="二、神经网路"></a>二、神经网路</h1><h2 id="1-1-从感知器到神经网络"><a href="#1-1-从感知器到神经网络" class="headerlink" title="1.1 从感知器到神经网络"></a>1.1 从感知器到神经网络</h2><p>​    一般而言，“朴素感知机”是指单层网络，指的是激活函数使用了阶跃函数 的模型。“多层感知机”是指神经网络，即使用<code>sigmoid</code> 函数等平滑的激活函数的多层网络。</p>
+<p>​    <img src="p7.png" alt></p>
+<p>​    如图所示。我们把最左边的一列称为输入层，最右边的一列称为输出层，中间的一列称为中间层。中间层有时也称为隐藏层.</p>
+<p>​    图中的网络一共由 3 层神经元构成, 但实质上只有 2层神经元有权重，因此将其称为“2层网络”。</p>
+<h2 id="1-2-激活函数"><a href="#1-2-激活函数" class="headerlink" title="1.2 激活函数"></a>1.2 激活函数</h2><p>​    神经网络与感知机的一个最大区别是它使用了“阶跃函数”之外的其他激活函数，比如sigmoid函数。sigmoid函数相比”阶跃函数”更佳平滑.</p>
+<p>​    阶跃函数和sigmoid函数均为非线性函数, 线性函数是一条笔直的直线，而非线性函数，顾名思义，指的是不像线性函数那样呈现出一条直线的函数。</p>
+<p>​    激活函数一定是非线性函数，它的主要作用就是增加神经网络的非线性，因为线性函数的线性组合还是线性函数，这样的话多层神经网络就没有意义。</p>
+<p>​    输出层的激活函数，要根据求解问题的性质决定。一般地，回归问题可以使用恒等函数，二元问题可以使用sigmoid函数，多元分类问题可以使用softmax函数。所谓恒等函数，就是按输入原样输出，对于输入的信息，不加任何改动地直接输出。</p>
+<p>​    常见的激活函数:</p>
+<ul>
+<li>阶跃函数:  </li>
+</ul>
+<p>$$<br>h(x) =\begin{cases}1, &amp; x &gt; 0 \\0, &amp; x \leq 0\end{cases}<br>$$</p>
+<p>​    <img src="n2.png" alt></p>
+<ul>
+<li>sigmoid函数(S函数)<br>$$<br>h(x) = \dfrac {1}{1+e^{-x}}<br>$$</li>
+</ul>
+<p>  <img src="n3.png" alt></p>
+<ul>
+<li>Relu函数<br>$$<br>h(x) =\begin{cases}x, &amp; x &gt; 0 \\0, &amp; x \leq 0\end{cases}<br>$$</li>
+</ul>
+<p>  <img src="n4.png" alt></p>
+<ul>
+<li>softmax函数</li>
+</ul>
+<p>$$<br>\sigma(x) =  \dfrac {e^{a_k}}{ \sum_{i=1}^n e^{a^i}   }<br>$$</p>
+<p><strong>注意</strong>: softmax函数有一个缺陷就是溢出问题，softmax函数的实现中要进行指数函数的运算，但是此时指数函数的值很容易变得非常大。如，$e^{1000}$的结果会返回一个表示无穷大的inf。</p>
+<p>改进: 先进行归一化，在求值</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1010</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">990</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">/</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#  array([nan, nan, nan])  没有计算正确的值</span>
+
+mi <span class="token operator">=</span> np<span class="token punctuation">.</span>min<span class="token punctuation">(</span>a<span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># 990                                 </span>
+ma <span class="token operator">=</span> np<span class="token punctuation">.</span>max<span class="token punctuation">(</span>a<span class="token punctuation">)</span>                                 
+nor <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">-</span>mi<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>ma<span class="token operator">-</span>mi<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 归一化 array([1. , 0.5, 0. ])   </span>
+np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>nor<span class="token punctuation">)</span><span class="token operator">/</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>nor<span class="token punctuation">)</span><span class="token punctuation">)</span>                 
+<span class="token comment" spellcheck="true"># array([0.50648039, 0.30719589, 0.18632372])</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>​    一般而言，神经网络只把输出值最大的神经元所对应的类别作为识别结果。并且，即便使用softmax函数，输出值最大的神经元的位置也不会变。因此，神经网络在进行分类时，输出层的softmax函数可以省略。在实际的问题中，由于指数函数的运算需要一定的计算机运算量，因此<strong>输出层的softmax函数一般会被省略</strong></p>
+<p>​    求解机器学习问题的步骤可以分为“学习” A 和“推理”两个阶段。首先， 在学习阶段进行模型的学习 ，然后，在推理阶段，用学到的模型对未知的数据进行推理（分类）。如前所述，推理阶段一般会省略输出层的 softmax 函数。在输出层使用 softmax 函数是因为它和<br>神经网络的学习有关系</p>
+<h2 id="1-3-3层神经网络"><a href="#1-3-3层神经网络" class="headerlink" title="1.3 3层神经网络"></a>1.3 3层神经网络</h2><p>​    <img src="n7.png" alt></p>
+<p>3层神经网络：输入层（第0层）有2个神经元，第1个隐藏层（第1层）有3个神经元，第2个隐藏层（第2层）有2个神经元，输出层（第3层）有2个神经元</p>
+<p><img src="n6.png" alt></p>
+<p>​                                图２－６权重的符号</p>
+<p>请注意，偏置的右下角的索引号只有一个。这是因为前一层的偏置神经元（神经元“1”）只有一个，索引表示的是后一层神经元的索引。</p>
+<p>数学公式表示$a_1^{(1)}$<br>$$<br>a_1^{(1)} = a_{11}^{(1)}x1 + w_{12}^{(1)}x2 + b_1^{(1)}<br>$$<br>矩阵$W^{(1)}$表示第１层的权重：<br>$$<br>W^{(1)} = \begin{pmatrix}w_{11}^{(1)} &amp; w_{12}^{(1)} &amp; w_{13}^{(1)}\\\\w_{12}^{(1)} &amp;w_{22}^{(1)} &amp;w_{32}^{(1)}\end{pmatrix}<br>$$<br>向量$B^{(1)}$表示第一层的偏置:<br>$$<br>\begin{pmatrix} b_1^{(1)} &amp; b_2^{(1)} &amp; b_3^{(1)}\\ \end{pmatrix} \quad<br>$$</p>
+<p>$$<br>A^{(1)} = \begin{pmatrix} a_1^{(1)} &amp; a_2^{(1)} &amp; a_3^{(1)}\\ \end{pmatrix} \quad<br>$$</p>
+<p>$$<br>X^{(1)} = \begin{pmatrix} x_1 &amp; x_2\\ \end{pmatrix} \quad<br>$$</p>
+<p>第１层的加权和表示:<br>$$<br>A^{(1)} = XW^{(1)} + B^{(1)}<br>$$</p>
+<h1 id="三、神经网络的学习"><a href="#三、神经网络的学习" class="headerlink" title="三、神经网络的学习"></a>三、神经网络的学习</h1><p>​    神经网络的学习就是从训练数据学习权重参数，然后使用刚才学习到的参数对输入数据进行预测。</p>
+<p>​    神经网络学习的策略是首先对输入数据进行前向传播(forward propagation)过程得到输出，然后计算输出与真实值之间的差别，最后通过反向传播跟新权重参数，重复这一过程直到权重参数没有更新，此时损失函数达到最小。</p>
+<p>​    计算输出与真实值之间的差别通过损失函数计算。反向传播需要用到梯度下降算法实现。</p>
+<h2 id="1-损失函数"><a href="#1-损失函数" class="headerlink" title="1.损失函数"></a>1.损失函数</h2><p>​    损失函数是表示神经网络性能的指标。神经网络通过减小损失函数，寻找最优权重参数。常用的误差函数有均方误差和交叉熵误差等。</p>
+<ul>
+<li>均方误差(mean squared error MSE)</li>
+</ul>
+<p>$$<br>E = \frac {1}{2} \sum_{k}({y_k - t_k})^2<br>$$</p>
+<p>​    $y_k$表示神经网络的输出，$t_k$表示目标数据，k表示输出数据的维度，比如　手写数字识别的输出数据的维度是10 (0-9)。</p>
+<ul>
+<li>交叉熵误差(cross entropy error)<br>$$<br>E = - \sum_{k}t_k\log y_k<br>$$<br>上式是一条数据的误差，如果批量计算多条数据则函数为:<br>$$<br>E = - \frac{1}{N}\sum_{N}\sum_{k}t_{nk}\log y_{nk}<br>$$<br>假设数据有N个， $t_{nk}$表示第n个数据的第k个元素的值（$y_{nk}$是神<br>经网络的输出， $t_{nk}$是目标数据）, 不过最后还要除以N, 通过这样的<br>平均化，可以获得和训练数据的数量无关的统一指标。</li>
+</ul>
+<h2 id="2-梯度下降"><a href="#2-梯度下降" class="headerlink" title="2.梯度下降"></a>2.梯度下降</h2><p>​    梯度是导数对多元函数的推广，它是多元函数对各个变量偏导形成的向量。多元函数的梯度定义为:<br>$$<br>\triangledown(x) = \begin{pmatrix} \frac{\partial f}{\partial x_1}, &amp; …, &amp; \frac{\partial f}{\partial x_n}\\  \end{pmatrix}^{T} \quad<br>$$<br>　其中$\triangledown$称为梯度算子，它作用与一个多元函数，得到一个向量。梯度是一个向量，即有大小又有方向，大小为该点的变化率，方向是该点增加最快的方向，-$\triangledown$(x)就为减小最快的方向。所以只要沿着梯度的反方向就可能达到函数的驻点，可能是局部极小值，全局极小值或鞍点。</p>
+<p>​    在梯度下降法中，函数的取值从当前位置沿着梯度反方向前进一定距离，然后在新的地方重新求梯度，再沿着新梯度反方向前进，如此反复，不断地沿梯度方向前进。像这样，通过不断地沿梯度反方向前进，逐渐减小函数值的过程就是梯度下降法（gradient descent method）。</p>
+<p>​    梯度法是解决机器学习中最优化问题的常用方法，特别是在神经网络的学习中经常被使用。寻找最小值的梯度法称为梯度下降法（gradient descent method），寻找最大值的梯度法称为梯度上升法（gradient ascent method）。但是通过反转损失函数的符号，求最小值的问题和求最大值的问题会变成相同的问题。</p>
+<p>数学公式来表示梯度下降方法:<br>$$<br>x_0 = x_0 - \eta \frac {\partial f}{\partial x_0}<br>$$</p>
+<p>$$<br>x_1 = x_1 - \eta \frac {\partial f}{\partial x_1}<br>$$</p>
+<p>$\eta$是学习率，表示根据梯度值变化的幅度，x在神经网络中代表权重.</p>
+<p>​    控制梯度下降的幅度</p>
+<p>​    0.1    0.01    0.001    ….</p>
+<p>​    如果学习率太大，误差会逐步增大</p>
+<p>​    如果学习率较大，误差会来回震荡</p>
+<p>​    如果学习率太小， 误差下降缓慢</p>
+<p>​    <img src="n8.png" alt></p>
+<p>​                    图　$f(x_0, x_1) = x_0^2 + x_1^2$的梯度下降更新过程:虚线是函数的等高线</p>
+<p>神经网络的学习分成下面4个步骤:<br><strong>步骤1（ mini-batch）</strong><br>    从训练数据中选出一部分数据，这部分数据称为mini-batch。我们的目标是减小损失函数的值。<br><strong>步骤2（计算梯度）</strong><br>    为了减小损失函数的值，需要求出各个权重参数的梯度。<br><strong>步骤3（更新参数）</strong><br>    将权重参数沿梯度方向进行微小更新。        </p>
+<p><strong>步骤4（重复）</strong><br>    重复步骤1、步骤2、步骤3, 直到梯度为０或接近０．</p>
+<p>​        </p>
+<h2 id="3-误差反向传播"><a href="#3-误差反向传播" class="headerlink" title="3.误差反向传播"></a>3.误差反向传播</h2><ol>
+<li><p>计算图</p>
+<p>小明在超市买了2个苹果、 3个橘子。其中，苹果每个100日元，<br>橘子每个150日元。消费税是10%，请计算支付金额。</p>
+<p><img src="b1.png" alt></p>
+<p>​                        <strong>计算图的求解过程</strong></p>
+<p>​    在计算图上，从左向右进行计算是一种正方向的传播, 简称为<strong>正向传播</strong>(forward propagation)。同理，反方向的计算，就是<strong>反向传播</strong>(backward propagation)。</p>
+<p>​    计算图的特征是可以通过传递“局部计算”获得最终结果。局部计算是指，无论全局发生了什么，都能只根据与自己相关的信息输出接下来的结果。</p>
+</li>
+</ol>
+<p>   <img src="b2.png" alt></p>
+<p>   ​    计算图的优点是，可以通过正向传播和反向传播高效地计算各个变量的导数值. 从上图可以看到，如果消费税和苹果的价格增加相同的值，则消费税将对最终价格产生200倍大小的影响，苹果的价格将产生2.2倍大小的影响。不过，因为这个例子中消费税和苹果的价格的量纲不同，所以才形成了这样的结果（消费税的1是100%，苹果的价格的1是1元）。</p>
+<ol start="2">
+<li><p>链式法则</p>
+<p>反向传播将局部导数向正方向的反方向（从右到左）传递，传递这个局部导数的原理，是基于<strong>链式法则</strong>的。</p>
+<p><img src="b3.png" alt></p>
+<p><strong>图b3 计算图的反向传播：沿着与正方向相反的方向，乘上局部导数</strong></p>
+<p>如图所示，反向传播的计算顺序是，将信号$E$乘以节点的局部导数<br>$(\frac {\partial y}{\partial x})$，然后将结果传递给下一个节点。这里所说的局部导数是指正向传播中y = f(x)的导数，也就是y关于x的导数$(\frac {\partial y}{\partial x})$。比如，假设$y = f(x) = x2$，则局部导数为 $(\frac {\partial y}{\partial x})$= $2x$。把这个局部导数乘以上游传过来的值（本例中为E），然后传递给前面的节点。</p>
+</li>
+</ol>
+<p>   <img src="b4.png" alt></p>
+<p>   根据链式法则，$\frac {\partial z}{\partial z} \frac {\partial z}{\partial t} \frac {\partial t}{\partial x} = \frac {\partial z}{\partial t} \frac {\partial t}{\partial x} = \frac {\partial z}{\partial x}$成立，对应“z关于x的导数”。也就是说，反向传播是基于链式法则的</p>
+<ol start="4">
+<li><p>激活函数的反向传播</p>
+<ul>
+<li><p>Relu激活函数<br>$$<br>h^{‘}(x) =\begin{cases}1, &amp; x &gt; 0 \\0, &amp; x \leq 0\end{cases}<br>$$<br>如果正向传播时的输入x大于0，则反向传播会将上游的值原封不动地传给下游。反过来，如果正向传播时的x小于等于0，则反向传播中传给下游的信号将停在此处。</p>
+<p>Relu 层的作用就像电路中的开关一样。正向传播时，有电流通过的话，就将开关设为ON；没有电流通过的话，就将开关设为OFF。反向传播时，开关为ON的话，电流会直接通过；开关为OFF的话，则不会有电流通过。</p>
+</li>
+<li><p>Sigmoid激活函数<br>$$<br>h^{‘}(y) = y(1-y)<br>$$</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code> ```python
+ class Sigmoid:
+     def __init__(self):
+         self.out = None     # 保存当前层的输出
+
+     def forward(self, x):
+         &quot;&quot;&quot;
+         前向传播
+         :param x: 
+         :return: 
+         &quot;&quot;&quot;
+         out = sigmoid(x)
+         self.out = out
+         return out
+
+     def backward(self, dout):
+         &quot;&quot;&quot;
+         反向传播
+         :param dout: 
+         :return: 
+         &quot;&quot;&quot;
+         dx = dout * (1.0 - self.out) * self.out
+
+         return dx
+ ```</code></pre><ol start="5">
+<li><p>矩阵运算<br>$$<br>X \cdot W = Y<br>$$</p>
+<p>$$<br>\frac{\partial L}{\partial X} = \frac{\partial L}{\partial Y} \cdot W^T<br>$$</p>
+<p>$$<br>\frac{\partial L}{\partial W} = X^T \cdot \frac{\partial L}{\partial Y}<br>$$</p>
+</li>
+</ol>
+<p>   <img src="b6.png" alt></p>
+<p>   需要注意各个变量的形状</p>
+<ol start="6">
+<li><p>Softmax-with-Loss层</p>
+<p><img src="b7.png" alt></p>
+<p>Softmax层将输入（a1, a2, a3）正规化，输出（y1,y2, y3）。 Cross Entropy Error层接收Softmax的输出（y1, y2, y3）和目标值（t1,t2, t3），从这些数据中输出损失L。</p>
+<p>Softmax反向传播的梯度为(y1 - t1,  y2 - t2, y3 - t3).</p>
+</li>
+</ol>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h2><p>通过使用计算图，可以直观地把握计算过程。<br>• 计算图的节点是由局部计算构成的。局部计算构成全局计算。<br>• 计算图的正向传播进行一般的计算。通过计算图的反向传播，可以<br>计算各个节点的导数。<br>• 通过将神经网络的组成元素实现为层，可以高效地计算梯度（反向传<br>播法）。<br>• 通过比较数值微分和误差反向传播法的结果，可以确认误差反向传<br>播法的实现是否正确（梯度确认）</p>
+<h1 id="四、参考"><a href="#四、参考" class="headerlink" title="四、参考"></a>四、参考</h1><p>《深度学习入门: 基于Python的理论与实现》</p>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《神经网络简介》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/25/shen-jing-wang-luo-jian-jie/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                Ace
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '85f48fa8f84b940f407f',
+        clientSecret: 'c88650575ce616c6abfa23b953cc755c9b8e483e',
+        repo: '981935539.github.io',
+        owner: '981935539',
+        admin: 981935539,
+        id: '2019/11/25/shen-jing-wang-luo-jian-jie/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/11/25/pyhton-gao-shu-ji-suan-ku/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Pyhton高数计算库">
+                        
+                        <span class="card-title">Pyhton高数计算库</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            math数学库# 导入math库
+import math
+
+# 常用数学常量
+math.pi        # π
+math.e
+math.inf    # ∞
+math.nan    # not a num
+
+# 指数/对数/开平方
+ma
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/math/" target="_blank">
+                        <span class="chip bg-color">math</span>
+                    </a>
+                    
+                    <a href="/tags/sympy/" target="_blank">
+                        <span class="chip bg-color">sympy</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/24/ji-qi-xue-xi-gai-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="机器学习概述">
+                        
+                        <span class="card-title">机器学习概述</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、人工智能
+什么是人工智能
+​        
+​        人工智能（Artificial Intelligence），英文缩写为AI。它是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。​  
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/机器学习/" class="post-category" target="_blank">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI/" target="_blank">
+                        <span class="chip bg-color">AI</span>
+                    </a>
+                    
+                    <a href="/tags/ML/" target="_blank">
+                        <span class="chip bg-color">ML</span>
+                    </a>
+                    
+                    <a href="/tags/DL/" target="_blank">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 杨青海的博客<br />'
+            + '作者: Ace<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 YangQingHai. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">26.2k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/981935539" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:981935539@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/981935539" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="https://user.qzone.qq.com/981935539" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/981935539" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 11, 15, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

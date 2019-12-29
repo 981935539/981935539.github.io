@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2019-11-23T18:06:46.889Z</updated>
+  <updated>2019-12-29T16:36:41.571Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -15,6 +15,234 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习之过拟合</title>
+    <link href="https://iace.fun/2019/12/29/shen-du-xue-xi-zhi-guo-ni-he/"/>
+    <id>https://iace.fun/2019/12/29/shen-du-xue-xi-zhi-guo-ni-he/</id>
+    <published>2019-12-29T13:48:28.000Z</published>
+    <updated>2019-12-29T16:36:41.571Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、过拟合&quot;&gt;&lt;a href=&quot;#一、过拟合&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="Python" scheme="https://iace.fun/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习之CNN模型演化</title>
+    <link href="https://iace.fun/2019/12/02/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/"/>
+    <id>https://iace.fun/2019/12/02/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</id>
+    <published>2019-12-02T12:04:54.000Z</published>
+    <updated>2019-12-02T07:25:24.152Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h1&gt;&lt;h1 id=&quot;一、LeNet&quot;&gt;&lt;a href=&quot;#一、LeNet&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="Python" scheme="https://iace.fun/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习之优化算法</title>
+    <link href="https://iace.fun/2019/11/28/shen-du-xue-xi-zhi-you-hua-suan-fa/"/>
+    <id>https://iace.fun/2019/11/28/shen-du-xue-xi-zhi-you-hua-suan-fa/</id>
+    <published>2019-11-28T09:00:22.000Z</published>
+    <updated>2019-12-02T07:25:24.184Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h1&gt;&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="python" scheme="https://iace.fun/tags/python/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中with的用法</title>
+    <link href="https://iace.fun/2019/11/28/python-zhong-with-de-yong-fa/"/>
+    <id>https://iace.fun/2019/11/28/python-zhong-with-de-yong-fa/</id>
+    <published>2019-11-27T16:14:20.000Z</published>
+    <updated>2019-12-02T08:53:06.518Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、什么是with语句&quot;&gt;&lt;a href=&quot;#一、什么是with语句&quot; class=&quot;headerlink&quot; title=&quot;一、什么是with语句&quot;&gt;&lt;/a&gt;一、什么是with语句&lt;/h1&gt;&lt;p&gt;​    对于系统资源如文件、数据库连接、socket
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://iace.fun/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://iace.fun/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python包管理</title>
+    <link href="https://iace.fun/2019/11/28/python-bao-guan-li/"/>
+    <id>https://iace.fun/2019/11/28/python-bao-guan-li/</id>
+    <published>2019-11-27T16:08:24.000Z</published>
+    <updated>2019-12-02T08:53:06.518Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、什么是包？&quot;&gt;&lt;a href=&quot;#一、什么是包？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://iace.fun/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://iace.fun/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pyhton高数计算库</title>
+    <link href="https://iace.fun/2019/11/25/pyhton-gao-shu-ji-suan-ku/"/>
+    <id>https://iace.fun/2019/11/25/pyhton-gao-shu-ji-suan-ku/</id>
+    <published>2019-11-25T07:57:29.000Z</published>
+    <updated>2019-12-02T08:53:06.517Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;math数学库&quot;&gt;&lt;a href=&quot;#math数学库&quot; class=&quot;headerlink&quot; title=&quot;math数学库&quot;&gt;&lt;/a&gt;math数学库&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://iace.fun/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://iace.fun/tags/python/"/>
+    
+      <category term="math" scheme="https://iace.fun/tags/math/"/>
+    
+      <category term="sympy" scheme="https://iace.fun/tags/sympy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>神经网络简介</title>
+    <link href="https://iace.fun/2019/11/25/shen-jing-wang-luo-jian-jie/"/>
+    <id>https://iace.fun/2019/11/25/shen-jing-wang-luo-jian-jie/</id>
+    <published>2019-11-25T01:08:19.000Z</published>
+    <updated>2019-12-02T08:53:06.564Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、感知器&quot;&gt;&lt;a href=&quot;#一、感知器&quot; class=&quot;headerlink&quot; title=&quot;一、感知器&quot;&gt;&lt;/a&gt;一、感知器&lt;/h1&gt;&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="ANN" scheme="https://iace.fun/tags/ANN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习概述</title>
+    <link href="https://iace.fun/2019/11/24/ji-qi-xue-xi-gai-shu/"/>
+    <id>https://iace.fun/2019/11/24/ji-qi-xue-xi-gai-shu/</id>
+    <published>2019-11-24T10:33:32.000Z</published>
+    <updated>2019-12-02T08:53:06.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、人工智能&quot;&gt;&lt;a href=&quot;#一、人工智能&quot; class=&quot;headerlink&quot; title=&quot;一、人工智能&quot;&gt;&lt;/a&gt;一、人工智能&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;什么是人工智能&lt;/p&gt;
+&lt;p&gt;​        &lt;img src=&quot;3.jpg&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构与算法之树</title>
@@ -49,7 +277,7 @@
     <link href="https://iace.fun/2019/11/18/cmake-yong-fa-zong-jie/"/>
     <id>https://iace.fun/2019/11/18/cmake-yong-fa-zong-jie/</id>
     <published>2019-11-18T08:18:09.000Z</published>
-    <updated>2019-11-18T09:12:25.932Z</updated>
+    <updated>2019-12-02T08:53:06.517Z</updated>
     
     <summary type="html">
     

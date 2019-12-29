@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://iace.fun/2019/12/29/shen-du-xue-xi-zhi-guo-ni-he/</loc>
+    <lastmod>2019-12-29</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/11/25/shen-jing-wang-luo-jian-jie/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/11/24/ji-qi-xue-xi-gai-shu/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/11/28/python-zhong-with-de-yong-fa/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/11/28/python-bao-guan-li/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/11/25/pyhton-gao-shu-ji-suan-ku/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/11/18/cmake-yong-fa-zong-jie/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/11/28/shen-du-xue-xi-zhi-you-hua-suan-fa/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2019/12/02/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
     <loc>https://iace.fun/2019/11/23/shu-ju-jie-gou-yu-suan-fa-zhi-shu/</loc>
     <lastmod>2019-11-23</lastmod>
   </url>  <url>
     <loc>https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/</loc>
-    <lastmod>2019-11-18</lastmod>
-  </url>  <url>
-    <loc>https://iace.fun/2019/11/18/cmake-yong-fa-zong-jie/</loc>
     <lastmod>2019-11-18</lastmod>
   </url>
 </urlset>
