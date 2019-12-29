@@ -4,21 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Pyhton高数计算库, Ace 自然语言处理 深度学习">
+    <meta name="keywords" content="深度学习之超参数, Ace 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="math数学库# 导入math库
-import math
-
-# 常用数学常量
-math.pi        # π
-math.e
-math.inf    # ∞
-math.nan    # not a num
-
-# 指数/对数/开平方
-ma">
+    <meta name="description" content="一、什么是超参数​    超参数是我们在将学习算法应用于数据集之前需要设置的变量。超参数的一个挑战在于,它不存在适用于所有地方的万能数字,每个任务和数据集的最佳数字各不相同。​    一般来讲, 我们可以将超参数分为两类, 第一类是优化器超">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +16,7 @@ ma">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Pyhton高数计算库 | 杨青海的博客</title>
+    <title>深度学习之超参数 | 杨青海的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -300,13 +290,13 @@ ma">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Pyhton高数计算库
+                        深度学习之超参数
                     </div>
                 </div>
             </div>
@@ -417,16 +407,12 @@ ma">
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
+                        <a href="/tags/DL/" target="_blank">
+                            <span class="chip bg-color">DL</span>
                         </a>
                         
-                        <a href="/tags/math/" target="_blank">
-                            <span class="chip bg-color">math</span>
-                        </a>
-                        
-                        <a href="/tags/sympy/" target="_blank">
-                            <span class="chip bg-color">sympy</span>
+                        <a href="/tags/Python/" target="_blank">
+                            <span class="chip bg-color">Python</span>
                         </a>
                         
                     </div>
@@ -437,8 +423,8 @@ ma">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Python/" class="post-category" target="_blank">
-                            Python
+                        <a href="/categories/深度学习/" class="post-category" target="_blank">
+                            深度学习
                         </a>
                         
                     </div>
@@ -449,7 +435,7 @@ ma">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-25
+                    2019-12-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -463,7 +449,7 @@ ma">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    731
+                    912
                 </div>
                 
 
@@ -486,142 +472,20 @@ ma">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="math数学库"><a href="#math数学库" class="headerlink" title="math数学库"></a>math数学库</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 导入math库</span>
-<span class="token keyword">import</span> math
-
-<span class="token comment" spellcheck="true"># 常用数学常量</span>
-math<span class="token punctuation">.</span>pi        <span class="token comment" spellcheck="true"># π</span>
-math<span class="token punctuation">.</span>e
-math<span class="token punctuation">.</span>inf    <span class="token comment" spellcheck="true"># ∞</span>
-math<span class="token punctuation">.</span>nan    <span class="token comment" spellcheck="true"># not a num</span>
-
-<span class="token comment" spellcheck="true"># 指数/对数/开平方</span>
-math<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>a<span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># math.e**a</span>
-math<span class="token punctuation">.</span>log<span class="token punctuation">(</span>a<span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 自然底数 math.e</span>
-math<span class="token punctuation">.</span>log<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 以b为底，b**x = a</span>
-math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>a<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 开平方</span>
-
-<span class="token comment" spellcheck="true"># 近似值</span>
-math<span class="token punctuation">.</span>ceil<span class="token punctuation">(</span><span class="token number">4.1</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># roud up to 5</span>
-math<span class="token punctuation">.</span>floor<span class="token punctuation">(</span><span class="token number">4.9</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># roud up to 4</span>
-
-<span class="token comment" spellcheck="true"># 阶乘</span>
-math<span class="token punctuation">.</span>factorial<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># a!</span>
-
-<span class="token comment" spellcheck="true"># 最大公约数</span>
-math<span class="token punctuation">.</span>gcd<span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 7</span>
-
-<span class="token comment" spellcheck="true"># 三角函数</span>
-math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 1.0</span>
-math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span><span class="token punctuation">)</span>
-math<span class="token punctuation">.</span>tan<span class="token punctuation">(</span><span class="token punctuation">)</span>
-math<span class="token punctuation">.</span>asin<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 1.5707963267948966</span>
-math<span class="token punctuation">.</span>acos<span class="token punctuation">(</span><span class="token punctuation">)</span>
-math<span class="token punctuation">.</span>atan<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 弧度角度转换</span>
-math<span class="token punctuation">.</span>degrees<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 弧度转角度</span>
-math<span class="token punctuation">.</span>radians<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 角度转弧度</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="sympy代数运算库"><a href="#sympy代数运算库" class="headerlink" title="sympy代数运算库"></a>sympy代数运算库</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 导入库</span>
-<span class="token keyword">from</span> sympy <span class="token keyword">import</span> <span class="token operator">*</span>
-
-<span class="token comment" spellcheck="true"># 有理数</span>
-Rational<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 1/3</span>
-
-<span class="token comment" spellcheck="true"># 特殊无理数</span>
-pi    <span class="token comment" spellcheck="true"># math.pi</span>
-E    <span class="token comment" spellcheck="true"># math.e</span>
-oo    <span class="token comment" spellcheck="true"># math.inf</span>
-
-<span class="token comment" spellcheck="true"># jupyter pretty print</span>
-init_printing<span class="token punctuation">(</span>pretty_print<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># Pretty printing mode</span>
-N<span class="token punctuation">(</span>pi<span class="token punctuation">)</span> <span class="token operator">=</span> pi<span class="token punctuation">.</span>eval<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 3.15..默认取前15位</span>
-<span class="token comment" spellcheck="true"># .n() and N() are equivalent to .evalf();</span>
-
-<span class="token comment" spellcheck="true"># 代数运算 用符号代替数进行运算</span>
-x <span class="token operator">=</span> Symbol<span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 声明一个代数符号</span>
-x<span class="token punctuation">,</span>y <span class="token operator">=</span> symbols<span class="token punctuation">(</span><span class="token string">'x y'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 一次声明的多个代数符号</span>
-<span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span>  <span class="token comment" spellcheck="true"># (𝑥+𝑦)2</span>
-
-<span class="token comment" spellcheck="true"># 展开和分解</span>
-<span class="token comment" spellcheck="true"># 展开多项式</span>
-expand<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 𝑥2+2𝑥𝑦+𝑦2</span>
-
-<span class="token comment" spellcheck="true"># 展开三角函数</span>
-expand<span class="token punctuation">(</span>cos<span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span> trig<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># sin2(𝑥)sin2(𝑦)−2sin(𝑥)sin(𝑦)cos(𝑥)cos(𝑦)+cos2(𝑥)cos2(𝑦)</span>
-
-<span class="token comment" spellcheck="true"># 化简</span>
-simplify<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">+</span>x<span class="token operator">*</span>y<span class="token punctuation">)</span><span class="token operator">/</span>x<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 1+y</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="累加运算"><a href="#累加运算" class="headerlink" title="累加运算"></a>累加运算</h2><p>$$<br>\sum_{x=1}^{10} {\frac {1}{x^2 + 2x}}<br>$$</p>
-<pre class="line-numbers language-python"><code class="language-python">expr <span class="token operator">=</span> Sum<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-expr <span class="token comment" spellcheck="true"># 上面公式</span>
-expr<span class="token punctuation">.</span>evalf<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 求值 0.662878787878788</span>
-expr<span class="token punctuation">.</span>doit<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 175/264</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="累积运算"><a href="#累积运算" class="headerlink" title="累积运算"></a>累积运算</h2><p>$$<br>\prod_{x=1}^{10} {\frac {1}{x^2 + 2x}}<br>$$</p>
-<pre class="line-numbers language-python"><code class="language-python">expr <span class="token operator">=</span> Product<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-expr
-expr<span class="token punctuation">.</span>doit<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 1/869100503040000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><p>$$<br>\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad<br>$$</p>
-<pre class="line-numbers language-python"><code class="language-python">n <span class="token operator">=</span> Symbol<span class="token punctuation">(</span><span class="token string">'n'</span><span class="token punctuation">)</span>
-expr <span class="token operator">=</span> limit<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span>n<span class="token operator">*</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> oo<span class="token punctuation">)</span>
-expr    <span class="token comment" spellcheck="true"># 0</span>
-
-<span class="token comment" spellcheck="true"># 左极限和有极限</span>
-limit<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>x<span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> dir<span class="token operator">=</span><span class="token string">'+'</span><span class="token punctuation">)</span>
-limit<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>x<span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> dir<span class="token operator">=</span><span class="token string">'-'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><pre class="line-numbers language-python"><code class="language-python">diff<span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 2x</span>
-diff<span class="token punctuation">(</span>sin<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 2cos(2𝑥)</span>
-diff<span class="token punctuation">(</span>sin<span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span>x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># diff(E**x*(x + sin(x)), x)</span>
-
-<span class="token comment" spellcheck="true"># 高阶导数</span>
-<span class="token comment" spellcheck="true"># 二阶导数</span>
-diff<span class="token punctuation">(</span>sin<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># −4sin(2𝑥)</span>
-<span class="token comment" spellcheck="true"># 三阶导数</span>
-diff<span class="token punctuation">(</span>sin<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># −8cos(2𝑥)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><p>不指定区间<br>$$<br>\int_{-\infty}^\infty {x^2} \,{\rm dx}<br>$$</p>
-<pre class="line-numbers language-python"><code class="language-python">integrate<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">,</span> x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 𝑥2</span>
-integrate<span class="token punctuation">(</span>sin<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># −cos(𝑥)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>指定区间[a, b]<br>$$<br>\int_a^b {x^2} \,{\rm dx}<br>$$</p>
-<pre class="line-numbers language-python"><code class="language-python">integrate<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 1</span>
-integrate<span class="token punctuation">(</span>cos<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token operator">-</span>pi<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> pi<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="解方程"><a href="#解方程" class="headerlink" title="解方程"></a>解方程</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 解一元方程</span>
-solve<span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># [1, 2]</span>
-
-<span class="token comment" spellcheck="true"># 解二元方程</span>
-solve<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token operator">+</span><span class="token number">5</span><span class="token operator">*</span>y<span class="token number">-2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">6</span><span class="token operator">*</span>y<span class="token number">-15</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#{x:-3, y:1}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="代数运算"><a href="#代数运算" class="headerlink" title="代数运算"></a>代数运算</h2><pre class="line-numbers language-python"><code class="language-python">expr <span class="token operator">=</span> x<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token operator">*</span>x <span class="token operator">+</span> <span class="token number">1</span>
-<span class="token comment" spellcheck="true"># 令x = 2</span>
-expr<span class="token punctuation">.</span>subs<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 9b</span>
-
-<span class="token comment" spellcheck="true"># 令x=y+1</span>
-expr<span class="token punctuation">.</span>subs<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 2𝑦+(𝑦+1)2+3</span>
-
-<span class="token comment" spellcheck="true"># 多元函数代数</span>
-expr <span class="token operator">=</span> x<span class="token operator">**</span><span class="token number">3</span> <span class="token operator">+</span> <span class="token number">4</span><span class="token operator">*</span>x<span class="token operator">*</span>y <span class="token operator">-</span>z
-expr<span class="token punctuation">.</span>subs<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>y<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>z<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 5</span>
-
-<span class="token comment" spellcheck="true"># 使用字符串</span>
-expr <span class="token operator">=</span> sympify<span class="token punctuation">(</span><span class="token string">"x*2 + 4*x*y"</span><span class="token punctuation">)</span>
-expr<span class="token punctuation">.</span>subs<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>y<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sympy <span class="token keyword">import</span> stats
-
-<span class="token comment" spellcheck="true">#创建一个6个面的筛子</span>
-X <span class="token operator">=</span> stats<span class="token punctuation">.</span>Die<span class="token punctuation">(</span><span class="token string">'X'</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 查看某个面出现的概率</span>
-stats<span class="token punctuation">.</span>density<span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">.</span>dict    <span class="token comment" spellcheck="true"># {1: 1/6, 2: 1/6, 3: 1/6, 4: 1/6, 5: 1/6, 6: 1/6}</span>
-
-<span class="token comment" spellcheck="true"># 随机丢一次筛子</span>
-stats<span class="token punctuation">.</span>sample<span class="token punctuation">(</span>X<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 4</span>
-
-<span class="token comment" spellcheck="true">#     硬币</span>
-C <span class="token operator">=</span> stats<span class="token punctuation">.</span>Coin<span class="token punctuation">(</span><span class="token string">'C'</span><span class="token punctuation">)</span>    
-stats<span class="token punctuation">.</span>density<span class="token punctuation">(</span>C<span class="token punctuation">)</span><span class="token punctuation">.</span>dict    <span class="token comment" spellcheck="true"># {H: 1/2, T: 1/2}</span>
-
-<span class="token comment" spellcheck="true"># 正态分布</span>
-Z <span class="token operator">=</span> stats<span class="token punctuation">.</span>Normal<span class="token punctuation">(</span><span class="token string">'Z'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># Z>1的概率</span>
-stats<span class="token punctuation">.</span>P<span class="token punctuation">(</span>Z <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>evalf<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 0.158655253931457</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="一、什么是超参数"><a href="#一、什么是超参数" class="headerlink" title="一、什么是超参数"></a>一、什么是超参数</h1><p>​    超参数是我们在将学习算法应用于数据集之前需要设置的变量。超参数的一个挑战在于,它不存在适用于所有地方的万能数字,每个任务和数据集的最佳数字各不相同。<br>​    一般来讲, 我们可以将超参数分为两类, 第一类是优化器超参数,它们是与优化和训练过程相关的变量,而非模型本身。这些包括学习率、minibatch大小以及训练迭代或 epoch 次数。 第二类是模型超参数。</p>
+<h1 id="二、学习率"><a href="#二、学习率" class="headerlink" title="二、学习率"></a>二、学习率</h1><p>学习率是最重要的一个超参数, 即使你将他人构建的模型应用于 自己的数据集 你也会发现你可能需要尝试多个不同的学习率值才能使模型正确训练。</p>
+<p>如果你归一化模型的输入，一个好的起始点通常是 0.01。这些是学习率的通常假设0.1, 0.01, 0.001, 0.0001, 0.00001, 0.000001。</p>
+<p>学习率用于控制梯度下降的幅度，根据选取的学习率的不同，梯度下降的误差会呈现出不同的情况:</p>
+<ul>
+<li><p>如果我们选择的学习率小于理想的学习率,没关系,我们的模型将继续学习 直到找到权重的最佳值。但是,如果学习率太小,那么我们的训练误差就会降低的非常慢。很明显，在这种情况下我们需要做的是提高学习率 。</p>
+</li>
+<li><p>另一种情况是，如果我们选择一个大于理想学习率的学习率，更新的值将会越过理想的权重值。下一次更新时它会在反方向越过最佳值，也就是误差来回震荡,  但它会越来越靠近最佳值，可能最终会收敛到一个合理的值。</p>
+</li>
+<li><p>但是如果我们选择的学习率比理想学习率大很多，比如两倍以上，这就会产生问题。在这种情况下 我们会看到权重采取较大的步长 它不仅越过理想权值 而且实际上离我们每步获得的最佳误差越来越远。所以如果我们的训练误差在增加,不妨试试降低学习率，看看会发生什么 </p>
+</li>
+</ul>
+<p>我们实际上无法保证误差曲线会是整洁的 U 形。事实上，它们会成为更复杂的形状。而且学习算法可能会错误地将局部最小值当做最佳值进行收敛 </p>
+<p>下面我们来看一个在调整学习率时经常会遇到的一个具体情形，假设我们选择了一个合理的学习率，它可以降低误差但只能到某一个点，在那之后就无法下降了，尽管它还没到达底部，它会一直在两个值之间震荡，她们优于刚开始训练时的误差但却不是此模型的最佳值。在这种情况下，让我们的训练算法降低整个训练过程的学习率会比较有用，此技术叫作学习率衰减。这么做的直观方式是线性降低学习率，假设每5个epoch减半，也可以按指数方式降低学习率，例如 每8个epoch对学习率乘以0.1, 除了之间降低学习率外还有一些聪明的学习算法如自适应学习率，不仅在需要时降低学习率，还在学习率太低时升高它。</p>
 
             </div>
             <hr />
@@ -780,9 +644,9 @@ stats<span class="token punctuation">.</span>P<span class="token punctuation">(<
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Pyhton高数计算库》
+                    《深度学习之超参数》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/25/pyhton-gao-shu-ji-suan-ku/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Ace
             </a> 采用
@@ -823,7 +687,7 @@ stats<span class="token punctuation">.</span>P<span class="token punctuation">(<
         repo: '981935539.github.io',
         owner: '981935539',
         admin: 981935539,
-        id: '2019/11/25/pyhton-gao-shu-ji-suan-ku/',
+        id: '2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1106,50 +970,52 @@ stats<span class="token punctuation">.</span>P<span class="token punctuation">(<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/28/python-bao-guan-li/">
+                <a href="/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="Python包管理">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="深度学习之超参数">
                         
-                        <span class="card-title">Python包管理</span>
+                        <span class="card-title">深度学习之超参数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、什么是包？简单来说包即是目录，但和普通目录不同，它除了包含python文件以外，还包含一个__init__.py文件，同时它允许嵌套。
-包结构如下：
-package/__init__.py
-        module1.py
-    
+                            一、什么是超参数​    超参数是我们在将学习算法应用于数据集之前需要设置的变量。超参数的一个挑战在于,它不存在适用于所有地方的万能数字,每个任务和数据集的最佳数字各不相同。​    一般来讲, 我们可以将超参数分为两类, 第一类是优化器超
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/DL/" target="_blank">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1163,24 +1029,25 @@ package/__init__.py
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/25/shen-jing-wang-luo-jian-jie/">
+                <a href="/2019/12/29/shen-du-xue-xi-zhi-guo-ni-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="神经网络简介">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="深度学习之过拟合">
                         
-                        <span class="card-title">神经网络简介</span>
+                        <span class="card-title">深度学习之过拟合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、感知器​    感知器(perceptron)是由美国学者FrankRoseblatt在1957年提出来的。为何我们现在还要学习这一很久以前就有的算法呢？因为感知机也是作为神经网络（深度学习）的起源的算法。因此，学习感知机的构造也就是学
+                            一、过拟合机器学习的问题中，过拟合是一个很常见的问题。过拟合指的是只能拟合训练数据，但不能很好地拟合不包含在训练数据中的其他数据的状态。机器学习的目标是提高泛化能力，即便是没有包含在训练数据里的未观测数据，也希望模型可以进行正确的识别。
+发
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-29
                             </span>
                         <span class="publish-author">
                             
@@ -1197,16 +1064,12 @@ package/__init__.py
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ML/" target="_blank">
-                        <span class="chip bg-color">ML</span>
-                    </a>
-                    
                     <a href="/tags/DL/" target="_blank">
                         <span class="chip bg-color">DL</span>
                     </a>
                     
-                    <a href="/tags/ANN/" target="_blank">
-                        <span class="chip bg-color">ANN</span>
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>

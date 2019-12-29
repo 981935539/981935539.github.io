@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2019-12-29T16:36:41.571Z</updated>
+  <updated>2019-12-29T17:17:38.387Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习之超参数</title>
+    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/"/>
+    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/</id>
+    <published>2019-12-29T16:47:24.000Z</published>
+    <updated>2019-12-29T17:17:38.387Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、什么是超参数&quot;&gt;&lt;a href=&quot;#一、什么是超参数&quot; class=&quot;headerlink&quot; title=&quot;一、什么是超参数&quot;&gt;&lt;/a&gt;一、什么是超参数&lt;/h1&gt;&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="Python" scheme="https://iace.fun/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>深度学习之过拟合</title>
