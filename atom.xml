@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2019-12-30T15:30:58.345Z</updated>
+  <updated>2019-12-30T15:48:40.922Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/"/>
     <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/</id>
     <published>2019-12-29T16:47:24.000Z</published>
-    <updated>2019-12-30T15:30:58.345Z</updated>
+    <updated>2019-12-30T15:48:40.922Z</updated>
     
     <summary type="html">
     
@@ -232,9 +232,9 @@
       <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
       <category term="ANN" scheme="https://iace.fun/tags/ANN/"/>
     
@@ -264,11 +264,11 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
   </entry>
   
