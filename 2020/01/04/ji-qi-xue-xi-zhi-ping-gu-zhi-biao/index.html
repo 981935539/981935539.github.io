@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="深度学习之超参数, Ace 自然语言处理 深度学习">
+    <meta name="keywords" content="机器学习之评估指标, Ace 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="一、什么是超参数​    超参数是我们在将学习算法应用于数据集之前需要设置的变量。超参数的一个挑战在于,它不存在适用于所有地方的万能数字,每个任务和数据集的最佳数字各不相同。​    一般来讲, 我们可以将超参数分为两类, 第一类是优化器超">
+    <meta name="description" content="一、分类模型1、混淆矩阵在机器学习领域，混淆矩阵(confusion matrix), 又称为可能性表格或者错误矩阵。它是一种特定的矩阵用来呈现算法性能的可视化效果，通常是监督学习（非监督学习，通常用匹配矩阵：matching matrix">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>深度学习之超参数 | 杨青海的博客</title>
+    <title>机器学习之评估指标 | 杨青海的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -290,13 +290,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        深度学习之超参数
+                        机器学习之评估指标
                     </div>
                 </div>
             </div>
@@ -407,12 +407,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/DL/" target="_blank">
-                            <span class="chip bg-color">DL</span>
+                        <a href="/tags/ML/" target="_blank">
+                            <span class="chip bg-color">ML</span>
                         </a>
                         
-                        <a href="/tags/Python/" target="_blank">
-                            <span class="chip bg-color">Python</span>
+                        <a href="/tags/DL/" target="_blank">
+                            <span class="chip bg-color">DL</span>
                         </a>
                         
                     </div>
@@ -423,8 +423,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/深度学习/" class="post-category" target="_blank">
-                            深度学习
+                        <a href="/categories/机器学习/" class="post-category" target="_blank">
+                            机器学习
                         </a>
                         
                     </div>
@@ -435,7 +435,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-30
+                    2020-01-04
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -449,7 +449,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    1.9k
                 </div>
                 
 
@@ -472,40 +472,76 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、什么是超参数"><a href="#一、什么是超参数" class="headerlink" title="一、什么是超参数"></a>一、什么是超参数</h1><p>​    超参数是我们在将学习算法应用于数据集之前需要设置的变量。超参数的一个挑战在于,它不存在适用于所有地方的万能数字,每个任务和数据集的最佳数字各不相同。<br>​    一般来讲, 我们可以将超参数分为两类, 第一类是优化器超参数,它们是与优化和训练过程相关的变量,而非模型本身。这些包括学习率、minibatch大小以及训练迭代或 epoch 次数。 第二类是模型超参数。</p>
-<h1 id="二、学习率"><a href="#二、学习率" class="headerlink" title="二、学习率"></a>二、学习率</h1><p>学习率是最重要的一个超参数, 即使你将他人构建的模型应用于 自己的数据集 你也会发现你可能需要尝试多个不同的学习率值才能使模型正确训练。</p>
-<p>如果你归一化模型的输入，一个好的起始点通常是 0.01。这些是学习率的通常假设0.1, 0.01, 0.001, 0.0001, 0.00001, 0.000001。</p>
-<p>学习率用于控制梯度下降的幅度，根据选取的学习率的不同，梯度下降的误差会呈现出不同的情况:</p>
+                <h1 id="一、分类模型"><a href="#一、分类模型" class="headerlink" title="一、分类模型"></a>一、分类模型</h1><h2 id="1、混淆矩阵"><a href="#1、混淆矩阵" class="headerlink" title="1、混淆矩阵"></a>1、混淆矩阵</h2><p>在机器学习领域，混淆矩阵(confusion matrix), 又称为可能性表格或者错误矩阵。它是一种特定的矩阵用来呈现算法性能的可视化效果，通常是监督学习（非监督学习，通常用匹配矩阵：matching matrix）。其每一列代表预测值，每一行代表的是实际的类别。</p>
+<p><img src="%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5.png" alt></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> skleran<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> confusion_matrix
+confmat <span class="token operator">=</span> confusion_matrix<span class="token punctuation">(</span>y_true<span class="token operator">=</span>y_test<span class="token punctuation">,</span> y_pred<span class="token operator">=</span>y_pred<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>confmat<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="2、预测误差和准确率"><a href="#2、预测误差和准确率" class="headerlink" title="2、预测误差和准确率"></a>2、预测误差和准确率</h2><p>预测误差（error，ERR）和准确率（accuracy，ACC）都提供了误分类样本数量的相关信息。误差可以理解为预测错误样本的数量与所有被预测样本数量的比值，而准确率计算方法则是正确预测样本的数量与所有被预测样本数量的比值:<br>$$<br>ERR = \frac {FP + FN}{FP + FN + TP + TN}<br>$$<br>预测准确率也可以通过误差直接计算：<br>$$<br>ACC = \frac{TP + TN}{FP + FN + TP + TN} = 1 - ERR<br>$$</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> accuracy_score
+accuracy_score<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>对于类别数量不均衡的分类问题来说，真正率（TPR）与假正率（FPR）是非常有用的性能指标：<br>$$<br>FPR = \frac{FP}{N} = \frac{FP}{FP + TN}<br>$$</p>
+<p>$$<br>TPR = \frac{TP}{P} = \frac{TP}{TP + FN}<br>$$</p>
+<h2 id="3、精确率和召回率"><a href="#3、精确率和召回率" class="headerlink" title="3、精确率和召回率"></a>3、精确率和召回率</h2><p><strong>精确率</strong>是针对我们<strong>预测结果</strong>而言的，它表示的是预测为正的样本中有多少是真正的正样本。那么预测为正就有两种可能了，一种就是把正类预测为正类(TP)，另一种就是把负类预测为正类(FP)，也就是:<br>$$<br>P = \frac{TP}{TP + FP}<br>$$</p>
+<p>而<strong>召回率</strong>是针对我们原来的<strong>样本</strong>而言的，它表示的是样本中的正例有多少被预测正确了。那也有两种可能，一种是把原来的正类预测成正类(TP)，另一种就是把原来的正类预测为负类(FN)。<br>$$<br>R = \frac {TP}{TP + FN}<br>$$</p>
+<p>在信息检索领域，精确率和召回率又被称为<strong>查准率</strong>和<strong>查全率</strong>，</p>
+<p>查准率＝检索出的相关信息量 / 检索出的信息总量<br>查全率＝检索出的相关信息量 / 系统中的相关信息总量  </p>
+<h2 id="4、敏感性和特异性"><a href="#4、敏感性和特异性" class="headerlink" title="4、敏感性和特异性"></a>4、敏感性和特异性</h2><p>医疗领域的混淆矩阵:</p>
+<p><img src="02.jpg" alt></p>
+<p>敏感性和特异性是这个矩阵中的行。更具体地说，如果我们做以下标记</p>
 <ul>
-<li><p>如果我们选择的学习率小于理想的学习率,没关系,我们的模型将继续学习 直到找到权重的最佳值。但是,如果学习率太小,那么我们的训练误差就会降低的非常慢。很明显，在这种情况下我们需要做的是提高学习率 。</p>
-</li>
-<li><p>另一种情况是，如果我们选择一个大于理想学习率的学习率，更新的值将会越过理想的权重值。下一次更新时它会在反方向越过最佳值，也就是误差来回震荡,  但它会越来越靠近最佳值，可能最终会收敛到一个合理的值。</p>
-</li>
-<li><p>但是如果我们选择的学习率比理想学习率大很多，比如两倍以上，这就会产生问题。在这种情况下 我们会看到权重采取较大的步长 它不仅越过理想权值 而且实际上离我们每步获得的最佳误差越来越远。所以如果我们的训练误差在增加,不妨试试降低学习率，看看会发生什么 </p>
-</li>
+<li>TP：（真阳性）被<strong>正确</strong>诊断为患病的病人。</li>
+<li>TN：（真阴性）被<strong>正确</strong>诊断为健康的健康人。</li>
+<li>FP：（假阳性）被<strong>错误</strong>诊断为患病的健康人。</li>
+<li>FN：（假阴性）被<strong>错误</strong>诊断为健康的病人。</li>
 </ul>
-<p>我们实际上无法保证误差曲线会是整洁的 U 形。事实上，它们会成为更复杂的形状。而且学习算法可能会错误地将局部最小值当做最佳值进行收敛 </p>
-<p>下面我们来看一个在调整学习率时经常会遇到的一个具体情形，假设我们选择了一个合理的学习率，它可以降低误差但只能到某一个点，在那之后就无法下降了，尽管它还没到达底部，它会一直在两个值之间震荡，她们优于刚开始训练时的误差但却不是此模型的最佳值。在这种情况下，让我们的训练算法降低整个训练过程的学习率会比较有用，此技术叫作学习率衰减。这么做的直观方式是线性降低学习率，假设每5个epoch减半，也可以按指数方式降低学习率，例如 每8个epoch对学习率乘以0.1, 除了之间降低学习率外还有一些聪明的学习算法如自适应学习率，不仅在需要时降低学习率，还在学习率太低时升高它。</p>
-<h1 id="三、mini-batch"><a href="#三、mini-batch" class="headerlink" title="三、mini-batch"></a>三、mini-batch</h1><p>​     一直以来人们都在争论哪种做法更好, 一种是在线随机训练, 在数据集中随机选择一条样本,然后仅用这一个样本进行前向传递,计算误差,然后反向传播并设置所有参数的调整数值，然后重复执行这个过程 。另一种是将整个数据集作为输入，使用数据集中所有示例的误差来计算整个数据集的梯度，这叫做批量训练 。</p>
-<p>​    如今普遍使用的抽象是设置一个 mini-batch 大小，那么在线训练的mini-batch 大小就为 1，而批量训练的 mini-batch大小与训练集中的示例数量相同 。我们可以将 mini-batch 大小设置为1到数据集数量之间的任意值，32通常是一个不错的选择 。</p>
-<p><img src="01.png" alt></p>
-<p>​    较大的mini-batch可以更好的代表数据集整体的方向，会提高矩阵乘法的计算速度，但这也会占用更多的内存。较小的 mini-batch大小会使误差计算中有更多的噪声,但是此噪声通常有助于防止误差陷入局部最小值。</p>
+<p>那么：<br>$$<br>敏感性 =\frac{TP}{TP+FN}<br>$$</p>
+<p>$$<br>特异性 = \frac{TN}{TN+FP}<br>$$</p>
+<p><strong>敏感性</strong>和<strong>特异性</strong>虽然与<strong>查准率</strong>和<strong>查全率</strong>相似，但并不相同。其定义如下：</p>
+<p>在癌症示例中，敏感性和特异性指：</p>
+<ul>
+<li>敏感性：在<strong>患有</strong>癌症的所有人中，诊断正确的人有多少？</li>
+<li>特异性：在<strong>未患</strong>癌症的所有人中，诊断正确的人有多少？</li>
+</ul>
+<p>查准率和查全率的定义如下：</p>
+<ul>
+<li>查全率：在<strong>被诊断</strong>患有癌症的所有人中，多少人确实<strong>得了癌症</strong>？</li>
+<li>查准率：在<strong>患有癌症</strong>的所有人中，多少人<strong>被诊断</strong>患有癌症？</li>
+</ul>
+<p>从这里可以看出，敏感性就是查全率，但特异性并不是查准率。</p>
+<h2 id="5、-F-1-和-F-beta"><a href="#5、-F-1-和-F-beta" class="headerlink" title="5、$F_1$和$F_\beta$"></a>5、$F_1$和$F_\beta$</h2><p>把精确率和召回率合成一个值，根据精确率和召回率权重的不同可以分为$F_1$和$F_\beta$</p>
+<p>算术平均数  Arithmetic Mean = (x+y)/2<br>调和平均数  Harmonic Mean = (2xy)/(x+y)<br>调和平均数始终小于算术平均数，因为调和平均数更接近较小的数</p>
+<p>$F_1$值的计算公式如下:<br>$$<br>F_1 = \frac{2}{\frac{1}{precision} + \frac{1}{recall}} = \frac{2<em>precision</em>recall}{presicion + recall}<br>$$<br>$F_1$值就是精确率和召回率的调和平均值，$F_1$值认为精确率和召回率一样重要。</p>
+<p>$F_\beta$值的计算公式如下:<br>$$<br>F_1 = \frac{1 + \beta^2}{\frac{1}{precision} + \frac{\beta^2}{recall}} = \frac{(1+\beta^2)<em>precision</em>recall}{\beta^2*presicion + recall}<br>$$<br>β 的界限在 0 和 ∞ 之间。如果β=0, 则得出精度。如果β=∞, 则得出召回率<br>在β=1时，$F_β$就是$F_1$值，此时$F_β$认为精确率和召回率一样重要；当β&gt;1时，$F_1$认为召回率更重要；当0&lt;β&lt;1时，认为精确$F_β$率更重要。除了$F_1$值之外，常用的还有$F_2$和$F_{0.5}$。</p>
+<h2 id="6、ROC曲线及AUC值"><a href="#6、ROC曲线及AUC值" class="headerlink" title="6、ROC曲线及AUC值"></a>6、ROC曲线及AUC值</h2><p>AUC全称为Area Under Curve，表示一条曲线下面的面积，ROC曲线的AUC值可以用来对模型进行评价。ROC曲线如图所示：</p>
 <p><img src="02.png" alt></p>
-<p>从上图中可以看出：</p>
-<p>随着mini-batch的增大，训练一个epoch的时间越来越少</p>
-<p>随着mini-batch的增大，达到同一准确率所花费的时间越来越多</p>
-<p>一篇名为 “Systematic evaluation of CNN advances on the ImageNet” 的文章显示，在学习率相同的情况下，mini-batch越大，模型的准确度越低。这不仅在于 minibatch 大小的影响，而当我们改变批量大小时还需要改变学习率 。如果我们在增加批量大小的同时调整学习率，可以看到准确度会随批量大小增加而下降，不过只是轻微的下降 。<br>所以总结来说， 32 至 256是不错的初始值选择</p>
-<h1 id="四、隐藏单元和层的数量"><a href="#四、隐藏单元和层的数量" class="headerlink" title="四、隐藏单元和层的数量"></a>四、隐藏单元和层的数量</h1><p>隐藏单元的数据量越多越好，但如果过多往往会导致过拟合。所以如果你的模型无法训练就向它添加更多隐藏层并跟踪验证误差，直到验证误差开始变大。</p>
-<p> Andrej Karpathy 告诉我们在实践中三层神经网络的性能往往优于两层网络的性能，但继续增加层却作用不大 。不过，卷积神经网络除外，它们往往是越深性能越好。</p>
-<h1 id="五、超参数的验证"><a href="#五、超参数的验证" class="headerlink" title="五、超参数的验证"></a>五、超参数的验证</h1><p>为什么不能用测试数据评估超参数的性能呢？这是因为如果使用测试数据调整超参数，超参数的值会对测试数据发生过拟合。换句话说，用测试数据确认超参数的值的“好坏”，就会导致超参数的值被调整为只拟合测试数据。这样话，可能就会得到不能拟合其他数据、泛化能力低的模型。 </p>
-<p>因此，调整超参数时，必须使用超参数专用的确认数据。用于调整超参数的数据，一般称为验证数据（validation data）。 </p>
-<p>训练数据用于参数（权重和偏置）的学习，验证数据用于超参数的性能评估。为了确认泛化能力，要在最后使用（比较理想的是只用一次）测试数据。</p>
-<p><strong>超参数的最优化</strong></p>
-<p>进行超参数的最优化时，逐渐缩小超参数的“好值”的存在范围非常重要。所谓逐渐缩小范围，是指一开始先大致设定一个范围，从这个范围中随机选出一个超参数（采样），用这个采样到的值进行识别精度的评估；然后，多次重复该操作，观察识别精度的结果，根据这个结果缩小超参数的“好值”的范围。通过重复这一操作，就可以逐渐确定超参数的合适范围。  </p>
-<p><strong>最优化的步骤</strong></p>
-<p>步骤0, 设定超参数的范围。<br>步骤1, 从设定的超参数范围中随机采样。<br>步骤2, 使用步骤1中采样到的超参数的值进行学习，通过验证数据评估识别精<br>度（但是要将epoch设置得很小）。<br>步骤3, 重复步骤1和步骤2（100次等），根据它们的识别精度的结果，缩小超参数的范围。 </p>
-<p>反复进行上述操作，不断缩小超参数的范围，在缩小到一定程度时，从该范围中选出一个超参数的值。这就是进行超参数的最优化的一种方法。 </p>
-<p>在超参数的最优化中，如果需要更精炼的方法，可以使用贝叶斯最优化（Bayesian optimization）。贝叶斯最优化运用以贝叶斯定理为中心的数学理论，能够更加严密、高效地进行最优化。详细内容请参 考 论 文“Practical Bayesian Optimization of Machine Learning Algorithms” 等。 </p>
+<p>　ROC曲线的纵坐标True Positive Rate（TPR）在数值上就等于positive class的recall，记作$recall_{positive}$，横坐标False Positive Rate（FPR）在数值上等于(1 - negative class的recall)，记作(1 - $recall_{negative}$)如下所示：<br>$$<br>TPR = \frac{TP}{P} = \frac{TP}{TP + FN} = recall_{positive}<br>$$</p>
+<p>$$<br>FPR = \frac{FP}{FP + TN} = \frac{FP+TN-TN}{FP+TN} = 1 - \frac{TN}{FP + TN} = 1 - recall_{negative}<br>$$</p>
+<p>通过对分类阈值θ（默认0.5）从大到小或者从小到大依次取值，我们可以得到很多组TPR和FPR的值，将其在图像中依次画出就可以得到一条ROC曲线，阈值θ取值范围为[0,1]。</p>
+<p>　　ROC曲线在图像上越接近左上角(0,1)模型越好，即ROC曲线下面与横轴和直线FPR = 1围成的面积（AUC值）越大越好。直观上理解，纵坐标TPR就是$recall_{positive}$值，横坐标FPR就是(1 - $recall_{negative}$)，前者越大越好，后者整体越小越好，在图像上表示就是曲线越接近左上角(0,1)坐标越好。</p>
+<p>　　图展示了３个模型的ROC曲线，要知道哪个模型更好，则需要计算每条曲线的AUC值，一般认为AUC值越大越好。AUC值由定义通过计算ROC曲线、横轴和直线FPR = 1三者围成的面积即可得到。</p>
+<p>ROC曲线上几个关键点的解释：<br>        ( TPR=0,FPR=0 ) 把每个实例都预测为负类的模型<br>        ( TPR=1,FPR=1 ) 把每个实例都预测为正类的模型<br>        ( TPR=1,FPR=0 ) 理想模型</p>
+<h1 id="二、回归模型"><a href="#二、回归模型" class="headerlink" title="二、回归模型"></a>二、回归模型</h1><h2 id="1、平均绝对误差-Mean-Absolute-Error"><a href="#1、平均绝对误差-Mean-Absolute-Error" class="headerlink" title="1、平均绝对误差(Mean Absolute Error)"></a>1、平均绝对误差(Mean Absolute Error)</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_absolute_error
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LinearRression
+classifier <span class="token operator">=</span> LinearRression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+classifier<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+guesses <span class="token operator">=</span> classifier<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+error <span class="token operator">=</span> mean_absolute_error<span class="token punctuation">(</span>y<span class="token punctuation">,</span> guesses<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>MAE问题：绝对值函数是不可微分的，不利于使用梯度下降等方法<br>解决：均方误差</p>
+<h2 id="2、平均平方误差-Mean-Squared-Error"><a href="#2、平均平方误差-Mean-Squared-Error" class="headerlink" title="2、平均平方误差(Mean Squared Error)"></a>2、平均平方误差(Mean Squared Error)</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_square_error
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LinearRression
+classifier <span class="token operator">=</span> LinearRression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+classifier<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+guesses <span class="token operator">=</span> classifier<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+error <span class="token operator">=</span> mean_square_error<span class="token punctuation">(</span>y<span class="token punctuation">,</span> guesses<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3、决定系数-R-2"><a href="#3、决定系数-R-2" class="headerlink" title="3、决定系数($R^2$ )"></a>3、决定系数($R^2$ )</h2><p>$R^2$分数通过将我们的模型与最简单的可能模型相比得出。那么思考一下，拟合一堆点的最简单的可能模型是什么呢？那就是取所有值的平均值,然后我们可以计算出这个模型的均方误差。<br>    R2 = 1 - (线性回归模型误差/简单模型误差)<br>    如果这个模型不太好 这两个误差将很接近而这个量应接近 1，那么整个 R2 分数应接近 0。<br>    如果模型较好 那么线性回归模型对的均方误差应比简单模型的均方误差小很多，那么这个比例就很小。而 R2 分数将非常接近 1，总结来说 如果 R2 分数接近 1 模型就不错。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> r2_score
+r2_score<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="三、参考"><a href="#三、参考" class="headerlink" title="三、参考"></a>三、参考</h1><p><a href="https://www.zhihu.com/question/19645541/answer/91694636" target="_blank" rel="noopener">https://www.zhihu.com/question/19645541/answer/91694636</a></p>
+<p><a href="https://www.zhihu.com/question/30750849" target="_blank" rel="noopener">https://www.zhihu.com/question/30750849</a></p>
+<p><a href="https://www.cnblogs.com/wuliytTaotao/p/9285227.html" target="_blank" rel="noopener">https://www.cnblogs.com/wuliytTaotao/p/9285227.html</a></p>
+<p><a href="https://www.cnblogs.com/gatherstars/p/6084696.html" target="_blank" rel="noopener">https://www.cnblogs.com/gatherstars/p/6084696.html</a></p>
+<p><a href="https://blog.csdn.net/weixin_41043240/article/details/80265577" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41043240/article/details/80265577</a></p>
 
             </div>
             <hr />
@@ -664,9 +700,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《深度学习之超参数》
+                    《机器学习之评估指标》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/04/ji-qi-xue-xi-zhi-ping-gu-zhi-biao/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Ace
             </a> 采用
@@ -707,7 +743,7 @@
         repo: '981935539.github.io',
         owner: '981935539',
         admin: 981935539,
-        id: '2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/',
+        id: '2020/01/04/ji-qi-xue-xi-zhi-ping-gu-zhi-biao/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -990,9 +1026,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/01/04/ji-qi-xue-xi-zhi-ping-gu-zhi-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="机器学习之评估指标">
+                        
+                        <span class="card-title">机器学习之评估指标</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、分类模型1、混淆矩阵在机器学习领域，混淆矩阵(confusion matrix), 又称为可能性表格或者错误矩阵。它是一种特定的矩阵用来呈现算法性能的可视化效果，通常是监督学习（非监督学习，通常用匹配矩阵：matching matrix
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/机器学习/" class="post-category" target="_blank">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ML/" target="_blank">
+                        <span class="chip bg-color">ML</span>
+                    </a>
+                    
+                    <a href="/tags/DL/" target="_blank">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/01/03/c-he-c-yu-fa-zong-jie/">
                     <div class="card-image">
@@ -1011,9 +1102,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1035,60 +1126,6 @@
                     
                     <a href="/tags/C/" target="_blank">
                         <span class="chip bg-color">C</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/12/29/shen-du-xue-xi-zhi-guo-ni-he/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="深度学习之过拟合">
-                        
-                        <span class="card-title">深度学习之过拟合</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一、过拟合机器学习的问题中，过拟合是一个很常见的问题。过拟合指的是只能拟合训练数据，但不能很好地拟合不包含在训练数据中的其他数据的状态。机器学习的目标是提高泛化能力，即便是没有包含在训练数据里的未观测数据，也希望模型可以进行正确的识别。
-发
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-29
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/深度学习/" class="post-category" target="_blank">
-                                    深度学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/DL/" target="_blank">
-                        <span class="chip bg-color">DL</span>
-                    </a>
-                    
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>

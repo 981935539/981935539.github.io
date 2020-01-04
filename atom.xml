@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2020-01-03T11:12:24.460Z</updated>
+  <updated>2020-01-04T11:49:41.659Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习之评估指标</title>
+    <link href="https://iace.fun/2020/01/04/ji-qi-xue-xi-zhi-ping-gu-zhi-biao/"/>
+    <id>https://iace.fun/2020/01/04/ji-qi-xue-xi-zhi-ping-gu-zhi-biao/</id>
+    <published>2020-01-04T06:48:57.000Z</published>
+    <updated>2020-01-04T11:49:41.659Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、分类模型&quot;&gt;&lt;a href=&quot;#一、分类模型&quot; class=&quot;headerlink&quot; title=&quot;一、分类模型&quot;&gt;&lt;/a&gt;一、分类模型&lt;/h1&gt;&lt;h2 id=&quot;1、混淆矩阵&quot;&gt;&lt;a href=&quot;#1、混淆矩阵&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+  </entry>
   
   <entry>
     <title>C和C++语法总结</title>
@@ -292,11 +320,11 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
   </entry>
   
