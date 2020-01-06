@@ -4,15 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python中with的用法, Ace 自然语言处理 深度学习">
+    <meta name="keywords" content="深度学习之卷积神经网络, Ace 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="一、什么是with语句​    对于系统资源如文件、数据库连接、socket 而言，应用程序打开这些资源并执行完业务逻辑之后，必须做的一件事就是要关闭（断开）该资源。
-# 操作文件的方式
-
-# 普通方式操作文件
-f = open(&#39;test">
+    <meta name="description" content="一、卷积神经网络概述1、CNN简介CNN和之前介绍的神经网络一样，可以像乐高积木一样通过组装层来构建。不过，CNN中新出现了卷积层（Convolution层）和池化层（Pooling层）。 
+2、多层神经网络的问题
+参数较多，多层神经网络采">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@ f = open(&#39;test">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python中with的用法 | 杨青海的博客</title>
+    <title>深度学习之卷积神经网络 | 杨青海的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -294,13 +292,13 @@ f = open(&#39;test">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python中with的用法
+                        深度学习之卷积神经网络
                     </div>
                 </div>
             </div>
@@ -411,8 +409,16 @@ f = open(&#39;test">
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
+                        <a href="/tags/ML/" target="_blank">
+                            <span class="chip bg-color">ML</span>
+                        </a>
+                        
+                        <a href="/tags/DL/" target="_blank">
+                            <span class="chip bg-color">DL</span>
+                        </a>
+                        
+                        <a href="/tags/Python/" target="_blank">
+                            <span class="chip bg-color">Python</span>
                         </a>
                         
                     </div>
@@ -423,8 +429,8 @@ f = open(&#39;test">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Python/" class="post-category" target="_blank">
-                            Python
+                        <a href="/categories/深度学习/" class="post-category" target="_blank">
+                            深度学习
                         </a>
                         
                     </div>
@@ -435,7 +441,7 @@ f = open(&#39;test">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2020-01-06
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -449,14 +455,14 @@ f = open(&#39;test">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    857
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
                 
@@ -472,104 +478,52 @@ f = open(&#39;test">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、什么是with语句"><a href="#一、什么是with语句" class="headerlink" title="一、什么是with语句"></a>一、什么是with语句</h1><p>​    对于系统资源如文件、数据库连接、socket 而言，应用程序打开这些资源并执行完业务逻辑之后，必须做的一件事就是要关闭（断开）该资源。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 操作文件的方式</span>
-
-<span class="token comment" spellcheck="true"># 普通方式操作文件</span>
-f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
-f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span>
-f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 普通方式操作文件的问题</span>
-<span class="token comment" spellcheck="true"># 1、忘记关闭文件</span>
-<span class="token comment" spellcheck="true"># 2、程序执行的过程中发生了异常导致关闭文件的代码没有被执行</span>
-
-<span class="token comment" spellcheck="true"># 可以使用try...finally的方式解决上述问题</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-    f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
-    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span>
-<span class="token keyword">finally</span><span class="token punctuation">:</span>
-    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># Python提供了一种更简单的解决方案:with语句</span>
-<span class="token comment" spellcheck="true"># 不论执行过程中是否发生异常，文件都会关闭</span>
-<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>with 语句的语法格式</strong>:</p>
-<pre class="line-numbers language-shell"><code class="language-shell">with 表达式 [as目标]:    
-    代码块        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>​                                </p>
-<h1 id="二、with语句的原理"><a href="#二、with语句的原理" class="headerlink" title="二、with语句的原理"></a>二、with语句的原理</h1><ol>
-<li><p>上下文管理器</p>
-<p>上下文管理器是一个实现了上下文协议的对象，即在对象中定义了<code>__enter__</code>和<code>__exit__</code>方法。上下文管理器定义运行时需要建立的上下文，处理程序的进入和退出。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># open函数返回的就是一个上下文管理器对象</span>
-f<span class="token punctuation">.</span>__enter__   <span class="token comment" spellcheck="true"># &lt;function TextIOWrapper.__enter__></span>
-f<span class="token punctuation">.</span>__exit__    <span class="token comment" spellcheck="true"># &lt;function TextIOWrapper.__exit__></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><code>__enter__(self)</code>:该方法只接收一个self参数。当对象返回时该方法立即执行，并返回当前对象或者与运行时上下文相关的其他对象。如果有as变量（as子句是可选项），返回值将被赋给as后面的变量上。</p>
-<p><code>__exit__(self, exception_type, exception_value, traceback)</code>:退出运行时上下文，并返回一个布尔值标示是否有需要处理的异常。如果在执行with语句体时发生异常，那退出时参数会包括异常类型、异常值、异常追踪信息，否则，3个参数都是None。返回True异常被处理，返回其他任何值，异常都会抛出。</p>
+                <h1 id="一、卷积神经网络概述"><a href="#一、卷积神经网络概述" class="headerlink" title="一、卷积神经网络概述"></a>一、卷积神经网络概述</h1><h2 id="1、CNN简介"><a href="#1、CNN简介" class="headerlink" title="1、CNN简介"></a>1、CNN简介</h2><p>CNN和之前介绍的神经网络一样，可以像乐高积木一样通过组装层来构建。不过，<br>CNN中新出现了卷积层（Convolution层）和池化层（Pooling层）。 </p>
+<h2 id="2、多层神经网络的问题"><a href="#2、多层神经网络的问题" class="headerlink" title="2、多层神经网络的问题"></a>2、多层神经网络的问题</h2><ul>
+<li>参数较多，多层神经网络采用全连接的方式，稍微大点的图片计算复杂程度就会很大。</li>
+<li>丢失空间信息，多层神经网络将图片像素矩阵展平为向量时丢失了图片中包含的二维信息。这种像素之间的位置信息可以帮助我们发现像素中规律。</li>
+</ul>
+<p>CNN通过稀疏互联的层级来解决这个问题，这种局部连接层包含更少的权重并且在空间内共享。</p>
+<h2 id="3、CNN整体架构"><a href="#3、CNN整体架构" class="headerlink" title="3、CNN整体架构"></a>3、CNN整体架构</h2><p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/01.png" alt></p>
+<p>CNN 的层的连接顺序是“Convolution - ReLU -（Pooling）”（Pooling层有时会被省略）。 然后跟着全连接神经网络”Affine-ReLU”组合 , 最后还是”Affine-Softmax”层输出最终结果（概率）。Affine为全连接层用来对卷积层提取的特征进行分类。</p>
+<h1 id="二、卷积层"><a href="#二、卷积层" class="headerlink" title="二、卷积层"></a>二、卷积层</h1><h2 id="1、输入输出"><a href="#1、输入输出" class="headerlink" title="1、输入输出"></a>1、输入输出</h2><p>卷积层的输入输出数据称为特征图（feature map）。其中，卷积层的输入数据称为输入特征图（input feature map），输出数据称为输出特征图（output feature map）。 当输入数据是图像时，卷积层会以3维数据的形式接收输入数据，并同样以3维数据的形式输出至下一层。 </p>
+<h2 id="2、卷积运算"><a href="#2、卷积运算" class="headerlink" title="2、卷积运算"></a>2、卷积运算</h2><p>卷积层进行的处理就是卷积运算。卷积运算相当于图像处理中的“滤波器运算”。 卷积运算对输入数据应用滤波器（卷积核）。</p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/02.png" alt></p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/03.png" alt></p>
+<p>​    对于输入数据，卷积运算以一定间隔滑动<strong>滤波器</strong>，将各个位置上滤波器的元素和输入的对应元素相乘，然后再求和（有时将这个计算称为乘积累加运算）。然后将这个结果保存到输出的对应位置。将这个过程在所有位置都进行一遍，就可以得到卷积运算的输出。</p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/04.png" alt></p>
+<p>​    在全连接的神经网络中，除了权重参数，还存在偏置。 CNN中，滤波器的参数就对应之前的权重。包含偏置的卷积运算的处理流如上图。</p>
+<h2 id="3、填充"><a href="#3、填充" class="headerlink" title="3、填充"></a>3、填充</h2><p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/05.png" alt></p>
+<p>在进行卷积层的处理之前，有时要向输入数据的周围填入固定的数据（比如等），这称为填充（padding），是卷积运算中经常会用到的处理。比如，在图中，对大小为(4, 4)的输入数据应用了幅度为1的填充。“幅度为1的填充”是指用幅度为1像素的0填充周围。 </p>
+<p>使用填充主要是为了调整输出的大小。比如，对大小为(4, 4)的输入数据应用(3, 3)的滤波器时，输出大小变为(2, 2)，相当于输出大小比输入大小缩小了2个元素。这在反复进行多次卷积运算的深度网络中会成为问题。为什么呢？因为如果每次进行卷积运算都会缩小空间，那么在某个时刻输出大小就有可能变为 1，导致无法再应用卷积运算。为了避免出现这样的情况，就要使用填充。在刚才的例子中，将填充的幅度设为1，那么相对于输入大小(4, 4)，输出大小也保持为原来的(4, 4)。因此，卷积运算就可以在保持空间大小不变的情况下将数据传给下一层。 </p>
+<h2 id="4、步幅"><a href="#4、步幅" class="headerlink" title="4、步幅"></a>4、步幅</h2><p>应用滤波器的位置间隔称为步幅（stride）。之前的例子中步幅都是1，如果将步幅设为2，则如下图所示，应用滤波器的窗口的间隔变为2个元素。 </p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/06.png" alt></p>
+<p>在上图中，对输入大小为(7, 7)的数据，以步幅2应用了滤波器。通过将步幅设为2，输出大小变为(3, 3)。像这样，步幅可以指定应用滤波器的间隔 。</p>
+<p>综上，增大步幅后，输出大小会变小。而增大填充后，输出大小会变大。假设输入大小为(H, W)，滤波器大小为(FH, FW)，输出大小为(OH, OW)，填充为P，步幅为S。此时，输出大小可通过公式进行计算： </p>
+<p>$$<br>OH = \frac{H + 2P - FH}{S} + 1<br>$$</p>
+<p>$$<br>OW = \frac{W+ 2P - FW}{S} + 1<br>$$</p>
+<p>当输出大小无法除尽时（结果是小数时），需要采取报错等对策。顺便说一下，根据深度学习的框架的不同，当值无法除尽时，有时会向最接近的整数四舍五入，不进行报错而继续运行。 </p>
+<h2 id="5、3维数据的卷积运算"><a href="#5、3维数据的卷积运算" class="headerlink" title="5、3维数据的卷积运算"></a>5、3维数据的卷积运算</h2><p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/07.png" alt></p>
+<p>通道方向上有多个特征图时，会按通道进行输入数据和滤波器的卷积运算，并将结果相加，从而得到输出。 </p>
+<p>需要注意的是，在3维数据的卷积运算中，输入数据和滤波器的通道数要设为相同的值。 </p>
+<h2 id="6、批处理"><a href="#6、批处理" class="headerlink" title="6、批处理"></a>6、批处理</h2><p>我们希望卷积运算也同样对应批处理。为此，需要将在各层间传递的数据保存为4维数据。具体地讲，就是按(batch_num, channel, height, width)的顺序保存数据。 </p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/08.png" alt></p>
+<p>这里需要注意的是，网络间传递的是4维数据，对这N个数据进行了卷积运算。也就是说，批处理将N次的处理汇总成了1次进行。 </p>
+<h1 id="三、池化层"><a href="#三、池化层" class="headerlink" title="三、池化层"></a>三、池化层</h1><p>池化层的主要作用是降低特征图的维度，避免过拟合。CNN中主要有两种池化层，最大池化层和全局平均池化层。</p>
+<h2 id="1、最大池化层"><a href="#1、最大池化层" class="headerlink" title="1、最大池化层"></a>1、最大池化层</h2><p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/09.png" alt></p>
+<p>“Max池化”是获取最大值的运算，“2 × 2”表示目标区域的大小。如图所示，从2 × 2的区域中取出最大的元素。此外，这个例子中将步幅设为了2，所以2 × 2的窗口的移动间隔为2个元素。另外，一般来说，池化的窗口大小会和步幅设定成相同的值。比如， 3 × 3的窗口的步幅会设为3， 4 × 4的窗口的步幅会设为4等。</p>
+<p>除了Max池化之外，还有Average池化等。相对于Max池化是从目标区域中取出最大值，Average池化则是计算目标区域的平均值。在图像识别领域，主要使用Max池化。 </p>
+<h2 id="2、池化层的特征"><a href="#2、池化层的特征" class="headerlink" title="2、池化层的特征"></a>2、池化层的特征</h2><ol>
+<li><p>没有要学习的参数</p>
+<p>池化层和卷积层不同，没有要学习的参数。池化只是从目标区域中取最大值（或者平均值），所以不存在要学习的参数。 </p>
+</li>
+<li><p>通道数不发生变化</p>
+<p>经过池化运算，输入数据和输出数据的通道数不会发生变化。所示，计算是按通道独立进行的。 </p>
+</li>
+<li><p>对微小的位置变化具有鲁棒性（健壮）</p>
+<p>输入数据发生微小偏差时，池化仍会返回相同的结果。因此，池化对输入数据的微小偏差具有鲁棒性。 </p>
 </li>
 </ol>
-<ol start="2">
-<li><p>自定义上下文管理器</p>
-<p>任何实现了上下文管理器协议的对象都可以称为一个上下文管理器。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 实现一个简单的open()上下文管理</span>
-<span class="token keyword">class</span> <span class="token class-name">myopen</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>file <span class="token operator">=</span> open<span class="token punctuation">(</span>name<span class="token punctuation">,</span> mode<span class="token punctuation">)</span>          
-    <span class="token keyword">def</span> <span class="token function">__enter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>file
-    <span class="token keyword">def</span> <span class="token function">__exit__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> exception_type<span class="token punctuation">,</span> exception_value<span class="token punctuation">,</span> traceback<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span>
-
-<span class="token keyword">with</span> myopen<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-     <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># test</span>
-f<span class="token punctuation">.</span>closed  <span class="token comment" spellcheck="true"># True</span>
-
-<span class="token comment" spellcheck="true"># 同时打开多个文件</span>
-<span class="token keyword">with</span> myopen<span class="token punctuation">(</span><span class="token string">'test1.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f1<span class="token punctuation">,</span> myopen<span class="token punctuation">(</span><span class="token string">'test2.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f2<span class="token punctuation">,</span> myopen<span class="token punctuation">(</span><span class="token string">'test3.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f3<span class="token punctuation">:</span>
-    f1<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'test1'</span><span class="token punctuation">)</span>
-    f2<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'test2'</span><span class="token punctuation">)</span>
-    f3<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'test3'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<h1 id="三、contextlib"><a href="#三、contextlib" class="headerlink" title="三、contextlib"></a>三、contextlib</h1><p>​    为了更好的辅助上下文管理，python提供了<code>contextlib</code>模块，该模块通过<code>Generator</code>实现，其中的<code>contextmanager</code>作为装饰器来提供了一种针对函数级别的上下文管理机制，可以直接使用与函数/对象而不用关心<code>__enter__</code>和<code>__exit__</code>方法的具体实现。</p>
-<ol>
-<li><p><code>contextmanager</code></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> contextlib <span class="token keyword">import</span> contextmanager
-
-@contextmanager
-<span class="token keyword">def</span> <span class="token function">myopen</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> model<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        f <span class="token operator">=</span> open<span class="token punctuation">(</span>name<span class="token punctuation">,</span> model<span class="token punctuation">)</span>
-        <span class="token keyword">yield</span> f
-    <span class="token keyword">finally</span><span class="token punctuation">:</span>
-        f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token keyword">with</span> myopen<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-     <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># test</span>
-f<span class="token punctuation">.</span>closed  <span class="token comment" spellcheck="true"># True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<ol start="2">
-<li><p><code>closing</code></p>
-<p>文件类是支持上下文管理协议的，可以直接用with语句，还有一些对象并不支持该协议，但使用的时候又要确保正常退出，这时就可以使用closing创建上下文管理器。</p>
-</li>
-</ol>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> urllib <span class="token keyword">import</span> request
-<span class="token keyword">from</span> contextlib <span class="token keyword">import</span> closing<span class="token punctuation">,</span> contextmanager
-<span class="token keyword">with</span> closing<span class="token punctuation">(</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span><span class="token string">'https://www.baidu.com/'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Status:'</span><span class="token punctuation">,</span> f<span class="token punctuation">.</span>status<span class="token punctuation">,</span> f<span class="token punctuation">.</span>reason<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Data:'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 等价于:</span>
-@contextmanager
-<span class="token keyword">def</span> <span class="token function">closing</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        <span class="token keyword">yield</span> f
-    <span class="token keyword">finally</span><span class="token punctuation">:</span>
-        f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -728,9 +682,9 @@ f<span class="token punctuation">.</span>closed  <span class="token comment" spe
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Python中with的用法》
+                    《深度学习之卷积神经网络》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/28/python-zhong-with-de-yong-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/06/shen-du-xue-xi-zhi-juan-ji-shen-jing-wang-luo/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Ace
             </a> 采用
@@ -771,7 +725,7 @@ f<span class="token punctuation">.</span>closed  <span class="token comment" spe
         repo: '981935539.github.io',
         owner: '981935539',
         admin: 981935539,
-        id: '2019/11/28/python-zhong-with-de-yong-fa/',
+        id: '2020/01/06/shen-du-xue-xi-zhi-juan-ji-shen-jing-wang-luo/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1054,30 +1008,32 @@ f<span class="token punctuation">.</span>closed  <span class="token comment" spe
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/28/shen-du-xue-xi-zhi-you-hua-suan-fa/">
+                <a href="/2020/01/06/shen-du-xue-xi-zhi-juan-ji-shen-jing-wang-luo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="深度学习之优化算法">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="深度学习之卷积神经网络">
                         
-                        <span class="card-title">深度学习之优化算法</span>
+                        <span class="card-title">深度学习之卷积神经网络</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、前言​    神经网络的学习的目的是找到使损失函数的值尽可能小的参数。这是寻找最优参数的问题，解决这个问题的过程称为最优化(optimization).
-​    使用参数的梯度，沿梯度方向更新参数，并重复这个步骤多次，从而逐渐靠近最优
+                            一、卷积神经网络概述1、CNN简介CNN和之前介绍的神经网络一样，可以像乐高积木一样通过组装层来构建。不过，CNN中新出现了卷积层（Convolution层）和池化层（Pooling层）。 
+2、多层神经网络的问题
+参数较多，多层神经网络采
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1090,15 +1046,20 @@ f<span class="token punctuation">.</span>closed  <span class="token comment" spe
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/ML/" target="_blank">
+                        <span class="chip bg-color">ML</span>
                     </a>
                     
                     <a href="/tags/DL/" target="_blank">
                         <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1112,35 +1073,31 @@ f<span class="token punctuation">.</span>closed  <span class="token comment" spe
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/28/python-bao-guan-li/">
+                <a href="/2020/01/04/ji-qi-xue-xi-zhi-ping-gu-zhi-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="Python包管理">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="机器学习之评估指标">
                         
-                        <span class="card-title">Python包管理</span>
+                        <span class="card-title">机器学习之评估指标</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、什么是包？简单来说包即是目录，但和普通目录不同，它除了包含python文件以外，还包含一个__init__.py文件，同时它允许嵌套。
-包结构如下：
-package/__init__.py
-        module1.py
-    
+                            一、分类模型1、混淆矩阵在机器学习领域，混淆矩阵(confusion matrix), 又称为可能性表格或者错误矩阵。它是一种特定的矩阵用来呈现算法性能的可视化效果，通常是监督学习（非监督学习，通常用匹配矩阵：matching matrix
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/机器学习/" class="post-category" target="_blank">
+                                    机器学习
                                 </a>
                             
                             
@@ -1150,8 +1107,12 @@ package/__init__.py
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/ML/" target="_blank">
+                        <span class="chip bg-color">ML</span>
+                    </a>
+                    
+                    <a href="/tags/DL/" target="_blank">
+                        <span class="chip bg-color">DL</span>
                     </a>
                     
                 </div>

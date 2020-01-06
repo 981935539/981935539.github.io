@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2020-01-04T11:49:41.659Z</updated>
+  <updated>2020-01-06T09:15:12.561Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习之卷积神经网络</title>
+    <link href="https://iace.fun/2020/01/06/shen-du-xue-xi-zhi-juan-ji-shen-jing-wang-luo/"/>
+    <id>https://iace.fun/2020/01/06/shen-du-xue-xi-zhi-juan-ji-shen-jing-wang-luo/</id>
+    <published>2020-01-06T05:32:08.000Z</published>
+    <updated>2020-01-06T09:15:12.561Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、卷积神经网络概述&quot;&gt;&lt;a href=&quot;#一、卷积神经网络概述&quot; class=&quot;headerlink&quot; title=&quot;一、卷积神经网络概述&quot;&gt;&lt;/a&gt;一、卷积神经网络概述&lt;/h1&gt;&lt;h2 id=&quot;1、CNN简介&quot;&gt;&lt;a href=&quot;#1、CNN简介&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="Python" scheme="https://iace.fun/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习之评估指标</title>
@@ -49,7 +79,7 @@
     <link href="https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/"/>
     <id>https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/</id>
     <published>2020-01-03T11:07:13.000Z</published>
-    <updated>2020-01-04T14:38:33.495Z</updated>
+    <updated>2020-01-04T16:37:39.707Z</updated>
     
     <summary type="html">
     
@@ -271,7 +301,7 @@
     <link href="https://iace.fun/2019/11/25/shen-jing-wang-luo-jian-jie/"/>
     <id>https://iace.fun/2019/11/25/shen-jing-wang-luo-jian-jie/</id>
     <published>2019-11-25T01:08:19.000Z</published>
-    <updated>2019-12-02T08:53:06.564Z</updated>
+    <updated>2020-01-05T13:05:02.387Z</updated>
     
     <summary type="html">
     
@@ -320,11 +350,11 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
+    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
-      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
   </entry>
   
