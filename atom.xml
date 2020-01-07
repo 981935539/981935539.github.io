@@ -103,6 +103,34 @@
   </entry>
   
   <entry>
+    <title>深度学习之CNN模型演化</title>
+    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/"/>
+    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</id>
+    <published>2019-12-29T16:47:24.000Z</published>
+    <updated>2020-01-07T17:16:41.492Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h1&gt;&lt;h1 id=&quot;一、LeNet&quot;&gt;&lt;a href=&quot;#一、LeNet&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="Python" scheme="https://iace.fun/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深度学习之超参数</title>
     <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/"/>
     <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/</id>
@@ -155,28 +183,6 @@
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
       <category term="Python" scheme="https://iace.fun/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://iace.fun/2019/12/02/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/"/>
-    <id>https://iace.fun/2019/12/02/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</id>
-    <published>2019-12-02T07:25:24.152Z</published>
-    <updated>2020-01-07T16:28:29.627Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;title: 深度学习之CNN模型演化&lt;br&gt;top: false&lt;br&gt;cover: false&lt;br&gt;toc: true&lt;br&gt;mathjax: true&lt;br&gt;date: 2019-12-02
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
