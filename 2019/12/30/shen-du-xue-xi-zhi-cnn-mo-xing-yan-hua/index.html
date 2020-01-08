@@ -450,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    5.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    27 分
                 </div>
                 
                 
@@ -1031,8 +1031,6 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 
 
 
-
-
 <ol>
 <li><p>左图是基本的Inception v2/v3模块，使用两个3x3卷积代替5x5卷积，并且使用average pooling，该模块主要处理尺寸为35x35的feature map；</p>
 </li>
@@ -1050,14 +1048,10 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 
 
 
-
-
 <p><strong>Inception-Resnet-v1基本模块</strong>：</p>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v4.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v5.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v6.png" width="180" height="240"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
 
 
 
@@ -1100,13 +1094,9 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 
 
 
-
-
 <p><strong>Inception-Resnet-v2基本模块：</strong>：</p>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v7.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v8.png" width="180" height="240"></div><div style="float:left;border:solid 1px 000;margin:2px;"><img src="v9.png" width="180" height="240"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
 
 <p>Inception-Resnet-v2网络结构同Inception-Resnet-v1，Stem模块同Inception v4</p>
 <h1 id="九、Xception"><a href="#九、Xception" class="headerlink" title="九、Xception"></a>九、Xception</h1><p>2016年８月</p>
@@ -1139,10 +1129,23 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <p>​    第一步：Depthwise 卷积，对输入的每个channel，分别进行 3×3 卷积操作，并将结果 concat。</p>
 <p>​    第二步：Pointwise 卷积，对 Depthwise 卷积中的 concat 结果，进行 1×1卷积操作。</p>
 <p>两种操作的循序不一致：Inception 先进行 1×1卷积，再进行 3×3卷积；Depthwise Separable Convolution 先进行 3×3卷积，再进行 1×11×1 卷积。</p>
+<h1 id="十-、DenseNet"><a href="#十-、DenseNet" class="headerlink" title="十 、DenseNet"></a>十 、DenseNet</h1><p>2016年8yue</p>
+<p>[DenseNe][<a href="https://arxiv.org/abs/1608.06993]的基本思路与ResNet一致，但是它建立的是前面所有层与后面层的密集连接（dense" target="_blank" rel="noopener">https://arxiv.org/abs/1608.06993]的基本思路与ResNet一致，但是它建立的是前面所有层与后面层的密集连接（dense</a> connection），它的名称也是由此而来。DenseNet的另一大特色是通过特征在channel上的连接来实现特征重用（feature reuse）。这些特点让DenseNet在参数和计算成本更少的情形下实现比ResNet更优的性能，DenseNet也因此斩获CVPR 2017的最佳论文奖。</p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8BCNN%E6%A8%A1%E5%9E%8B%E6%BC%94%E5%8C%96/d1.png" alt></p>
+<p><strong>设计理念</strong></p>
+<p>相比ResNet，DenseNet提出了一个更激进的密集连接机制：即互相连接所有的层，具体来说就是<strong>每个层都会接受其前面所有层作为其额外的输入</strong>。ResNet是每个层与前面的某层（一般是2~3层）短路连接在一起，连接方式是通过<strong>元素级</strong>相加。而在DenseNet中，每个层都会与前面所有层在channel维度上连接（concat）在一起（这里各个层的特征图大小是相同的，后面会有说明），并作为下一层的输入。对于一个 $L$层的网络，DenseNet共包含 $\frac{L(L+1)}{2}$个连接，相比ResNet，这是一种密集连接。而且DenseNet是直接concat来自不同层的特征图，这可以实现特征重用，提升效率，这一特点是DenseNet与ResNet最主要的区别。</p>
+<p><strong>网络结构</strong></p>
+<p>CNN网络一般要经过Pooling或者stride&gt;1的Conv来降低特征图的大小，而DenseNet的密集连接方式需要特征图大小保持一致。为了解决这个问题，DenseNet网络中使用DenseBlock+Transition的结构，其中DenseBlock是包含很多层的模块，每个层的特征图大小相同，层与层之间采用密集连接方式。而Transition模块是连接两个相邻的DenseBlock，并且通过Pooling使特征图大小降低。</p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8BCNN%E6%A8%A1%E5%9E%8B%E6%BC%94%E5%8C%96/d2.jpg" alt></p>
+<p>在DenseBlock中，各个层的特征图大小一致，可以在channel维度上连接。DenseBlock中的非线性组合函数 $H$采用的是<strong>BN+ReLU+3x3 Conv</strong>的结构。另外值得注意的一点是，与ResNet不同，所有DenseBlock中各个层卷积之后均输出 <img src="https://www.zhihu.com/equation?tex=k" alt="[公式]"> 个特征图，即得到的特征图的channel数为$k$，或者说采用$k$个卷积核。$k$ 在DenseNet称为growth rate，这是一个超参数。一般情况下使用较小的 $k$（比如12），就可以得到较佳的性能。假定输入层的特征图的channel数为 $k_0$，那么 <img src="https://www.zhihu.com/equation?tex=l" alt="[公式]"> 层输入的channel数为$k_0 + k(l-1)$，因此随着层数增加，尽管 <img src="https://www.zhihu.com/equation?tex=k" alt="[公式]"> 设定得较小，DenseBlock的输入会非常多，不过这是由于特征重用所造成的，每个层仅有 <img src="https://www.zhihu.com/equation?tex=k" alt="[公式]"> 个特征是自己独有的。</p>
+<p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8BCNN%E6%A8%A1%E5%9E%8B%E6%BC%94%E5%8C%96/d3.jpg" alt></p>
+<p>由于后面层的输入会非常大，DenseBlock内部可以采用bottleneck层来减少计算量，主要是原有的结构中增加1x1 Conv，如图7所示，即<strong>BN+ReLU+1x1 Conv+BN+ReLU+3x3 Conv</strong>，称为DenseNet-B结构。其中1x1 Conv得到 $4k$个特征图它起到的作用是降低特征数量，从而提升计算效率。</p>
+<p>对于Transition层，它主要是连接两个相邻的DenseBlock，并且降低特征图大小。Transition层包括一个1x1的卷积和2x2的AvgPooling，结构为<strong>BN+ReLU+1x1 Conv+2x2 AvgPooling</strong>。另外，Transition层可以起到压缩模型的作用。假定Transition的上接DenseBlock得到的特征图channels数为$m$，Transition层可以产生 个$[\theta m]$特征（通过卷积层），其中 $\theta \in (0, 1]$是压缩系数（compression rate）。当 $\theta =1$ 时，特征个数经过Transition层没有变化，即无压缩，而当压缩系数小于1时，这种结构称为DenseNet-C 。对于使用bottleneck层的DenseBlock结构和压缩系数小于1的Transition组合结构称为DenseNet-BC。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>​    <a href="https://www.cnblogs.com/CZiFan/p/9490565.html" target="_blank" rel="noopener">https://www.cnblogs.com/CZiFan/p/9490565.html</a></p>
 <p>​    <a href="https://www.zhihu.com/question/53727257/answer/136261195" target="_blank" rel="noopener">https://www.zhihu.com/question/53727257/answer/136261195</a></p>
 <p>​    <a href="https://blog.csdn.net/lk3030/article/details/84847879" target="_blank" rel="noopener">https://blog.csdn.net/lk3030/article/details/84847879</a></p>
 <p>​    <a href="https://blog.csdn.net/zzc15806/article/details/83504130" target="_blank" rel="noopener">https://blog.csdn.net/zzc15806/article/details/83504130</a></p>
+<p>​    <a href="https://zhuanlan.zhihu.com/p/37189203" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/37189203</a></p>
 <p><a href="https://medium.com/雞雞與兔兔的工程世界/機器學習-ml-note-cnn演化史-alexnet-vgg-inception-resnet-keras-coding-668f74879306" target="_blank" rel="noopener">https://medium.com/%E9%9B%9E%E9%9B%9E%E8%88%87%E5%85%94%E5%85%94%E7%9A%84%E5%B7%A5%E7%A8%8B%E4%B8%96%E7%95%8C/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-ml-note-cnn%E6%BC%94%E5%8C%96%E5%8F%B2-alexnet-vgg-inception-resnet-keras-coding-668f74879306</a></p>
 
             </div>
@@ -1887,7 +1890,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.5k</span>
+            <span class="white-color">43.5k</span>
             
 
             <br>
