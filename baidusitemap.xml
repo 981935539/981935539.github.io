@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://iace.fun/2020/01/15/she-ji-mo-shi-zhi-dan-li-mo-shi/</loc>
+    <lastmod>2020-01-15</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/</loc>
+    <lastmod>2020-01-14</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2020/01/12/ji-suan-ji-shi-jue-zhi-fen-ge/</loc>
+    <lastmod>2020-01-12</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2020/01/12/shang-cai-yang-zhi-zhuan-zhi-juan-ji/</loc>
+    <lastmod>2020-01-12</lastmod>
+  </url>  <url>
+    <loc>https://iace.fun/2020/01/10/ji-suan-ji-shi-jue-zhi-mu-biao-jian-ce/</loc>
+    <lastmod>2020-01-11</lastmod>
+  </url>  <url>
     <loc>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</loc>
     <lastmod>2020-01-08</lastmod>
   </url>  <url>
@@ -9,9 +24,6 @@
   </url>  <url>
     <loc>https://iace.fun/2019/11/25/shen-jing-wang-luo-jian-jie/</loc>
     <lastmod>2020-01-05</lastmod>
-  </url>  <url>
-    <loc>https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/</loc>
-    <lastmod>2020-01-04</lastmod>
   </url>  <url>
     <loc>https://iace.fun/2020/01/04/ji-qi-xue-xi-zhi-ping-gu-zhi-biao/</loc>
     <lastmod>2020-01-04</lastmod>
@@ -31,10 +43,10 @@
     <loc>https://iace.fun/2019/11/28/python-bao-guan-li/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
-    <loc>https://iace.fun/2019/11/18/cmake-yong-fa-zong-jie/</loc>
+    <loc>https://iace.fun/2019/11/25/pyhton-gao-shu-ji-suan-ku/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
-    <loc>https://iace.fun/2019/11/25/pyhton-gao-shu-ji-suan-ku/</loc>
+    <loc>https://iace.fun/2019/11/18/cmake-yong-fa-zong-jie/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
     <loc>https://iace.fun/2019/11/28/shen-du-xue-xi-zhi-you-hua-suan-fa/</loc>

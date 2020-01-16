@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2020-01-06T09:15:12.561Z</updated>
+  <updated>2020-01-15T06:19:00.260Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -15,6 +15,117 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式之单例模式</title>
+    <link href="https://iace.fun/2020/01/15/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
+    <id>https://iace.fun/2020/01/15/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
+    <published>2020-01-15T06:15:54.000Z</published>
+    <updated>2020-01-15T06:19:00.260Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、什么是单例模式&quot;&gt;&lt;a href=&quot;#一、什么是单例模式&quot; class=&quot;headerlink&quot; title=&quot;一、什么是单例模式&quot;&gt;&lt;/a&gt;一、什么是单例模式&lt;/h1&gt;&lt;p&gt;单例模式（Singleton
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://iace.fun/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://iace.fun/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机视觉之分割</title>
+    <link href="https://iace.fun/2020/01/12/ji-suan-ji-shi-jue-zhi-fen-ge/"/>
+    <id>https://iace.fun/2020/01/12/ji-suan-ji-shi-jue-zhi-fen-ge/</id>
+    <published>2020-01-12T07:37:02.000Z</published>
+    <updated>2020-01-12T13:16:16.135Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、语义分割和实例分割的定义&quot;&gt;&lt;a href=&quot;#一、语义分割和实例分割的定义&quot; class=&quot;headerlink&quot; title=&quot;一、语义分割和实例分割的定义&quot;&gt;&lt;/a&gt;一、语义分割和实例分割的定义&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;01.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>上采样之转置卷积</title>
+    <link href="https://iace.fun/2020/01/12/shang-cai-yang-zhi-zhuan-zhi-juan-ji/"/>
+    <id>https://iace.fun/2020/01/12/shang-cai-yang-zhi-zhuan-zhi-juan-ji/</id>
+    <published>2020-01-12T03:50:59.000Z</published>
+    <updated>2020-01-12T08:13:01.151Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;本文翻译自[《Up-sampling with Transposed Convolution》][&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机视觉之目标检测</title>
+    <link href="https://iace.fun/2020/01/10/ji-suan-ji-shi-jue-zhi-mu-biao-jian-ce/"/>
+    <id>https://iace.fun/2020/01/10/ji-suan-ji-shi-jue-zhi-mu-biao-jian-ce/</id>
+    <published>2020-01-10T11:32:18.000Z</published>
+    <updated>2020-01-11T15:29:08.453Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;目标检测在现实中的应用很广泛，我们需要检测图像中的物体位置以及类别。先明确如下2个定义:&lt;/p&gt;
+&lt;p&gt;1）定位+分类:
+        
+      
+    
+    </summary>
+    
+      <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+  </entry>
   
   <entry>
     <title>深度学习之卷积神经网络</title>
@@ -38,9 +149,9 @@
       <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
       <category term="Python" scheme="https://iace.fun/tags/Python/"/>
     
@@ -68,9 +179,9 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
   </entry>
   
@@ -79,7 +190,7 @@
     <link href="https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/"/>
     <id>https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/</id>
     <published>2020-01-03T11:07:13.000Z</published>
-    <updated>2020-01-04T16:37:39.707Z</updated>
+    <updated>2020-01-14T14:25:13.746Z</updated>
     
     <summary type="html">
     
@@ -318,9 +429,9 @@
       <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
       <category term="ANN" scheme="https://iace.fun/tags/ANN/"/>
     
@@ -350,11 +461,11 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
   </entry>
   
