@@ -90,9 +90,9 @@
       <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="CV" scheme="https://iace.fun/tags/CV/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
   </entry>
   
@@ -118,9 +118,9 @@
       <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="CV" scheme="https://iace.fun/tags/CV/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
   </entry>
   
@@ -147,9 +147,9 @@
       <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="CV" scheme="https://iace.fun/tags/CV/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
   </entry>
   
@@ -175,9 +175,9 @@
       <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
       <category term="Python" scheme="https://iace.fun/tags/Python/"/>
     
@@ -205,9 +205,9 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
   </entry>
   
@@ -216,7 +216,7 @@
     <link href="https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/"/>
     <id>https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/</id>
     <published>2020-01-03T11:07:13.000Z</published>
-    <updated>2020-03-03T11:28:19.835Z</updated>
+    <updated>2020-03-03T16:18:11.848Z</updated>
     
     <summary type="html">
     
@@ -455,9 +455,9 @@
       <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
       <category term="ANN" scheme="https://iace.fun/tags/ANN/"/>
     
@@ -487,11 +487,11 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
   </entry>
   

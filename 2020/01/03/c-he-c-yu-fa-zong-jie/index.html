@@ -291,7 +291,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -629,14 +629,14 @@
 <p>2) 一步编译</p>
 <p><code>gcc hello.c -o demo</code></p>
 <p><strong>2.3、查找程序所依赖的动态库</strong></p>
-<p>１）Linux平台下，<code>ldd</code>(“l”为字母) 可执行程序</p>
+<p>１）Linux平台下，<code>ldd</code>  可执行程序</p>
 <p>２）Windows平台下，需要相应软件(<code>Depends.exe</code>)</p>
 <h2 id="3、CPU内部结构与寄存器"><a href="#3、CPU内部结构与寄存器" class="headerlink" title="3、CPU内部结构与寄存器"></a>3、CPU内部结构与寄存器</h2><h3 id="3-1、CPU总线"><a href="#3-1、CPU总线" class="headerlink" title="3.1、CPU总线"></a>3.1、CPU总线</h3><p><strong>数据总线</strong></p>
 <p>（1） 是CPU与内存或其他器件之间的数据传送的通道。</p>
 <p>（2）数据总线的宽度决定了CPU和外界的数据传送速度。</p>
-<p>（3）每条传输线一次只能传输1位二进制数据。eg: 8根数据线一次可传送一个8位二进制数据(即一个字节)。</p>
+<p>（3）每条传输线一次只能传输1位二进制数据。eg: 8根数据线一次可传送一个8位二进制数据（即一个字节）。</p>
 <p>（4）数据总线是数据线数量之和。</p>
-<p>数据总线数据总线是CPU与存储器、CPU与I/O接口设备之间传送数据信息(各种指令数据信息)的总线，这些信号通过数据总线往返于CPU与存储器、CPU与I/O接口设备之间，因此，数据总线上的信息是双向传输的。</p>
+<p>数据总线是CPU与存储器、CPU与I/O接口设备之间传送数据信息（各种指令数据信息）的总线，这些信号通过数据总线往返于CPU与存储器、CPU与I/O接口设备之间，因+此，数据总线上的信息是双向传输的。</p>
 <p><strong>地址总线</strong></p>
 <p>（1）CPU是通过地址总线来指定存储单元的。</p>
 <p>（2）地址总线决定了cpu所能访问的最大内存空间的大小。eg: 10根地址线能访问的最大的内存为1024位二进制数据（1024个内存单元）(1B)</p>
@@ -657,7 +657,7 @@
 </li>
 <li><p><strong>CPU的位宽(位数)一般是以 min{ALU位宽、通用寄存器位宽、数据总线位宽}决定的</strong></p>
 </li>
-<li><p>CPU对外是通过总线(地址、控制、数据)来和外部设备交互的，总线的宽度是8位，同时CPU的寄存器也是8位，那么这个CPU就叫8位CPU</p>
+<li><p>CPU对外是通过总线（地址、控制、数据）来和外部设备交互的，总线的宽度是8位，同时CPU的寄存器也是8位，那么这个CPU就叫8位CPU</p>
 </li>
 <li><p>如果总线是32位，寄存器也是32位的，那么这个CPU就是32位CPU</p>
 </li>
@@ -683,7 +683,8 @@
 </li>
 </ol>
 <p>总结：大致来说数据是通过内存-Cache-寄存器，Cache缓存则是为了弥补CPU与内存之间运算速度的差异而设置的的部件。</p>
-<h2 id="4、内存、地址和指针"><a href="#4、内存、地址和指针" class="headerlink" title="4、内存、地址和指针"></a>4、内存、地址和指针</h2><h3 id="4-1、内存"><a href="#4-1、内存" class="headerlink" title="4.1、内存"></a>4.1、内存</h3><p>内存含义：</p>
+<h2 id="4、内存、地址和指针"><a href="#4、内存、地址和指针" class="headerlink" title="4、内存、地址和指针"></a>4、内存、地址和指针</h2><p><strong>4.1、内存</strong></p>
+<p>内存含义：</p>
 <ul>
 <li><p>存储器：计算机的组成中，用来存储程序和数据，辅助CPU进行运算处理的重要部分。</p>
 </li>
@@ -699,7 +700,8 @@
 <li><p>暂存与硬盘等外部存储器交换的数据</p>
 </li>
 </ul>
-<h3 id="4-2、物理存储器和存储地址空间"><a href="#4-2、物理存储器和存储地址空间" class="headerlink" title="4.2、物理存储器和存储地址空间"></a>4.2、物理存储器和存储地址空间</h3><p>有关内存的两个概念：物理存储器和存储地址空间。</p>
+<p><strong>4.2、物理存储器和存储地址空间</strong></p>
+<p>有关内存的两个概念：物理存储器和存储地址空间。</p>
 <p>物理存储器：实际存在的具体存储器芯片。</p>
 <ul>
 <li><p>主板上装插的内存条</p>
@@ -716,7 +718,8 @@
 <li><p>寻址：可以根据分配的号码找到相应的存储单元，完成数据的读写</p>
 </li>
 </ul>
-<h3 id="4-3、内存地址"><a href="#4-3、内存地址" class="headerlink" title="4.3、内存地址"></a>4.3、内存地址</h3><ul>
+<p><strong>4.3、内存地址</strong></p>
+<ul>
 <li><p>将内存抽象成一个很大的一维字符数组。</p>
 </li>
 <li><p>编码就是对内存的每一个字节分配一个32位或64位的编号（与32位或者64位处理器相关）。</p>
@@ -733,7 +736,8 @@
 <li><p>float、struct、函数、数组等</p>
 </li>
 </ul>
-<h3 id="4-4、指针和指针变量"><a href="#4-4、指针和指针变量" class="headerlink" title="4.4、指针和指针变量"></a>4.4、指针和指针变量</h3><ul>
+<p><strong>4.4、指针和指针变量</strong></p>
+<ul>
 <li><p>内存区的每一个字节都有一个编号，这就是“地址”。</p>
 </li>
 <li><p>如果在程序中定义了一个变量，在对程序进行编译或运行时，系统就会给这个变量分配内存单元，并确定它的内存地址(编号)</p>
@@ -745,11 +749,13 @@
 <li><p><strong>通常我们叙述时会把指针变量简称为指针，实际他们含义并不一样</strong></p>
 </li>
 </ul>
-<h2 id="5、存储类型"><a href="#5、存储类型" class="headerlink" title="5、存储类型"></a>5、存储类型</h2><h3 id="5-1、auto"><a href="#5-1、auto" class="headerlink" title="5.1、auto"></a>5.1、auto</h3><ol>
+<h2 id="5、存储类型"><a href="#5、存储类型" class="headerlink" title="5、存储类型"></a>5、存储类型</h2><p><strong>5.1、auto</strong></p>
+<ol>
 <li>普通局部变量，自动存储，该对象会自动创建和销毁，调用函数时分配内存，函数结束时释放内存。只在{}内有效，存放在堆栈中一般省略auto,  不会被默认初始化，初值不随机</li>
 <li>全局变量，<strong>不允许声明为auto变量</strong>， register不适用于全局变量，生命周期由定义到程序运行结束，没有初始化会<strong>自动赋值0或空字符</strong>。全局变量属于整个程序，不同文件中不能有同名的全局变量，通过<strong>extern</strong>在其他文件中引用使用</li>
 </ol>
-<h3 id="5-2、static"><a href="#5-2、static" class="headerlink" title="5.2、static"></a>5.2、static</h3><ol>
+<p><strong>5.2、static</strong></p>
+<ol>
 <li>静态局部变量，生命周期由定义到程序运行结束，在编译时赋初值，<strong>只初始化一次，没有初始化会自动赋值0或空字符</strong>。只在当前{}内有效</li>
 <li>静态全局变量，生命周期由定义到程序运行结束，在编译时赋初值，只初始化一次，没有初始化会自动赋值0或空字符。从定义到文件结尾起作用，在一个程序中的其他文件中可以定义同名的静态全局变量，因为作用于不冲突。</li>
 </ol>
@@ -781,7 +787,8 @@
 <ol start="5">
 <li>多个文件时，可以在未定义该外部变量的文件内做extern声明即可以使用。但是需要注意可能执行一个文件时改变了该全局变量的值，影响其他文件的调用。编译时遇到extern，会先在文件内找是否定义了该外部变量。如果未找到则在链接时在其他文件中找。</li>
 </ol>
-<h3 id="5-4、register"><a href="#5-4、register" class="headerlink" title="5.4、register"></a>5.4、register</h3><ol>
+<p><strong>5.4、register</strong></p>
+<ol>
 <li><p>寄存器变量，请求编译器将这个变量保存在CPU的寄存器中，从而加快程序的运行.只是建议CPU这样做，非强制,声明变量为register,编译器并不一定会将它处理为寄存器变量</p>
 </li>
 <li><p>动态和静态变量都是存放在内存中，程序中遇到该值时用控制器发指令将变量的值送到运算器中，需要存数再保存到内存中。如果频繁使用一个变量，比如一个函数体内的多次循环每次都引用该局部变量，我们则可以把局部变量的值放到CPU的寄存器中，叫寄存器变量。不需要多次到内存中存取提高效率。</p>
@@ -818,7 +825,8 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
-<h3 id="5-5、volatile"><a href="#5-5、volatile" class="headerlink" title="5.5、volatile"></a>5.5、volatile</h3><pre class="line-numbers language-c"><code class="language-c">    程序在使用变量时<span class="token punctuation">,</span> 特别是连续多次使用变量时<span class="token punctuation">,</span> 一般是载入寄存器<span class="token punctuation">,</span> 直接从寄存器存取<span class="token punctuation">,</span> 之后再还回内存<span class="token punctuation">;</span>但如果此变量在返回内存时<span class="token punctuation">,</span> 假如内存中的值已经改变了<span class="token punctuation">(</span>从外部修改了<span class="token punctuation">)</span>怎么办<span class="token operator">?</span>
+<p><strong>5.5、volatile</strong></p>
+<pre class="line-numbers language-c"><code class="language-c">    程序在使用变量时<span class="token punctuation">,</span> 特别是连续多次使用变量时<span class="token punctuation">,</span> 一般是载入寄存器<span class="token punctuation">,</span> 直接从寄存器存取<span class="token punctuation">,</span> 之后再还回内存<span class="token punctuation">;</span>但如果此变量在返回内存时<span class="token punctuation">,</span> 假如内存中的值已经改变了<span class="token punctuation">(</span>从外部修改了<span class="token punctuation">)</span>怎么办<span class="token operator">?</span>
 为了避免这种情况的发生<span class="token punctuation">,</span> 可以用 <span class="token keyword">volatile</span> 说明此变量<span class="token punctuation">,</span> 以保证变量的每次使用都是直接从内存存取<span class="token punctuation">.</span>
 但这样肯定会影响效率<span class="token punctuation">,</span> 幸好它并不常用<span class="token punctuation">.</span>
 
@@ -833,7 +841,8 @@
     <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-6、总结"><a href="#5-6、总结" class="headerlink" title="5.6、总结"></a>5.6、总结</h3><table>
+<p><strong>5.6、总结</strong></p>
+<table>
 <thead>
 <tr>
 <th>关键字</th>
@@ -986,7 +995,7 @@
 <p><strong>7.2、内存对齐原则</strong></p>
 <ul>
 <li><p>原则1：数据成员的对齐规则</p>
-<p>1) 最大对齐单位以CPU架构对齐，如Linux 32位最大以4字节对齐，Linux 64位最大以8字节对齐，vs(32位、64位)最大对齐单位为8字节</p>
+<p>1) 最大对齐单位以CPU架构对齐，如Linux 32位最大以4字节对齐，Linux 64位最大以8字节对齐，vs（32位、64位）最大对齐单位为8字节</p>
 <p>2) 需要和<strong>结构体的最大成员</strong>和CPU架构(32位或64位)对比，取小的作为对齐单位</p>
 <p>3) 字节对齐也可以通过程序控制，采用指令：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">pragma</span> pack(xx)   </span>
@@ -1006,7 +1015,7 @@
 <p>  int length = sizeof(testlength); //2个字节对齐，length = 10</p>
 <p>  int main(){<br>      printf(“length=%d\n”, length); // length=10<br>  }</p>
 <pre><code>
-  尽管通过pragma pack(xx)可以指定字节对齐单位，但需要和结构体的最大成员、CPU架构(32位或64位)对比，取最小的作为对齐单位。
+  尽管通过pragma pack（xx）可以指定字节对齐单位，但需要和结构体的最大成员、CPU架构（32位或64位）对比，取最小的作为对齐单位。
 
 - 原则2：数据成员的偏移起点
 
@@ -1021,10 +1030,9 @@
 ## 8、typedef与define的区别
 
 - typedef为C语言的关键字，作用是为一种数据类型(基本类型或自定义数据类型)定义一个新名字，不能创建新类型。
-
-- 与#define不同，typedef仅限于数据类型，而不是能是表达式或具体的值
-
-- define发生在预处理，typedef发生在编译阶段
+- 功能差异   typedef仅限于数据类型，而不是能是表达式或具体的值
+- 执行时间不同     define发生在预处理，typedef发生在编译阶段
+- 作用域不同    #define没有作用域的限制，而typedef有自己的作用域
 
 
 
@@ -2443,7 +2451,7 @@ void test()
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="机器学习之评估指标">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="机器学习之评估指标">
                         
                         <span class="card-title">机器学习之评估指标</span>
                     </div>
@@ -2473,12 +2481,12 @@ void test()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ML/" target="_blank">
-                        <span class="chip bg-color">ML</span>
-                    </a>
-                    
                     <a href="/tags/DL/" target="_blank">
                         <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                    <a href="/tags/ML/" target="_blank">
+                        <span class="chip bg-color">ML</span>
                     </a>
                     
                 </div>
@@ -2496,7 +2504,7 @@ void test()
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="深度学习之CNN模型演化">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="深度学习之CNN模型演化">
                         
                         <span class="card-title">深度学习之CNN模型演化</span>
                     </div>
