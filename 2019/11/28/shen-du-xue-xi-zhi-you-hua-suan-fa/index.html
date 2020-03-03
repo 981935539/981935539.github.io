@@ -291,7 +291,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -450,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    12 分
                 </div>
                 
                 
@@ -538,13 +538,13 @@
 <h1 id="五、Nesterov"><a href="#五、Nesterov" class="headerlink" title="五、Nesterov"></a>五、Nesterov</h1><p>Nesterov加速梯度下降法（Nesterov Accelerated Gradient，NAG）是动量算法的一个变种，同样是一阶优化算法，但在梯度评估方面有所不同。NAG能给动量项一个预知的能力，并且收敛速度更快。其更新算法如下：<br>$$<br>\upsilon_{t+1} \leftarrow \alpha \upsilon_{t} - \eta \frac {\partial L(W_t + \alpha \upsilon_t)}{\partial W_{t}}<br>$$</p>
 <p>$$<br>W_{t+1} \leftarrow W_{t} + \upsilon_{t+1}<br>$$</p>
 <p>我们利用动量项$\alpha v_t$更新参数$w_t$，通过计算$(W_t + \alpha v_t)$得到参数未来位置的一个近似值，计算关于参数未来的近似位置的梯度，而不是关于当前参数$W_t$的梯度，这样NAG算法可以高效地求解。<br>我们可以将其抽象为球滚落的时候，一般是盲目地沿着某个斜率方向，结果并不一定能令人满意。于是我们希望有一个较为“智能”的球，能够自己判断下落的方向，这样在途中遇到斜率上升的时候能够知道减速，该思想对于RNN性能的提升有重要的意义。</p>
-<h1 id="六、Adagrad"><a href="#六、Adagrad" class="headerlink" title="六、Adagrad"></a>六、Adagrad</h1><p>​    在神经网络的学习中，学习率（数学式中记为η）的值很重要。学习率过小，会导致学习花费过多时间；反过来，学习率过大，则会导致学习发散而不能正确进行。</p>
-<p>​    在关于学习率的有效技巧中，有一种被称为学习率衰减（learning rate decay）的方法，即随着学习的进行，使学习率逐渐减小。</p>
-<p>​    和Momentum直接把动量累加到梯度上不同，它是通过动量逐步减小学习率的值，使得最后的值在最小值附近，更加接近收敛点。</p>
+<h1 id="六、Adagrad"><a href="#六、Adagrad" class="headerlink" title="六、Adagrad"></a>六、Adagrad</h1><p>在神经网络的学习中，学习率（数学式中记为η）的值很重要。学习率过小，会导致学习花费过多时间；反过来，学习率过大，则会导致学习发散而不能正确进行。</p>
+<p>在关于学习率的有效技巧中，有一种被称为学习率衰减（learning rate decay）的方法，即随着学习的进行，使学习率逐渐减小。</p>
+<p>和Momentum直接把动量累加到梯度上不同，它是通过动量逐步减小学习率的值，使得最后的值在最小值附近，更加接近收敛点。</p>
 <p><strong>数学公式</strong><br>$$<br>h \leftarrow h + \frac {\partial L}{\partial W} \cdot \frac {\partial L}{\partial W}<br>$$</p>
-<p>$$<br>W \leftarrow W -  \frac {\eta}{\sqrt h}\frac {\partial L}{\partial W}<br>$$</p>
+<p>$$<br>W \leftarrow W -  \frac {\eta}{\sqrt h}\cdot\frac {\partial L}{\partial W}<br>$$</p>
 <p>在更新参数时，通过乘以$\frac {1}{\sqrt h}$ ，就可以调整学习的尺度</p>
-<p>前期$g_t$较小的时候，正则化项较大，能够放大梯度；后期$g_t$较大的时候，正则化项较小，能够约束梯度，适合处理稀疏梯度。</p>
+<p>前期$g_t$较小的时候，正则化项$\frac{1}{\sqrt h}$较大，能够放大梯度；后期$g_t$较大的时候，正则化项较小，能够约束梯度，适合处理稀疏梯度。</p>
 <p>但Adagrad算法同样依赖于人工设置一个全局学习率η，设置过大的话，会使正则化项过于敏感，对梯度的调节过大。</p>
 <p><strong>代码实现</strong></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">AdaGrad</span><span class="token punctuation">:</span>
@@ -576,11 +576,12 @@
 </ol>
 <p><strong>缺点</strong></p>
 <p>​    中后期，分母上梯度的平方的积累将会越来越大，使gradient–&gt;0, 使得训练提前结束。</p>
-<h1 id="七、Adadelta"><a href="#七、Adadelta" class="headerlink" title="七、Adadelta"></a>七、Adadelta</h1><p>Adadelta算法的出现可较好地解决全局学习率问题，其本质是对Adagrad算法的扩展，同样是对学习率进行自适应约束，但是计算上进行了简化。Adagrad算法会累加之前所有的梯度平方，而Adadelta算法只累加固定大小的项，并且仅存储这些项近似计算对应的平均值。其公式如下：<br>$$<br>h_t \leftarrow \alpha h_{t-1} + {(1-\alpha)}\frac {\partial L}{\partial W} \cdot \frac {\partial L}{\partial W}<br>$$</p>
-<p>$$<br>W \leftarrow W -  \frac {\sqrt{\sum_{k=1}^{t-1}h}}{\sqrt h_t}\frac {\partial L}{\partial W}<br>$$</p>
+<h1 id="七、Adadelta"><a href="#七、Adadelta" class="headerlink" title="七、Adadelta"></a>七、Adadelta</h1><p>Adadelta算法的出现可较好地解决全局学习率问题，其本质是对Adagrad算法的扩展，同样是对学习率进行自适应约束，但是计算上进行了简化。Adagrad算法会累加之前所有的梯度平方，而Adadelta算法只累加固定大小的项，并且仅存储这些项近似计算对应的平均值。其公式如下：<br>$$<br>h_t \leftarrow \alpha h_{t-1} + {(1-\alpha)}\frac {\partial L}{\partial W_t} \cdot \frac {\partial L}{\partial W_t}<br>$$</p>
+<p>$$<br>\Delta x_t = \frac {\sqrt{\sum_{k=1}^{t-1}\Delta x_k}}{\sqrt h_t}\frac {\partial L}{\partial W}<br>$$</p>
+<p>$$<br>W \leftarrow W -  \Delta x_t<br>$$</p>
 <p>Adadelta不依赖于全局学习率，训练初、中期，加速效果理想化，训练后期，反复在局部最小值附近抖动。</p>
 <p>原论文: <a href="https://arxiv.org/abs/1212.5701" target="_blank" rel="noopener">https://arxiv.org/abs/1212.5701</a></p>
-<h1 id="八、RMSprop"><a href="#八、RMSprop" class="headerlink" title="八、RMSprop"></a>八、RMSprop</h1><p>RMSprop可以算作Adadelta的一个特例，依然依赖于全局学习率。RMSprop效果趋于Adagrad和Adadelta之间，适合处理非平稳目标，适用于RNN的优化。</p>
+<h1 id="八、RMSProp"><a href="#八、RMSProp" class="headerlink" title="八、RMSProp"></a>八、RMSProp</h1><p>RMSProp可以算作Adadelta的一个特例，依然依赖于全局学习率。RMSProp效果趋于Adagrad和Adadelta之间，适合处理非平稳目标，适用于RNN的优化。</p>
 <p><strong>数学公式</strong><br>$$<br>h \leftarrow \alpha h + (1-\alpha)\frac {\partial L}{\partial W} \cdot \frac {\partial L}{\partial W}<br>$$</p>
 <p>$$<br>W \leftarrow W - \eta \frac {1}{\sqrt h}\frac {\partial L}{\partial W}<br>$$</p>
 <p><strong>代码实现</strong></p>
@@ -611,26 +612,19 @@
 <p>​    Adam会设置3个超参数。一个是学习率（论文中以α出现），另外两个是一次momentum系数$\beta_1$和二次momentum系数$\beta_2$。根据论文，标准的设定值是$\beta_1$为0.9， $\beta_2$ 为0.999。设置了这些值后，大多数情况下都能顺利运行。</p>
 <p>其中，$m_t$和$v_t$分别是对梯度的一阶和二阶矩估计，即对期望$E|g_t|$和$E|g_t^2|$的估计, $\hat m_t$、$\hat v_t$是对$m_t$和$v_t$的校正，近似为对期望的无偏估计。由公式可得，Adam算法可以根据梯度进行动态调整，对学习率有一个动态约束。<br>Adam算法的优点主要在于经过偏置校正后，每一次迭代学习率都有个确定的范围，使参数比较平稳；对内存需求较小，适用于大多数非凸优化问题，尤其适合处理大数据集和高维空间问题。</p>
 <p>原文： <a href="https://arxiv.org/abs/1412.6980" target="_blank" rel="noopener">https://arxiv.org/abs/1412.6980</a></p>
-<p><strong>特点</strong></p>
-<ol>
-<li>结合了AdaGrad善于处理稀疏梯度和RMSprop善于处理非平稳目标的优点</li>
-<li>对内存需求较小（指数加权平均不需要存储大量的值就能平均）</li>
-<li>为不同的参数计算不同的自适应学习率</li>
-<li>适用于大多非凸优化 - 适用于大数据集和高维空间</li>
-</ol>
 <h1 id="十、Nadam"><a href="#十、Nadam" class="headerlink" title="十、Nadam"></a>十、Nadam</h1><p>Nadam类似于带有Nesterov动量项的Adam。对学习率有了更强的约束，同时对梯度的更新也有更直接的影响。一般而言，使用带动量的RMSprop或者Adam的情况下，大多可以使用Nadam取得更好的效果。</p>
 <h1 id="十一、不同算法比较"><a href="#十一、不同算法比较" class="headerlink" title="十一、不同算法比较"></a>十一、不同算法比较</h1><p>​    <img src="v1.webp" alt></p>
 <p><img src="v2.webp" alt></p>
 <ol>
-<li>如果数据是稀疏的，就用自适应算法, 即AdaGrad, Adadelta, RMSProp, Adam</li>
+<li>如果数据是稀疏的，就用自适应算法, 即Adagrad, Adadelta, RMSProp, Adam</li>
 <li>RMSProp, Adadelta, Adam 在很多情况下的效果是相似的。</li>
 <li>Adam 就是在 RMSprop 的基础上加了 bias-correction 和 momentum，随着梯度变的稀疏，Adam 比 RMSprop 效果会好。</li>
 <li>SGD 虽然能达到极小值，但是比其它算法用的时间长，而且可能会被困在鞍点。</li>
 </ol>
-<h1 id="十二、参考"><a href="#十二、参考" class="headerlink" title="十二、参考"></a>十二、参考</h1><p>  《深度学习入门: 基于Python的理论与实现》</p>
-<p>​    《深度学习之图像识别：核心技术与案例实战》</p>
-<p>​    <a href="https://blog.csdn.net/qq_28031525/article/details/79535942" target="_blank" rel="noopener">https://blog.csdn.net/qq_28031525/article/details/79535942</a></p>
-<p>​    <a href="https://www.cnblogs.com/guoyaohua/p/8542554.html" target="_blank" rel="noopener">https://www.cnblogs.com/guoyaohua/p/8542554.html</a></p>
+<h1 id="十二、参考"><a href="#十二、参考" class="headerlink" title="十二、参考"></a>十二、参考</h1><p>《深度学习入门: 基于Python的理论与实现》</p>
+<p>《深度学习之图像识别：核心技术与案例实战》</p>
+<p><a href="https://blog.csdn.net/qq_28031525/article/details/79535942" target="_blank" rel="noopener">https://blog.csdn.net/qq_28031525/article/details/79535942</a></p>
+<p><a href="https://www.cnblogs.com/guoyaohua/p/8542554.html" target="_blank" rel="noopener">https://www.cnblogs.com/guoyaohua/p/8542554.html</a></p>
 
             </div>
             <hr />
@@ -1123,7 +1117,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="深度学习之过拟合">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="深度学习之过拟合">
                         
                         <span class="card-title">深度学习之过拟合</span>
                     </div>
@@ -1177,7 +1171,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Python中with的用法">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Python中with的用法">
                         
                         <span class="card-title">Python中with的用法</span>
                     </div>
@@ -1374,7 +1368,7 @@ f = open('test
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">59.2k</span>
+            <span class="white-color">59.1k</span>
             
 
             <br>
