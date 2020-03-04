@@ -1113,8 +1113,8 @@ p<span class="token operator">=</span>a<span class="token punctuation">;</span><
 <li><p>二级指针是指向指针的指针，而指针数组则是元素类型为指针的数组。虽然它们是不一样的，但是在表达式中，它们是等效的。</p>
 </li>
 </ul>
-<h2 id="14、字节序-大端、小端"><a href="#14、字节序-大端、小端" class="headerlink" title="14、字节序(大端、小端)"></a>14、字节序(大端、小端)</h2><p><strong>14.1 大端和小端</strong></p>
-<p>计算机的内存最小单位是字节。字节序是指多字节(大于1字节)数据的存储顺序，在设计计算机系统的时候，有两种处理内存中数据的方法：大端格式、小端格式。</p>
+<h2 id="14、字节序（大端、小端）"><a href="#14、字节序（大端、小端）" class="headerlink" title="14、字节序（大端、小端）"></a>14、字节序（大端、小端）</h2><p><strong>14.1 大端和小端</strong></p>
+<p>计算机的内存最小单位是字节。字节序是指多字节（大于1字节）数据的存储顺序，在设计计算机系统的时候，有两种处理内存中数据的方法：大端格式、小端格式。</p>
 <ul>
 <li><p>小端格式(Little-Endian)：将低位字节数据存储在低地址。X86和ARM都是小端对齐。</p>
 </li>
@@ -1182,7 +1182,7 @@ P q<span class="token punctuation">;</span> <span class="token comment" spellche
 <p>浅拷贝  不同结构体成员指针变量指向同一块内存</p>
 <p>深拷贝  不同结构体成员指针变量指向不同的内存</p>
 <p><strong>类</strong>:</p>
-<p>浅拷贝 类中有动态分配的空间的指针指向相同</p>
+<p>浅拷贝 类中有动态分配的空间的指针指向相同内存空间</p>
 <p>深拷贝 类中有动态分配的空间的指针指向不同的内存空间</p>
 <h2 id="17、-include-lt-gt-与-include-“”的区别"><a href="#17、-include-lt-gt-与-include-“”的区别" class="headerlink" title="17、#include&lt; &gt; 与 #include “”的区别"></a>17、#include&lt; &gt; 与 #include “”的区别</h2><ul>
 <li><p>“” 表示系统先在file1.c所在的当前目录找file1.h，如果找不到，再按系统指定的目录检索。</p>
