@@ -291,7 +291,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -450,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.6k
+                    10.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    35 分
+                    39 分
                 </div>
                 
                 
@@ -631,7 +631,8 @@
 <p><strong>2.3、查找程序所依赖的动态库</strong></p>
 <p>１）Linux平台下，<code>ldd</code>  可执行程序</p>
 <p>２）Windows平台下，需要相应软件(<code>Depends.exe</code>)</p>
-<h2 id="3、CPU内部结构与寄存器"><a href="#3、CPU内部结构与寄存器" class="headerlink" title="3、CPU内部结构与寄存器"></a>3、CPU内部结构与寄存器</h2><h3 id="3-1、CPU总线"><a href="#3-1、CPU总线" class="headerlink" title="3.1、CPU总线"></a>3.1、CPU总线</h3><p><strong>数据总线</strong></p>
+<h2 id="3、CPU内部结构与寄存器"><a href="#3、CPU内部结构与寄存器" class="headerlink" title="3、CPU内部结构与寄存器"></a>3、CPU内部结构与寄存器</h2><p><strong>3.1、CPU总线</strong></p>
+<p><strong>数据总线</strong></p>
 <p>（1） 是CPU与内存或其他器件之间的数据传送的通道。</p>
 <p>（2）数据总线的宽度决定了CPU和外界的数据传送速度。</p>
 <p>（3）每条传输线一次只能传输1位二进制数据。eg: 8根数据线一次可传送一个8位二进制数据（即一个字节）。</p>
@@ -648,7 +649,8 @@
 <p>（2）控制总线的宽度决定了CPU对外部器件的控制能力。</p>
 <p>（3）控制总线是控制线数量之和。</p>
 <p>控制总线，英文名称：ControlBus，简称：CB。控制总线主要用来传送控制信号和时序信号。控制信号中，有的是微处理器送往存储器和输入输出设备接口电路的，如读/写信号，片选信号、中断响应信号等；也有是其它部件反馈给CPU的</p>
-<h3 id="3-2、64位和32位系统区别"><a href="#3-2、64位和32位系统区别" class="headerlink" title="3.2、64位和32位系统区别"></a>3.2、64位和32位系统区别</h3><ul>
+<p><strong>3.2、64位和32位系统区别</strong></p>
+<ul>
 <li><p>寄存器是CPU内部最基本的存储单元</p>
 </li>
 <li><p>CPU的主要组成包括了运算器和控制器。运算器是由算术逻辑单元（ALU）、累加器、状态寄存器、通用寄存器组等组成。</p>
@@ -672,7 +674,8 @@
 <li><p>64位的软件不能运行在32位的CPU之上</p>
 </li>
 </ul>
-<h3 id="3-3、寄存器、缓存、内存三者关系"><a href="#3-3、寄存器、缓存、内存三者关系" class="headerlink" title="3.3、寄存器、缓存、内存三者关系"></a>3.3、寄存器、缓存、内存三者关系</h3><ol>
+<p><strong>3.3、寄存器、缓存、内存三者关系</strong></p>
+<ol>
 <li><p>寄存器是中央处理器内的组成部份。寄存器是有限存贮容量的高速存贮部件，它们可用来暂存指令、数据和位址。在中央处理器的控制部件中，包含的寄存器有指令寄存器(IR)和程序计数器(PC)。在中央处理器的算术及逻辑部件中，包含的寄存器有累加器(ACC)。</p>
 </li>
 <li><p>内存包含的范围非常广，一般分为只读存储器（ROM）、随机存储器（RAM）和高速缓存存储器（cache）。</p>
@@ -759,7 +762,8 @@
 <li>静态局部变量，生命周期由定义到程序运行结束，在编译时赋初值，<strong>只初始化一次，没有初始化会自动赋值0或空字符</strong>。只在当前{}内有效</li>
 <li>静态全局变量，生命周期由定义到程序运行结束，在编译时赋初值，只初始化一次，没有初始化会自动赋值0或空字符。从定义到文件结尾起作用，在一个程序中的其他文件中可以定义同名的静态全局变量，因为作用于不冲突。</li>
 </ol>
-<h3 id="5-3、extern"><a href="#5-3、extern" class="headerlink" title="5.3、extern"></a>5.3、extern</h3><ol>
+<p><strong>5.3、extern</strong></p>
+<ol>
 <li><p>外部变量声明，是指这是一个已在别的地方定义过的对象，这里只是对变量的一次重复引用，不会产生新的变量。</p>
 </li>
 <li><p>使用extern时，注意不能重复定义，否则编译报错</p>
@@ -1038,7 +1042,7 @@
 
 ## 9、C语言文本操作的区别
 
-### 9.1 二进制文件和文本文件
+**9.1 二进制文件和文本文件**
 
 
 
@@ -1056,7 +1060,7 @@
 
 - 在Unix/Linux平台下，“文本”与“二进制”模式没有区别，&quot;\r\n&quot; 作为两个字符原样输入输出
 
-### 9.2 文本结尾
+**9.2 文本结尾**
 
 在C语言中，EOF表示文件结束符(end of file)。在while循环中以EOF作为文件结束标志，这种以EOF作为文件结束标志的文件，必须是文本文件。在文本文件中，数据都是以字符的ASCII代码值的形式存放。我们知道，ASCII代码值的范围是0~127，不可能出现-1，因此可以用EOF作为文件结束标志。
 
@@ -1116,9 +1120,9 @@ p<span class="token operator">=</span>a<span class="token punctuation">;</span><
 <h2 id="14、字节序（大端、小端）"><a href="#14、字节序（大端、小端）" class="headerlink" title="14、字节序（大端、小端）"></a>14、字节序（大端、小端）</h2><p><strong>14.1 大端和小端</strong></p>
 <p>计算机的内存最小单位是字节。字节序是指多字节（大于1字节）数据的存储顺序，在设计计算机系统的时候，有两种处理内存中数据的方法：大端格式、小端格式。</p>
 <ul>
-<li><p>小端格式(Little-Endian)：将低位字节数据存储在低地址。X86和ARM都是小端对齐。</p>
+<li><p>小端格式（Little-Endian）：将低位字节数据存储在低地址。X86和ARM都是小端对齐。</p>
 </li>
-<li><p>大端格式(Big-Endian)：将高位字节数据存储在低地址。很多Unix服务器的CPU是大端对齐的、网络上数据是以大端对齐。</p>
+<li><p>大端格式（Big-Endian）：将高位字节数据存储在低地址。很多Unix服务器的CPU是大端对齐的、网络上数据是以大端对齐。</p>
 </li>
 </ul>
 <p><img src="03.png" alt></p>
@@ -1212,7 +1216,60 @@ P q<span class="token punctuation">;</span> <span class="token comment" spellche
 <p>在使用动态库的时候，往往提供两个文件：一个引入库（.lib）文件（也称“导入库文件”）和一个DLL（.dll）文件。 </p>
 <p>虽然引入库的后缀名也是“lib”，但是，动态库的引入库文件和静态库文件有着本质的区别，对一个DLL文件来说，其引入库文件（.lib）包含该DLL导出的函数和变量的符号名，而.dll文件包含该DLL实际的函数和数据。</p>
 <p>在使用动态库的情况下，在编译链接可执行文件时，只需要链接该DLL的引入库文件，该DLL中的函数代码和数据并不复制到可执行文件，直到可执行程序运行时，才去加载所需的DLL，将该DLL映射到进程的地址空间中，然后访问DLL中导出的函数。</p>
-<h1 id="二、C-篇"><a href="#二、C-篇" class="headerlink" title="二、C++篇"></a>二、C++篇</h1><h2 id="1、c语言和c-语言的关系"><a href="#1、c语言和c-语言的关系" class="headerlink" title="1、c语言和c++语言的关系"></a>1、c语言和c++语言的关系</h2><p>“c++”中的++来自于c语言中的递增运算符++，该运算符将变量加1。c++起初也叫”c with clsss”。通过名称表明，c++是对C的扩展，因此c++是c语言的超集，这意味着任何有效的c程序都是有效的c++程序。c++程序可以使用已有的c程序库。</p>
+<h1 id="二、Pythonp篇"><a href="#二、Pythonp篇" class="headerlink" title="二、Pythonp篇"></a>二、Pythonp篇</h1><h2 id="1、Python和C-的区别"><a href="#1、Python和C-的区别" class="headerlink" title="1、Python和C++的区别"></a>1、Python和C++的区别</h2><p><strong>1、应用领域</strong></p>
+<p>Python是一种简单、灵活、面向对象的编程语言，旨在优化开发速度，编写易于理解，重用和修改的软件。</p>
+<p>C++是C语言的扩展，它的核心应用领域是最广义的系统编程，最适用资源受限的应用的程序。</p>
+<p><strong>2、特性</strong></p>
+<p>​    强类型：不允许隐式类型转换，转换数据类型必须强制转换。例如不允许不同类型相加，整数+字符串，会报TypeError</p>
+<p>​    动态语言：不使用显式数据类型声明，在运行时确定数据类型，通常变量的类型是被赋值的那个值的类型。</p>
+<p>​    脚本语言：解释型语言，运行代码只需要一个解释器，不需要编译。</p>
+<p>Python是一门强类型的动态脚本语言。</p>
+<p>C++是静态类型语言和强类型语言。</p>
+<p><strong>3、效率</strong></p>
+<p>​    Python比C++执行效率低</p>
+<p>​    原因：</p>
+<ul>
+<li><p>解释型和编译型</p>
+<p>每次执行都要先翻译再执行，运行效率大大降低</p>
+</li>
+<li><p>动态类型</p>
+<p>为了支持动态类型，执行的时候要不断判断数据的类型，带来很大的开销</p>
+</li>
+<li><p>GIL</p>
+<p>同一时刻，只有一个线程在执行</p>
+</li>
+</ul>
+<p><strong>4、内存管理</strong></p>
+<p><strong>Python内存管理</strong></p>
+<p>Python：对于垃圾回收机制，python采用的是引用计数机制为主，分代收集机制为辅的策略。</p>
+<p>引用计数机制：在Python中，每个对象都保存了一个称为引用计数的整数值，来追踪到底有多少引用指向了这个对象。当一个对象被引用时引用计数加1，当一个对象被删除时引用计数减，当对象的引用计数为0时，Python将会释放这个对象以及回收相关内存空间。</p>
+<p>引用计数的优点：</p>
+<p>​    1.简单</p>
+<p>​    2.实时性，引用计数为0，内存就被释放了。处理回收内存的时间分摊到了平时。</p>
+<p>引用计数的缺点：</p>
+<p>​    1.维护引用计数需要消耗资源   </p>
+<p>​    2.循环引用导致内存泄漏。</p>
+<p>分代收集机制：Python使用一种链表来持续追踪活跃的对象。每次当你创建一个对象的时候，Python会将其加入零代链表，随后，Python会循环遍历零代列表上的每个对象，找出列表中每个互相引用的对象，根据规则减掉其引用计数。随着程序的运行，当python创建的对象与释放的对象达到某一个阀值是会把零代上的对象移动到一代中。</p>
+<p>小整数[-5,256]共用对象，常驻内存</p>
+<p>单个字符共用对象，常驻内存</p>
+<p>单个单词，默认开启intern机制，共用对象，引用计数为0，则销毁</p>
+<p>字符串（含有空格），不可修改，没开启intern机制，不共用对象，引用计数为0，销毁</p>
+<p>大整数不共用对象，引用计数为0，销毁</p>
+<p>数值类型和字符串类型在 Python中都是不可变的，这意味着你无法修改这个对象的值，每次对变量的修改，实际上是创建一个新的对象</p>
+<p><strong>C++内存管理</strong></p>
+<p>代码区（text segment）</p>
+<p>加载的是可执行文件代码段，所有的可执行代码都加载到代码区，这块内存是不可以在运行期间修改的。</p>
+<p>只读数据区（文字常量区 RO data）</p>
+<p>只读数区是程序使用的一些不会被更改的数据。一般是const修饰的变量以及程序中使用的文字常量。</p>
+<p>已初始化数据区 （RW data）</p>
+<p>加载的是可执行文件数据段，存储于数据段（全局初始化，静态初始化数据）的数据的生存周期为整个程序运行过程。</p>
+<p>未初始化数据区（BSS）</p>
+<p>加载的是可执行文件BSS段，位置可以分开亦可以紧靠数据段，存储于数据段的数据（全局未初始化，静态未初始化数据）的生存周期为整个程序运行过程。</p>
+<p>堆区（heap）</p>
+<p>堆是一个大容器，它的容量要远远大于栈，但没有栈那样先进后出的顺序。用于动态内存分配。堆在内存中位于BSS区和栈区之间。一般由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收。</p>
+<p>栈区（stack）</p>
+<p>栈是一种先进后出的内存结构，由编译器自动分配释放，存放函数的参数值、返回值、局部变量等。在程序运行过程中实时加载和释放，因此，局部变量的生存周期为申请到释放该段栈空间。</p>
+<h2 id="2、深度学习框架对比"><a href="#2、深度学习框架对比" class="headerlink" title="2、深度学习框架对比"></a>2、深度学习框架对比</h2><h1 id="二、C-篇"><a href="#二、C-篇" class="headerlink" title="二、C++篇"></a>二、C++篇</h1><h2 id="1、c语言和c-语言的关系"><a href="#1、c语言和c-语言的关系" class="headerlink" title="1、c语言和c++语言的关系"></a>1、c语言和c++语言的关系</h2><p>“c++”中的++来自于c语言中的递增运算符++，该运算符将变量加1。c++起初也叫”c with clsss”。通过名称表明，c++是对C的扩展，因此c++是c语言的超集，这意味着任何有效的c程序都是有效的c++程序。c++程序可以使用已有的c程序库。</p>
 <p>c++语言在c语言的基础上添加了<strong>面向对象编程</strong>和<strong>泛型编程</strong>的支持。c++继承了c语言高效，简洁，快速和可移植的传统。</p>
 <p>c++融合了3种不同的编程方式:</p>
 <ul>
@@ -1224,7 +1281,7 @@ P q<span class="token punctuation">;</span> <span class="token comment" spellche
 </li>
 </ul>
 <h2 id="2、左值和右值"><a href="#2、左值和右值" class="headerlink" title="2、左值和右值"></a>2、左值和右值</h2><p>判断是否是左值，有一个简单的方法，就是看看能否取它的地址，能取地址就是左值，否则就是右值。</p>
-<p>当一个对象成为右值时，使用的是它的值(内容), 而成为左值时，使用的是它的身份（在内存中的位置）。</p>
+<p>当一个对象成为右值时，使用的是它的值（内容）, 而成为左值时，使用的是它的身份（在内存中的位置）。</p>
 <p>平常所说的引用，实际上指的就是左值引用<code>lvalue reference</code>, 常用单个&amp;来表示。左值引用只能接收左值，不能接收右值。<strong>const关键字会让左值引用变得不同，它可以接收右值。</strong></p>
 <p><strong>为了支持移动操作，在c++11版本，增加了右值引用。</strong>右值引用一般用于绑定到一个即将销毁的对象，所以右值引用又通常出现在移动构造函数中。</p>
 <p>看完下面的例子，左值和右值基本就清楚了，左值具有持久的状态，有独立的内存空间，右值要么是字面常量，要么就是表达式求值过程中创建的临时对象</p>
@@ -1238,7 +1295,7 @@ const int &r3 = i*42; // const修饰的左值引用 正确
 int &&rr2 = i*42 ; // 右引用，绑定右值 正确<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3、c-对c的扩展"><a href="#3、c-对c的扩展" class="headerlink" title="3、c++对c的扩展"></a>3、c++对c的扩展</h2><p><strong>3.1 三目运算符</strong></p>
 <p>c语言三目运算表达式返回值为数据值，为右值，不能赋值。</p>
-<p>c++语言三目运算表达式返回值为变量本身(引用)，为左值，可以赋值。</p>
+<p>c++语言三目运算表达式返回值为变量本身（引用），为左值，可以赋值。</p>
 <pre class="line-numbers language-c++"><code class="language-c++">int a = 10;
 int b = 20;
 printf("ret:%d\n", a > b ? a : b);
@@ -1251,9 +1308,9 @@ cout << "b:" << b << endl;<span aria-hidden="true" class="line-numbers-rows"><sp
 <p><strong>3.2 bool</strong></p>
 <p>c++中新增bool类型关键字</p>
 <ul>
-<li>bool类型只有两个值，true(1)， false（0）</li>
+<li>bool类型只有两个值，true（1）， false（0）</li>
 <li>bool类型占1个字节</li>
-<li>给bool类型赋值时, 非0值会自动转换为true(1), 0值会自动转换为false（0）</li>
+<li>给bool类型赋值时, 非0值会自动转换为true（1）, 0值会自动转换为false（0）</li>
 </ul>
 <p>C语言中也有bool类型，在c99标准之前是没有bool关键字，c99标准已经有bool类型，包含头文件<code>stdbool.h</code>,就可以使用和c++一样的bool类型。</p>
 <p><strong>3.3 struct类型增强</strong></p>
@@ -1266,7 +1323,7 @@ cout << "b:" << b << endl;<span aria-hidden="true" class="line-numbers-rows"><sp
 <p><strong>3.4 更严格的类型转换</strong></p>
 <p>在C++中，不同类型的变量一般是不能直接赋值的，需要相应的强转。</p>
 <p>在C++中，所有的变量和函数都必须有类型</p>
-<p><strong>3.4 全局变量检测增强</strong></p>
+<p><strong>3.5 全局变量检测增强</strong></p>
 <pre class="line-numbers language-c++"><code class="language-c++">int a = 10; //赋值，当做定义
 int a; //没有赋值，当做声明
 
@@ -1276,8 +1333,8 @@ int main(){
 }
 
 // 上面的代码在c++下编译失败，在c下编译通过。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4、内部连接和外部连接"><a href="#4、内部连接和外部连接" class="headerlink" title="4、内部连接和外部连接"></a>4、内部连接和外部连接</h2><p>内部连接：如果一个名称对编译单元(.cpp)来说是局部的，在链接的时候其他的编译单元无法链接到它且不会与其它编译单元(.cpp)中的同样的名称相冲突。例如static函数，inline函数等（注 : 用static修饰的函数，本限定在本源码文件中，不能被本源码文件以外的代码文件调用。而普通的函数，默认是extern的，也就是说，可以被其它代码文件调用该函数。）</p>
-<p>外部连接：如果一个名称对编译单元(.cpp)来说不是局部的，而在链接的时候其他的编译单元可以访问它，也就是说它可以和别的编译单元交互。 例如全局变量就是外部链接 。</p>
+<h2 id="4、内部连接和外部连接"><a href="#4、内部连接和外部连接" class="headerlink" title="4、内部连接和外部连接"></a>4、内部连接和外部连接</h2><p>内部连接：如果一个名称对编译单元（.cpp）来说是局部的，在链接的时候其他的编译单元无法链接到它且不会与其它编译单元（.cpp）中的同样的名称相冲突。例如static函数，inline函数等（注 : 用static修饰的函数，本限定在本源码文件中，不能被本源码文件以外的代码文件调用。而普通的函数，默认是extern的，也就是说，可以被其它代码文件调用该函数。）</p>
+<p>外部连接：如果一个名称对编译单元（.cpp）来说不是局部的，而在链接的时候其他的编译单元可以访问它，也就是说它可以和别的编译单元交互。 例如全局变量就是外部链接 。</p>
 <h2 id="5、C-C-中const的区别"><a href="#5、C-C-中const的区别" class="headerlink" title="5、C/C++中const的区别"></a>5、C/C++中const的区别</h2><p>1、const全局变量</p>
 <p>c语言全局const会被存储到只读数据区。c++中全局const当声明extern或者对变量取地址时，编译器会分配存储地址，变量存储在只读数据段。两个都受到了只读数据区的保护，不可修改。</p>
 <pre class="line-numbers language-c++"><code class="language-c++">const int constA = 10;
@@ -1353,7 +1410,7 @@ cout << "pPerson->age:" << pPerson->age << endl;
 </li>
 <li><p>必须在声明引用变量时进行初始化。</p>
 </li>
-<li><p>引用初始化之后不能改变。</p>
+<li><p><strong>引用初始化之后不能改变。</strong></p>
 </li>
 <li><p>不能有NULL引用。必须确保引用是和一块合法的存储单元关联。</p>
 </li>
@@ -1397,7 +1454,7 @@ int main(){
 operator=也不能被继承，因为它完成类似构造函数的行为。</code></pre><p><strong>多态</strong></p>
 <pre><code>c++支持编译时多态(静态多态)和运行时多态(动态多态)，运算符重载和函数重载就是编译时多态，而派生类和虚函数实现运行时多态。
 
-静态多态和动态多态的区别就是函数地址是早绑定(静态联编)还是晚绑定(动态联编)。如果函数的调用，在编译阶段就可以确定函数的调用地址，并产生代码，就是静态多态(编译时多态)，就是说地址是早绑定的。而如果函数的调用地址不能编译不能在编译期间确定，而需要在运行时才能决定，这这就属于晚绑定(动态多态,运行时多态)。
+静态多态和动态多态的区别就是函数地址是早绑定(静态联编)还是晚绑定(动态联编)。如果在编译阶段就可以确定函数的调用地址，并产生代码，就是静态多态(编译时多态)，就是说地址是早绑定的。而如果函数的调用地址不能编译不能在编译期间确定，而需要在运行时才能决定，这这就属于晚绑定(动态多态,运行时多态)。
 
 多态性改善了代码的可读性和组织性，同时也使创建的程序具有可扩展性。</code></pre><p>​<br>​    C++的函数调用默认不使用动态绑定。要触发动态绑定，必须满足两个条件：<br>​        1、只有指定为虚函数的成员函数才能进行动态绑定<br>​        2、必须通过基类类型的引用或指针进行函数调用</p>
 <h2 id="9、C-编译器优化技术：RVO-NRVO和复制省略"><a href="#9、C-编译器优化技术：RVO-NRVO和复制省略" class="headerlink" title="9、C++编译器优化技术：RVO/NRVO和复制省略"></a>9、C++编译器优化技术：RVO/NRVO和复制省略</h2><p>现代编译器缺省会使用RVO（return value optimization，返回值优化）、NRVO（named return value optimization、命名返回值优化）和复制省略（Copy elision）技术，来减少拷贝次数来提升代码的运行效率</p>
@@ -2451,7 +2508,7 @@ void test()
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="机器学习之评估指标">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="机器学习之评估指标">
                         
                         <span class="card-title">机器学习之评估指标</span>
                     </div>
@@ -2500,20 +2557,19 @@ void test()
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/">
+                <a href="/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="深度学习之CNN模型演化">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="深度学习之超参数">
                         
-                        <span class="card-title">深度学习之CNN模型演化</span>
+                        <span class="card-title">深度学习之超参数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前沿一、LeNet1998年LeCun发布了[LeNet][http://www.dengfanxin.cn/wp-content/uploads/2016/03/1998Lecun.pdf]网络架构，从而揭开了深度学习的神秘面纱。
-​  
+                            一、什么是超参数​    超参数是我们在将学习算法应用于数据集之前需要设置的变量。超参数的一个挑战在于,它不存在适用于所有地方的万能数字,每个任务和数据集的最佳数字各不相同。​    一般来讲, 我们可以将超参数分为两类, 第一类是优化器超
                         
                     </div>
                     <div class="publish-info">
@@ -2702,7 +2758,7 @@ void test()
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">59.1k</span>
+            <span class="white-color">60.3k</span>
             
 
             <br>

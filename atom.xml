@@ -216,7 +216,7 @@
     <link href="https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/"/>
     <id>https://iace.fun/2020/01/03/c-he-c-yu-fa-zong-jie/</id>
     <published>2020-01-03T11:07:13.000Z</published>
-    <updated>2020-03-03T18:16:14.408Z</updated>
+    <updated>2020-03-05T03:40:45.935Z</updated>
     
     <summary type="html">
     
@@ -240,11 +240,11 @@
   </entry>
   
   <entry>
-    <title>深度学习之CNN模型演化</title>
-    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/"/>
-    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</id>
+    <title>深度学习之超参数</title>
+    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/"/>
+    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/</id>
     <published>2019-12-29T16:47:24.000Z</published>
-    <updated>2020-01-08T08:50:04.069Z</updated>
+    <updated>2019-12-30T15:48:40.922Z</updated>
     
     <summary type="html">
     
@@ -252,7 +252,7 @@
       
         
         
-          &lt;h1 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h1&gt;&lt;h1 id=&quot;一、LeNet&quot;&gt;&lt;a href=&quot;#一、LeNet&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;一、什么是超参数&quot;&gt;&lt;a href=&quot;#一、什么是超参数&quot; class=&quot;headerlink&quot; title=&quot;一、什么是超参数&quot;&gt;&lt;/a&gt;一、什么是超参数&lt;/h1&gt;&lt;p&gt;​   
         
       
     
@@ -268,11 +268,11 @@
   </entry>
   
   <entry>
-    <title>深度学习之超参数</title>
-    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/"/>
-    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/</id>
+    <title>深度学习之CNN模型演化</title>
+    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/"/>
+    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</id>
     <published>2019-12-29T16:47:24.000Z</published>
-    <updated>2019-12-30T15:48:40.922Z</updated>
+    <updated>2020-01-08T08:50:04.069Z</updated>
     
     <summary type="html">
     
@@ -280,7 +280,7 @@
       
         
         
-          &lt;h1 id=&quot;一、什么是超参数&quot;&gt;&lt;a href=&quot;#一、什么是超参数&quot; class=&quot;headerlink&quot; title=&quot;一、什么是超参数&quot;&gt;&lt;/a&gt;一、什么是超参数&lt;/h1&gt;&lt;p&gt;​   
+          &lt;h1 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h1&gt;&lt;h1 id=&quot;一、LeNet&quot;&gt;&lt;a href=&quot;#一、LeNet&quot; class=&quot;headerlink&quot;
         
       
     
@@ -489,9 +489,9 @@
     
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
-      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
   </entry>
   
