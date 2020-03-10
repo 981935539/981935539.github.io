@@ -410,12 +410,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/CV/" target="_blank">
-                            <span class="chip bg-color">CV</span>
-                        </a>
-                        
                         <a href="/tags/DL/" target="_blank">
                             <span class="chip bg-color">DL</span>
+                        </a>
+                        
+                        <a href="/tags/CV/" target="_blank">
+                            <span class="chip bg-color">CV</span>
                         </a>
                         
                     </div>
@@ -484,7 +484,7 @@
 <p>既然是对原图的每个像素进行分类， 那么将输出层的每一个像素点当作分类任务做一个Softmax即可。 即对于一张W*H*3的图片， 中间经过若干层卷积， 卷积的kernel大小为W*H， 最终通过一个W*H*C（C为之前定义好的类别个数） 的Softmax对原图的每一个像素进行分类， </p>
 <p>这种最简单解决方案的问题是中间卷积层尺度太大， 内存和计算量的消耗也非常大。  </p>
 <h2 id="2、FCN架构"><a href="#2、FCN架构" class="headerlink" title="2、FCN架构"></a>2、FCN架构</h2><p><img src="04.png" alt></p>
-<p>在2015年， Long、 Shelhamer、 Darrell和Noh等人提出了在卷积神经网络内部使用下采样和上采样结合的方式实现图片的语义分割， 该方案的大体结构如上图所示。 在这个过程中， 下采样主要是通过我们之前学习过的Pooling（池化） 和调整卷积的stride（步幅） 来实现的， 上采样的过程其实就是与下采样相反， 主要包括Unpooling（反池化）和Deconvolution（转置卷积） 两种方式。 </p>
+<p>在2015年， Long、 Shelhamer、 Darrell和Noh等人提出了在卷积神经网络内部使用下采样和上采样结合的方式实现图片的语义分割， 该方案的大体结构如上图所示。 在这个过程中， 下采样主要是通过我们之前学习过的Pooling（池化） 和调整卷积的stride（步幅） 来实现的， 上采样的过程其实就是与下采样相反， 主要包括Unpooling（反池化）和Deconvolution（转置卷积） 两种方式。 FCN采用的是最大池化下采样和转置卷积和双线性插值进行上采样。</p>
 <p><img src="05.png" alt></p>
 <p>上图给出了几种常见的Unpooling方法， 其中a和简单易懂， 这里不做赘述， 值得一提的是c中Max Unpooling的方式， 若使用该方法， 则需要在下采样Max Pooling时记录对应Max元素的位置， 在Unpooling的时候将每个元素写回到对应的位置上。 所以，这种方式需要注意下采样和上采样过程对应的问题。 </p>
 <p>不论是Unpooling方式还是Deconvolution的方式， 关键层都是以卷积的方式进行操作， 不涉及类似全连接这种操作， 因此我们通常称这种网络为全卷积网络（Full Connected Network， <a href="https://arxiv.org/abs/1411.4038]" target="_blank" rel="noopener">FCN</a>） 。 </p>
@@ -493,9 +493,9 @@
 <p>跳跃融合是为了获得更加精细的分割结果，我们先看下图：</p>
 <p>整个FCN网络基本原理如图<strong>（只是原理示意图）</strong>：</p>
 <ol>
-<li>image经过多个conv和+一个max pooling变为pool1 feature，宽高变为1/2</li>
-<li>pool1 feature再经过多个conv+一个max pooling变为pool2 feature，宽高变为1/4</li>
-<li>pool2 feature再经过多个conv+一个max pooling变为pool3 feature，宽高变为1/8</li>
+<li>image经过多个conv和一个max pooling变为pool1 feature，宽高变为1/2</li>
+<li>pool1 feature再经过多个conv一个max pooling变为pool2 feature，宽高变为1/4</li>
+<li>pool2 feature再经过多个conv一个max pooling变为pool3 feature，宽高变为1/8</li>
 <li>……</li>
 <li>直到pool5 feature，宽高变为1/32。</li>
 </ol>
@@ -529,7 +529,7 @@
 <p><img src="08.png" alt></p>
 <p>SegNet与FCN类似，也移除了全连接层，不同的是，采用了编码器-解码器结构，在上采样和下采样中使用了不同的方法。</p>
 <p>SegNet的编码器部分使用的是VGG16的前13层卷积网络,每个编码器层都对应一个解码器层,最终解码器的输出被送入soft-max分类器以独立的为每个像素产生类概率。</p>
-<p>每个编码器由数个蓝色层(卷积层,批归一化层,RELU层)以及一个Pooling层(2x2窗口,步进2,最大池化)组成,输出相当于系数为2的下采样。</p>
+<p>每个编码器由数个蓝色层（卷积层,批归一化层,RELU层）以及一个Pooling层（2x2窗口,步进2,最大池化）组成,输出相当于系数为2的下采样。</p>
 <p><strong>创新点</strong>:</p>
 <p>在 encoder 部分的最大池化操作时<strong>记录了最大值所在位置（索引）</strong>，然后在 decoder upsampling时直接将数据放在原先的位置，，这样在上采样阶段就无需学习。上采样后得到的是一个稀疏特征图，再通过普通的卷积得到稠密特征图，再重复上采样。SegNet 主要比较的是 FCN，FCN解码时用transposed convolutions+双线性插值来获得特征图，再和对应 encoder 的特征图相加得到输出。SegNet 的优势就在于不用保存整个 encoder 部分的特征图，只需保存池化索引，节省内存空间；第二个是不用反卷积，上采样阶段无需学习，尽管上采样完以后还要卷积学习。</p>
 <p><img src="09.png" alt></p>
@@ -1134,12 +1134,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CV/" target="_blank">
-                        <span class="chip bg-color">CV</span>
-                    </a>
-                    
                     <a href="/tags/DL/" target="_blank">
                         <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                    <a href="/tags/CV/" target="_blank">
+                        <span class="chip bg-color">CV</span>
                     </a>
                     
                 </div>
@@ -1301,7 +1301,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">60.3k</span>
+            <span class="white-color">60.4k</span>
             
 
             <br>

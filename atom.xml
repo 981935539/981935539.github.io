@@ -73,7 +73,7 @@
     <link href="https://iace.fun/2020/01/12/ji-suan-ji-shi-jue-zhi-fen-ge/"/>
     <id>https://iace.fun/2020/01/12/ji-suan-ji-shi-jue-zhi-fen-ge/</id>
     <published>2020-01-12T07:37:02.000Z</published>
-    <updated>2020-03-10T09:49:44.532Z</updated>
+    <updated>2020-03-10T10:45:43.718Z</updated>
     
     <summary type="html">
     
@@ -90,9 +90,9 @@
       <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
     
   </entry>
   
@@ -118,9 +118,9 @@
       <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
     
   </entry>
   
@@ -147,9 +147,9 @@
       <category term="计算机视觉" scheme="https://iace.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
-    
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
+    
+      <category term="CV" scheme="https://iace.fun/tags/CV/"/>
     
   </entry>
   
@@ -175,9 +175,9 @@
       <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
       <category term="Python" scheme="https://iace.fun/tags/Python/"/>
     
@@ -205,9 +205,9 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
   </entry>
   
@@ -240,11 +240,11 @@
   </entry>
   
   <entry>
-    <title>深度学习之超参数</title>
-    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/"/>
-    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/</id>
+    <title>深度学习之CNN模型演化</title>
+    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/"/>
+    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</id>
     <published>2019-12-29T16:47:24.000Z</published>
-    <updated>2019-12-30T15:48:40.922Z</updated>
+    <updated>2020-01-08T08:50:04.069Z</updated>
     
     <summary type="html">
     
@@ -252,7 +252,7 @@
       
         
         
-          &lt;h1 id=&quot;一、什么是超参数&quot;&gt;&lt;a href=&quot;#一、什么是超参数&quot; class=&quot;headerlink&quot; title=&quot;一、什么是超参数&quot;&gt;&lt;/a&gt;一、什么是超参数&lt;/h1&gt;&lt;p&gt;​   
+          &lt;h1 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h1&gt;&lt;h1 id=&quot;一、LeNet&quot;&gt;&lt;a href=&quot;#一、LeNet&quot; class=&quot;headerlink&quot;
         
       
     
@@ -268,11 +268,11 @@
   </entry>
   
   <entry>
-    <title>深度学习之CNN模型演化</title>
-    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/"/>
-    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-cnn-mo-xing-yan-hua/</id>
+    <title>深度学习之超参数</title>
+    <link href="https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/"/>
+    <id>https://iace.fun/2019/12/30/shen-du-xue-xi-zhi-chao-can-shu/</id>
     <published>2019-12-29T16:47:24.000Z</published>
-    <updated>2020-01-08T08:50:04.069Z</updated>
+    <updated>2019-12-30T15:48:40.922Z</updated>
     
     <summary type="html">
     
@@ -280,7 +280,7 @@
       
         
         
-          &lt;h1 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h1&gt;&lt;h1 id=&quot;一、LeNet&quot;&gt;&lt;a href=&quot;#一、LeNet&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;一、什么是超参数&quot;&gt;&lt;a href=&quot;#一、什么是超参数&quot; class=&quot;headerlink&quot; title=&quot;一、什么是超参数&quot;&gt;&lt;/a&gt;一、什么是超参数&lt;/h1&gt;&lt;p&gt;​   
         
       
     
@@ -455,9 +455,9 @@
       <category term="深度学习" scheme="https://iace.fun/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
       <category term="ANN" scheme="https://iace.fun/tags/ANN/"/>
     
@@ -487,9 +487,9 @@
       <category term="机器学习" scheme="https://iace.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
       <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
