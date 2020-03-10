@@ -293,7 +293,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -487,7 +487,7 @@
 <p>在2015年， Long、 Shelhamer、 Darrell和Noh等人提出了在卷积神经网络内部使用下采样和上采样结合的方式实现图片的语义分割， 该方案的大体结构如上图所示。 在这个过程中， 下采样主要是通过我们之前学习过的Pooling（池化） 和调整卷积的stride（步幅） 来实现的， 上采样的过程其实就是与下采样相反， 主要包括Unpooling（反池化）和Deconvolution（转置卷积） 两种方式。 </p>
 <p><img src="05.png" alt></p>
 <p>上图给出了几种常见的Unpooling方法， 其中a和简单易懂， 这里不做赘述， 值得一提的是c中Max Unpooling的方式， 若使用该方法， 则需要在下采样Max Pooling时记录对应Max元素的位置， 在Unpooling的时候将每个元素写回到对应的位置上。 所以，这种方式需要注意下采样和上采样过程对应的问题。 </p>
-<p>不论是Unpooling方式还是Deconvolution的方式， 关键层都是以卷积的方式进行操作， 不涉及类似全连接这种操作， 因此我们通常称这种网络为全卷积网络（Full Connected Network， [FCN][<a href="https://arxiv.org/abs/1411.4038]）" target="_blank" rel="noopener">https://arxiv.org/abs/1411.4038]）</a> 。 </p>
+<p>不论是Unpooling方式还是Deconvolution的方式， 关键层都是以卷积的方式进行操作， 不涉及类似全连接这种操作， 因此我们通常称这种网络为全卷积网络（Full Connected Network， <a href="https://arxiv.org/abs/1411.4038]" target="_blank" rel="noopener">FCN</a>） 。 </p>
 <h2 id="3、跳跃融合"><a href="#3、跳跃融合" class="headerlink" title="3、跳跃融合"></a>3、跳跃融合</h2><p>论文示图：</p>
 <p><img src="07.png" alt></p>
 <p>跳跃融合是为了获得更加精细的分割结果，我们先看下图：</p>
@@ -1052,7 +1052,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="设计模式之单例模式">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="设计模式之单例模式">
                         
                         <span class="card-title">设计模式之单例模式</span>
                     </div>
@@ -1104,7 +1104,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="上采样之转置卷积">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="上采样之转置卷积">
                         
                         <span class="card-title">上采样之转置卷积</span>
                     </div>
