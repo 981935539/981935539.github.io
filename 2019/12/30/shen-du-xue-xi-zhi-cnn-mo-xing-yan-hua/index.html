@@ -8,8 +8,11 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="前沿一、LeNet1998年LeCun发布了[LeNet][http://www.dengfanxin.cn/wp-content/uploads/2016/03/1998Lecun.pdf]网络架构，从而揭开了深度学习的神秘面纱。
-​  ">
+    <meta name="description" content="前沿一、LeNet1998年LeCun发布了LeNet网络架构，从而揭开了深度学习的神秘面纱。
+​    
+和“现在的CNN”相比， LeNet有几个不同点。
+
+第一个不同点在于激活函数。 LeNet中使用sigmoid函数，而现在的CNN">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -473,7 +476,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h1><h1 id="一、LeNet"><a href="#一、LeNet" class="headerlink" title="一、LeNet"></a>一、LeNet</h1><p>1998年LeCun发布了[LeNet][<a href="http://www.dengfanxin.cn/wp-content/uploads/2016/03/1998Lecun.pdf]网络架构，从而揭开了深度学习的神秘面纱。" target="_blank" rel="noopener">http://www.dengfanxin.cn/wp-content/uploads/2016/03/1998Lecun.pdf]网络架构，从而揭开了深度学习的神秘面纱。</a></p>
+                <h1 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h1><h1 id="一、LeNet"><a href="#一、LeNet" class="headerlink" title="一、LeNet"></a>一、LeNet</h1><p>1998年LeCun发布了<a href="http://www.dengfanxin.cn/wp-content/uploads/2016/03/1998Lecun.pdf" target="_blank" rel="noopener">LeNet</a>网络架构，从而揭开了深度学习的神秘面纱。</p>
 <p>​    <img src="c1.png" alt></p>
 <p>和“现在的CNN”相比， LeNet有几个不同点。</p>
 <ul>
@@ -556,7 +559,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="二、AlexNet"><a href="#二、AlexNet" class="headerlink" title="二、AlexNet"></a>二、AlexNet</h1><p>2012年，Alex Krizhevsky发表了AlexNet，相对比LeNet它的网络层次更加深，从LeNet的5层到AlexNet的8层，更重要的是AlexNet还赢得了2012年的ImageNet竞赛的第一。AlexNet不仅比LeNet的神经网络层数更多更深，并且可以学习更复杂的图像高维特征。</p>
 <p>​    <img src="c2.png" alt></p>
-<p>AlexNet叠有多个卷积层和池化层，最后经由全连接层输出结果。虽然<br>结构上AlexNet和LeNet没有大的不同，但有以下几点差异。</p>
+<p>AlexNet叠有多个卷积层和池化层，最后经由全连接层输出结果。虽然结构上AlexNet和LeNet没有大的不同，但有以下几点差异。</p>
 <ul>
 <li>激活函数使用ReLU。</li>
 <li>使用进行局部正规化的LRN（Local Response Normalization）层</li>
@@ -1014,12 +1017,11 @@ plt<span class="token punctuation">.</span>legend<span class="token punctuation"
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="八、Inception-v4-和-Inception-ResNet"><a href="#八、Inception-v4-和-Inception-ResNet" class="headerlink" title="八、Inception v4 和 Inception-ResNet"></a>八、Inception v4 和 Inception-ResNet</h1><p>2016年2月</p>
-<p>Inception v4 和 Inception -ResNet 在同一篇论文[《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》][<a href="https://arxiv.org/abs/1602.07261].首先说明一下Inception" target="_blank" rel="noopener">https://arxiv.org/abs/1602.07261].首先说明一下Inception</a> v4<strong>没有</strong>使用残差学习的思想, 而出自同一篇论文的Inception-Resnet-v1和Inception-Resnet-v2才是Inception module与残差学习的结合产物。Inception-ResNet和Inception v4网络结构都是基于Inception v3的改进。</p>
+<p>Inception v4 和 Inception -ResNet 在同一篇论文<a href="https://arxiv.org/abs/1602.07261" target="_blank" rel="noopener">《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》</a>.首先说明一下Inception v4<strong>没有</strong>使用残差学习的思想, 而出自同一篇论文的Inception-Resnet-v1和Inception-Resnet-v2才是Inception module与残差学习的结合产物。Inception-ResNet和Inception v4网络结构都是基于Inception v3的改进。</p>
 <p><strong>Inception v4中的三个基本模块</strong>：</p>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v1.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v2.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v3.png" width="180" height="240"></div><br><br><br><br><br><br><br><br><br><br><br><br>
-
 
 
 
@@ -1047,12 +1049,10 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 
 
 
-
 <p><strong>Inception-Resnet-v1基本模块</strong>：</p>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v4.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v5.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v6.png" width="180" height="240"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
 
 
 
@@ -1093,12 +1093,15 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 
 
 
-
 <p><strong>Inception-Resnet-v2基本模块：</strong>：</p>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v7.png" width="180" height="240"></div>
 <div style="float:left;border:solid 1px 000;margin:2px;"><img src="v8.png" width="180" height="240"></div><div style="float:left;border:solid 1px 000;margin:2px;"><img src="v9.png" width="180" height="240"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+Inception-Resnet-v2网络结构同Inception-Resnet-v1，Stem模块同Inception v4
 
-<p>Inception-Resnet-v2网络结构同Inception-Resnet-v1，Stem模块同Inception v4</p>
+
+
+
+
 <h1 id="九、Xception"><a href="#九、Xception" class="headerlink" title="九、Xception"></a>九、Xception</h1><p>2016年８月</p>
 <p><a href="https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1610.02357" target="_blank" rel="noopener">Xception</a>是google继Inception后提出的对Inception v3的另一种改进，主要是采用depthwise separable convolution来替换原来Inception v3中的卷积操作。</p>
 <p><strong>结构的变形过程如下</strong>：</p>
@@ -1128,9 +1131,9 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <p>Depthwise Separable Convolution：</p>
 <p>​    第一步：Depthwise 卷积，对输入的每个channel，分别进行 3×3 卷积操作，并将结果 concat。</p>
 <p>​    第二步：Pointwise 卷积，对 Depthwise 卷积中的 concat 结果，进行 1×1卷积操作。</p>
-<p>两种操作的循序不一致：Inception 先进行 1×1卷积，再进行 3×3卷积；Depthwise Separable Convolution 先进行 3×3卷积，再进行 1×11×1 卷积。</p>
+<p>两种操作的循序不一致：Inception 先进行 1×1卷积，再进行 3×3卷积；Depthwise Separable Convolution 先进行 3×3卷积，再进行1×1 卷积。</p>
 <h1 id="十-、DenseNet"><a href="#十-、DenseNet" class="headerlink" title="十 、DenseNet"></a>十 、DenseNet</h1><p>2016年8yue</p>
-<p>[DenseNe][<a href="https://arxiv.org/abs/1608.06993]的基本思路与ResNet一致，但是它建立的是前面所有层与后面层的密集连接（dense" target="_blank" rel="noopener">https://arxiv.org/abs/1608.06993]的基本思路与ResNet一致，但是它建立的是前面所有层与后面层的密集连接（dense</a> connection），它的名称也是由此而来。DenseNet的另一大特色是通过特征在channel上的连接来实现特征重用（feature reuse）。这些特点让DenseNet在参数和计算成本更少的情形下实现比ResNet更优的性能，DenseNet也因此斩获CVPR 2017的最佳论文奖。</p>
+<p><a href="https://arxiv.org/abs/1608.06993" target="_blank" rel="noopener">DenseNe</a>的基本思路与ResNet一致，但是它建立的是前面所有层与后面层的密集连接（dense connection），它的名称也是由此而来。DenseNet的另一大特色是通过特征在channel上的连接来实现特征重用（feature reuse）。这些特点让DenseNet在参数和计算成本更少的情形下实现比ResNet更优的性能，DenseNet也因此斩获CVPR 2017的最佳论文奖。</p>
 <p><img src="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8BCNN%E6%A8%A1%E5%9E%8B%E6%BC%94%E5%8C%96/d1.png" alt></p>
 <p><strong>设计理念</strong></p>
 <p>相比ResNet，DenseNet提出了一个更激进的密集连接机制：即互相连接所有的层，具体来说就是<strong>每个层都会接受其前面所有层作为其额外的输入</strong>。ResNet是每个层与前面的某层（一般是2~3层）短路连接在一起，连接方式是通过<strong>元素级</strong>相加。而在DenseNet中，每个层都会与前面所有层在channel维度上连接（concat）在一起（这里各个层的特征图大小是相同的，后面会有说明），并作为下一层的输入。对于一个 $L$层的网络，DenseNet共包含 $\frac{L(L+1)}{2}$个连接，相比ResNet，这是一种密集连接。而且DenseNet是直接concat来自不同层的特征图，这可以实现特征重用，提升效率，这一特点是DenseNet与ResNet最主要的区别。</p>
