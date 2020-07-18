@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>线性代数笔记</title>
+      <link href="/2020/07/18/xian-xing-dai-shu-bi-ji/"/>
+      <url>/2020/07/18/xian-xing-dai-shu-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、单位向量"><a href="#一、单位向量" class="headerlink" title="一、单位向量"></a>一、单位向量</h1><p>单位向量是指模等于1的向量，由于是非零向量，单位向量具有确定的方向。单位向量有无数个。</p><p>一个非零向量除以它的模，可得所需单位向量。设原来的向量是$\vec{AB}$，则与它方向相同的单位向量$e = \frac{\vec{AB}}{|AB|}$。一个单位向量的平面直角坐标系上的坐标表示可以是：$(n, k)$, 则有 $n^2 + k^2 = 1$。</p><h1 id="二、点乘和叉乘"><a href="#二、点乘和叉乘" class="headerlink" title="二、点乘和叉乘"></a>二、点乘和叉乘</h1><p><strong>向量的点乘</strong></p><p>向量的点乘又称为内积，设两个向量为 $\vec{A} = \{ x_1, x_2, x_3,…,x_n \}$，$\vec{B} = \{y_1,y_2,y_3,…,y_n\}$，</p><p>向量的点乘结果为对应子项的乘积和，也就是<br>$$<br>\vec{A} \cdot \vec{B} = x_1 <em> y_1 + x_2 </em> y_2 + x_3 <em> y_3 +,…, + x_n </em> y_n<br>$$<br>点乘结果为一个数值。向量点乘的另一种表达式为 $\vec{A} \cdot \vec{B} = |A||B|cos\theta$。该形式表明，当两个向量的夹角为90度时，两向量的点乘结果为0，此时两向量互相垂直，或者也可以称为两向量正交（0向量和任何向量都正交）。从第二种表达式中，还可以发现$|A|cos\theta$ 就是 A 在 B 上的投影，那么点乘就是 A 在 B 上的投影乘以 B 的长度，可以理解为用来体现两个向量平行程度的大小，当两向量垂直时，平行度最小，值为0。</p><p><strong>向量的叉乘</strong></p><p>设向量$\vec{A} = \{a_1, a_2, a_3\}, \vec{B}=\{b_1, b_2, b_3\}$<br>$$<br>\vec{A} \times \vec{B} =\begin{vmatrix} i &amp; j &amp; k \\ a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3 \end{vmatrix} = \begin{vmatrix} a_2 &amp; a_3 \\ b_2 &amp; b_3\end{vmatrix}i - \begin{vmatrix} a_1 &amp; a_3 \\ b_1 &amp; b_3\end{vmatrix}j + \begin{vmatrix} a_1 &amp; a_2 \\ b_1 &amp; b_2\end{vmatrix}k<br>$$<br>叉乘的向量是一个向量，向量的模是向量A，B组成平行四边形的面积；向量方向是垂直于向量A，B组成的平面。向量叉乘的模另一种表达式为$|\vec{A} \times \vec{B}| = |A||B|sin\theta$, 类似的$|A|sin\theta$就是A在B垂直方向上的分量，所以两向量的叉乘可以表示向量的垂直程度。当两个向量平行时，叉乘值为0，也就是垂直程度最小。</p><p>假设 <strong>A</strong> 和 <strong>B</strong> 的叉乘结果为 <strong>C</strong>，则 <strong>C</strong> 向量分别和 <strong>A</strong> ，<strong>B</strong> 正交，<strong>C</strong> 的方向可以由右手守则来判定。用右手食指指向 <strong>A</strong>，中指指向 <strong>B</strong>，此时大拇指的方向就是 <strong>C</strong> 的方向。</p><h1 id="三、正交矩阵"><a href="#三、正交矩阵" class="headerlink" title="三、正交矩阵"></a>三、正交矩阵</h1><p>如果：$AA^T = E$ 或 $A^T A=E$，则n阶实矩阵A称为正交矩阵，若A为正交矩阵，则满足以下条件：</p><p>1）$A^t是正交矩阵$</p><p>2）A的各行是单位向量且两两正交。</p><p>3）A的各列是单位矩阵且两两正交。</p><p>4）$|A|=1 或 -1$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高数 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>深度学习之激活函数</title>
       <link href="/2020/01/18/shen-du-xue-xi-zhi-ji-huo-han-shu/"/>
       <url>/2020/01/18/shen-du-xue-xi-zhi-ji-huo-han-shu/</url>
@@ -452,9 +471,9 @@
             
             <tag> DL </tag>
             
-            <tag> AI </tag>
-            
             <tag> ML </tag>
+            
+            <tag> AI </tag>
             
         </tags>
       

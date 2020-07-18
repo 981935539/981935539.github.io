@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iace.fun/"/>
-  <updated>2020-03-31T03:28:18.854Z</updated>
+  <updated>2020-07-18T16:34:09.526Z</updated>
   <id>https://iace.fun/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线性代数笔记</title>
+    <link href="https://iace.fun/2020/07/18/xian-xing-dai-shu-bi-ji/"/>
+    <id>https://iace.fun/2020/07/18/xian-xing-dai-shu-bi-ji/</id>
+    <published>2020-07-18T13:05:03.000Z</published>
+    <updated>2020-07-18T16:34:09.526Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、单位向量&quot;&gt;&lt;a href=&quot;#一、单位向量&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="高数" scheme="https://iace.fun/categories/%E9%AB%98%E6%95%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>深度学习之激活函数</title>
@@ -489,9 +513,9 @@
     
       <category term="DL" scheme="https://iace.fun/tags/DL/"/>
     
-      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
-    
       <category term="ML" scheme="https://iace.fun/tags/ML/"/>
+    
+      <category term="AI" scheme="https://iace.fun/tags/AI/"/>
     
   </entry>
   
@@ -550,36 +574,6 @@
       <category term="Make" scheme="https://iace.fun/tags/Make/"/>
     
       <category term="C++" scheme="https://iace.fun/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo+Github博客搭建</title>
-    <link href="https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/"/>
-    <id>https://iace.fun/2019/11/15/hexo-github-bo-ke-da-jian/</id>
-    <published>2019-11-14T19:02:58.000Z</published>
-    <updated>2019-11-18T09:12:25.933Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://iace.fun/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Github" scheme="https://iace.fun/tags/Github/"/>
-    
-      <category term="Hexo" scheme="https://iace.fun/tags/Hexo/"/>
-    
-      <category term="node.js" scheme="https://iace.fun/tags/node-js/"/>
     
   </entry>
   

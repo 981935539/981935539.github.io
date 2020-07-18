@@ -4,12 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="深度学习之优化算法, Ace 自然语言处理 深度学习">
+    <meta name="keywords" content="线性代数笔记, Ace 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="一、最优化神经网络的学习的目的是找到使损失函数的值尽可能小的参数。这是寻找最优参数的问题，解决这个问题的过程称为最优化（optimization）。常见的最优化方法有梯度下降法、牛顿法、拟牛顿法和共轭梯度法等。
-二、梯度下降法梯度下降法是使">
+    <meta name="description" content="一、单位向量单位向量是指模等于1的向量，由于是非零向量，单位向量具有确定的方向。单位向量有无数个。
+一个非零向量除以它的模，可得所需单位向量。设原来的向量是$\vec{AB}$，则与它方向相同的单位向量$e = \frac{\vec{AB}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>深度学习之优化算法 | 杨青海的博客</title>
+    <title>线性代数笔记 | 杨青海的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -291,13 +291,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        深度学习之优化算法
+                        线性代数笔记
                     </div>
                 </div>
             </div>
@@ -407,15 +407,7 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/DL/" target="_blank">
-                            <span class="chip bg-color">DL</span>
-                        </a>
-                        
-                        <a href="/tags/Python/" target="_blank">
-                            <span class="chip bg-color">Python</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
@@ -424,8 +416,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/深度学习/" class="post-category" target="_blank">
-                            深度学习
+                        <a href="/categories/高数/" class="post-category" target="_blank">
+                            高数
                         </a>
                         
                     </div>
@@ -436,7 +428,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2020-07-18
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -450,14 +442,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    710
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    2 分
                 </div>
                 
                 
@@ -473,158 +465,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、最优化"><a href="#一、最优化" class="headerlink" title="一、最优化"></a>一、最优化</h1><p>神经网络的学习的目的是找到使损失函数的值尽可能小的参数。这是寻找最优参数的问题，解决这个问题的过程称为最优化（optimization）。常见的最优化方法有梯度下降法、牛顿法、拟牛顿法和共轭梯度法等。</p>
-<h1 id="二、梯度下降法"><a href="#二、梯度下降法" class="headerlink" title="二、梯度下降法"></a>二、梯度下降法</h1><p>梯度下降法是使用最广泛的最优化方法，在目标函数是凸函数的时候可以得到全局解。</p>
-<p>使用参数的梯度，沿梯度反方向更新参数，并重复这个步骤多次，从而逐渐靠近最优参数，这个过程称为梯度下降法，也被称为“最速下降法”。</p>
-<p>最速下降法越接近目标值的时候，需要步长越小，前进越慢，否则就会越过最优点。通常在机器学习优化任务中，有两种常用的梯度下降方法，分别是随机梯度下降法和批量梯度下降法。</p>
-<p>所谓批量梯度下降（Batch gradient descent），就是使用所有的训练样本计算梯度，梯度计算稳定，可以求得全局最优解，但问题是计算非常慢，往往因为资源问题不可能实现。</p>
-<p>所谓随机梯度下降（Stochastic gradient descent），就是每次只取一个样本进行梯度的计算，它的问题是梯度计算相对不稳定，容易震荡，不过整体上还是趋近于全局最优解的，所以最终的结果往往是在全局最优解附近。</p>
-<p>通常我们训练的时候会进行折中，即从训练集中随机取一部分样本进行迭代，这就是常说的mini-batch训练了。</p>
-<h1 id="三、牛顿法、拟牛顿法和共轭梯度法"><a href="#三、牛顿法、拟牛顿法和共轭梯度法" class="headerlink" title="三、牛顿法、拟牛顿法和共轭梯度法"></a>三、牛顿法、拟牛顿法和共轭梯度法</h1><p>梯度下降法是基于一阶的梯度进行优化的方法，牛顿法则是基于二阶梯度的方法，通常有更快的收敛速度。该算法利用局部一阶和二阶的偏导信息，推测整个函数的形状，进而求得近似函数的全局最小值，然后将当前最小值设定成近似函数的最小值。</p>
-<p>不过牛顿法作为一种迭代算法，每一步都需要求解目标函数的Hessian矩阵的逆矩阵，计算比较复杂。当Hessian矩阵不可逆时无法计算，矩阵的逆计算复杂度为$n^2$，当问题规模比较大时，计算量很大。</p>
-<p>拟牛顿法通过用正定矩阵来近似Hessian矩阵的逆，不需要二阶导数的信息，简化了运算的复杂度。</p>
-<p>共轭梯度法是一种通过迭代下降的共轭方向来避免Hessian矩阵求逆计算的方法，介于最速下降法与牛顿法之间。</p>
-<h1 id="四、SGD"><a href="#四、SGD" class="headerlink" title="四、SGD"></a>四、SGD</h1><p>深度学习中的SGD指mini-batch gradient descent。 在训练过程中，采用固定的学习率.</p>
-<p>数学公式<br>$$<br>W \leftarrow W - \eta \frac {\partial L}{\partial W}<br>$$</p>
-<p><strong>代码实现</strong></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">SGD</span><span class="token punctuation">:</span>
-
-    <span class="token triple-quoted-string string">"""随机梯度下降法（Stochastic Gradient Descent）"""</span>
-
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>lr <span class="token operator">=</span> lr
-
-    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> params<span class="token punctuation">,</span> grads<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        更新权重
-        :param params: 权重, 字典，params['W1'], ..
-        :param grads: 梯度, 字典, grads['w1']
-        :return:
-        """</span>
-        <span class="token keyword">for</span> key <span class="token keyword">in</span> params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            params<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">-=</span> self<span class="token punctuation">.</span>lr <span class="token operator">*</span> grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>SGD的缺点</strong></p>
-<ol>
-<li>选择合适的learning rate 比较困难, 且对所有的参数更新使用同样的learning rate.</li>
-<li>SGD容易收敛到局部最优，并且在某些情况下可能被困在鞍点.</li>
-</ol>
-<h1 id="四、Momentum"><a href="#四、Momentum" class="headerlink" title="四、Momentum"></a>四、Momentum</h1><p>为解决随机梯度下降的问题，在1964年，Polyak提出了动量项（Momentum）方法。动量算法积累了之前梯度的<strong>指数加权平均</strong>，并且继续沿该方向移动，将前几次的梯度计算量加进来一起进行运算。<br>为了表示动量，首先引入一个新的变量v（velocity），v是之前梯度计算量的累加，但是每回合都有一定的衰减。动量法的思想就是将历史步长更新向量的一个分量$\alpha$，增加到当前的更新向量中，其具体实现为在每次迭代过程中，计算梯度和误差，更新速度v和参数$W$:<br>$$<br>\upsilon_{t+1} \leftarrow \alpha \upsilon_{t} - \eta \frac {\partial L}{\partial W_{t}}<br>$$</p>
-<p>$$<br>W_{t+1} \leftarrow W_{t} + \upsilon_{t+1}<br>$$</p>
-<p>原论文:<a href="http://www.cs.toronto.edu/~hinton/absps/momentum.pdf" target="_blank" rel="noopener">http://www.cs.toronto.edu/~hinton/absps/momentum.pdf</a></p>
-<p>如果前一刻的梯度与当前的梯度方向几乎相反，则因为受到前一时刻的影响，当前时刻梯度幅度会减小，反之则会增强。</p>
-<p>形象地说，动量法就像我们从山上推下一个球，在滚落过程中累积动量，速度越来越快，直到达到终极速度。在梯度更新过程中，对在梯度点处具有相同方向的维度，增大其动量项，对于在梯度点处改变方向的维度，减小其动量项。</p>
-<p><strong>代码实现</strong></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Momentum</span><span class="token punctuation">:</span>
-
-    <span class="token triple-quoted-string string">"""Momentum SGD"""</span>
-
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> momentum<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>lr <span class="token operator">=</span> lr
-        self<span class="token punctuation">.</span>momentum <span class="token operator">=</span> momentum
-        self<span class="token punctuation">.</span>v <span class="token operator">=</span> None
-
-    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> params<span class="token punctuation">,</span> grads<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>v <span class="token keyword">is</span> None<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 初始化v</span>
-            self<span class="token punctuation">.</span>v <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-            <span class="token keyword">for</span> key<span class="token punctuation">,</span> val <span class="token keyword">in</span> params<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>                                
-                self<span class="token punctuation">.</span>v<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>val<span class="token punctuation">)</span>
-
-        <span class="token keyword">for</span> key <span class="token keyword">in</span> params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>v<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>momentum<span class="token operator">*</span>self<span class="token punctuation">.</span>v<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">-</span> self<span class="token punctuation">.</span>lr<span class="token operator">*</span>grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span> 
-            params<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">+=</span> self<span class="token punctuation">.</span>v<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="sgd.png" alt><img src="mom.png" alt></p>
-<p>​    和SGD相比，我们发现“之”字形的“程度”减轻了。这是因为虽然x轴方向上受到的力非常小，但是一直在同一方向上受力，所以朝同一个方向会有一定的加速。反过来，虽然y轴方向上受到的力很大，但是因为交互地受到正方向和反方向的力，它们会互相抵消，所以y轴方向上的速度不稳定。因此，和SGD时的情形相比，可以更快地朝x轴方向靠近，减弱“之”字形的变动程度。</p>
-<p>总体而言，momentum能够在相关方向上加速学习，抑制震荡，从而加速收敛。</p>
-<h1 id="五、Nesterov"><a href="#五、Nesterov" class="headerlink" title="五、Nesterov"></a>五、Nesterov</h1><p>Nesterov加速梯度下降法（Nesterov Accelerated Gradient，NAG）是动量算法的一个变种，同样是一阶优化算法，但在梯度评估方面有所不同。NAG能给动量项一个预知的能力，并且收敛速度更快。其更新算法如下：<br>$$<br>\upsilon_{t+1} \leftarrow \alpha \upsilon_{t} - \eta \frac {\partial L(W_t + \alpha \upsilon_t)}{\partial W_{t}}<br>$$</p>
-<p>$$<br>W_{t+1} \leftarrow W_{t} + \upsilon_{t+1}<br>$$</p>
-<p>我们利用动量项$\alpha v_t$更新参数$w_t$，通过计算$(W_t + \alpha v_t)$得到参数未来位置的一个近似值，计算关于参数未来的近似位置的梯度，而不是关于当前参数$W_t$的梯度，这样NAG算法可以高效地求解。<br>我们可以将其抽象为球滚落的时候，一般是盲目地沿着某个斜率方向，结果并不一定能令人满意。于是我们希望有一个较为“智能”的球，能够自己判断下落的方向，这样在途中遇到斜率上升的时候能够知道减速，该思想对于RNN性能的提升有重要的意义。</p>
-<h1 id="六、Adagrad"><a href="#六、Adagrad" class="headerlink" title="六、Adagrad"></a>六、Adagrad</h1><p>在神经网络的学习中，学习率（数学式中记为η）的值很重要。学习率过小，会导致学习花费过多时间；反过来，学习率过大，则会导致学习发散而不能正确进行。</p>
-<p>在关于学习率的有效技巧中，有一种被称为学习率衰减（learning rate decay）的方法，即随着学习的进行，使学习率逐渐减小。</p>
-<p>和Momentum直接把动量累加到梯度上不同，它是通过动量逐步减小学习率的值，使得最后的值在最小值附近，更加接近收敛点。</p>
-<p><strong>数学公式</strong><br>$$<br>h \leftarrow h + \frac {\partial L}{\partial W} \cdot \frac {\partial L}{\partial W}<br>$$</p>
-<p>$$<br>W \leftarrow W -  \frac {\eta}{\sqrt h}\cdot\frac {\partial L}{\partial W}<br>$$</p>
-<p>在更新参数时，通过乘以$\frac {1}{\sqrt h}$ ，就可以调整学习的尺度</p>
-<p>前期$g_t$较小的时候，正则化项$\frac{1}{\sqrt h}$较大，能够放大梯度；后期$g_t$较大的时候，正则化项较小，能够约束梯度，适合处理稀疏梯度。</p>
-<p>但Adagrad算法同样依赖于人工设置一个全局学习率η，设置过大的话，会使正则化项过于敏感，对梯度的调节过大。</p>
-<p><strong>代码实现</strong></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">AdaGrad</span><span class="token punctuation">:</span>
-
-    <span class="token triple-quoted-string string">"""AdaGrad"""</span>
-
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>lr <span class="token operator">=</span> lr
-        self<span class="token punctuation">.</span>h <span class="token operator">=</span> None
-
-    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> params<span class="token punctuation">,</span> grads<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>h <span class="token keyword">is</span> None<span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>h <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-            <span class="token keyword">for</span> key<span class="token punctuation">,</span> val <span class="token keyword">in</span> params<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                self<span class="token punctuation">.</span>h<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>val<span class="token punctuation">)</span>
-
-        <span class="token keyword">for</span> key <span class="token keyword">in</span> params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>h<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">+=</span> grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">*</span> grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
-            params<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">-=</span> self<span class="token punctuation">.</span>lr <span class="token operator">*</span> grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>self<span class="token punctuation">.</span>h<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">)</span>
-
- <span class="token comment" spellcheck="true"># 为了防止当self.h[key]中有0时，将0用作除数的情况。添加了1e-7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>​    <img src="adagrad.png" alt></p>
-<p>​                                <strong>基于Adagrad的最优化的更新路径</strong></p>
-<p>​    由图可知，函数的取值高效地向着最小值移动。由于y轴方向上的梯度较大，因此刚开始变动较大，但是后面会根据这个较大的变动按比例进行调整，减小更新的步伐。因此， y轴方向上的更新程度被减弱，“之”字形的变动程度有所衰减。</p>
-<p><strong>特点</strong></p>
-<ol>
-<li>前期放大梯度，加速学习，后期约束梯度</li>
-<li>适合处理稀疏梯度</li>
-</ol>
-<p><strong>缺点</strong></p>
-<p>​    中后期，分母上梯度的平方的积累将会越来越大，使gradient–&gt;0, 使得训练提前结束。</p>
-<h1 id="七、Adadelta"><a href="#七、Adadelta" class="headerlink" title="七、Adadelta"></a>七、Adadelta</h1><p>Adadelta算法的出现可较好地解决全局学习率问题，其本质是对Adagrad算法的扩展，同样是对学习率进行自适应约束，但是计算上进行了简化。Adagrad算法会累加之前所有的梯度平方，而Adadelta算法只累加固定大小的项，并且仅存储这些项近似计算对应的平均值。其公式如下：<br>$$<br>h_t \leftarrow \alpha h_{t-1} + {(1-\alpha)}\frac {\partial L}{\partial W_t} \cdot \frac {\partial L}{\partial W_t}<br>$$</p>
-<p>$$<br>\Delta x_t = \frac {\sqrt{\sum_{k=1}^{t-1}\Delta x_k}}{\sqrt h_t}\frac {\partial L}{\partial W}<br>$$</p>
-<p>$$<br>W \leftarrow W -  \Delta x_t<br>$$</p>
-<p>Adadelta不依赖于全局学习率，训练初、中期，加速效果理想化，训练后期，反复在局部最小值附近抖动。</p>
-<p>原论文: <a href="https://arxiv.org/abs/1212.5701" target="_blank" rel="noopener">https://arxiv.org/abs/1212.5701</a></p>
-<h1 id="八、RMSProp"><a href="#八、RMSProp" class="headerlink" title="八、RMSProp"></a>八、RMSProp</h1><p>RMSProp可以算作Adadelta的一个特例，依然依赖于全局学习率。RMSProp效果趋于Adagrad和Adadelta之间，适合处理非平稳目标，适用于RNN的优化。</p>
-<p><strong>数学公式</strong><br>$$<br>h \leftarrow \alpha h + (1-\alpha)\frac {\partial L}{\partial W} \cdot \frac {\partial L}{\partial W}<br>$$</p>
-<p>$$<br>W \leftarrow W - \eta \frac {1}{\sqrt h}\frac {\partial L}{\partial W}<br>$$</p>
-<p><strong>代码实现</strong></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">RMSprop</span><span class="token punctuation">:</span>
-
-    <span class="token triple-quoted-string string">"""RMSprop"""</span>
-
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> decay_rate <span class="token operator">=</span> <span class="token number">0.99</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>lr <span class="token operator">=</span> lr
-        self<span class="token punctuation">.</span>decay_rate <span class="token operator">=</span> decay_rate
-        self<span class="token punctuation">.</span>h <span class="token operator">=</span> None
-
-    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> params<span class="token punctuation">,</span> grads<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>h <span class="token keyword">is</span> None<span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>h <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-            <span class="token keyword">for</span> key<span class="token punctuation">,</span> val <span class="token keyword">in</span> params<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                self<span class="token punctuation">.</span>h<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>val<span class="token punctuation">)</span>
-
-        <span class="token keyword">for</span> key <span class="token keyword">in</span> params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>h<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">*=</span> self<span class="token punctuation">.</span>decay_rate
-            self<span class="token punctuation">.</span>h<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> self<span class="token punctuation">.</span>decay_rate<span class="token punctuation">)</span> <span class="token operator">*</span> grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">*</span> grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
-            params<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">-=</span> self<span class="token punctuation">.</span>lr <span class="token operator">*</span> grads<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>self<span class="token punctuation">.</span>h<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="九、Adam"><a href="#九、Adam" class="headerlink" title="九、Adam"></a>九、Adam</h1><p>​    Adam (Adaptive Moment Estimation)本质上是带有动量项的RMSProp。Adam的优点主要在于参数偏置校正。它利用梯度的一阶矩估计和二阶矩估计动态调整每个参数的学习率。其公式如下：<br>$$<br>m_t \leftarrow \beta_{1} m_{t-1} + (1-\beta_1)\frac {\partial L}{\partial W}<br>$$</p>
-<p>$$<br>v_t \leftarrow \beta_{2} v_{t-1} + (1-\beta_2)\frac {\partial L}{\partial W} \cdot \frac {\partial L}{\partial W}<br>$$</p>
-<p>$$<br>\hat m_t = \frac {m_t}{(1-\beta_1)}<br>$$</p>
-<p>$$<br>\hat v_t = \frac {v_t}{(1-\beta_2)}<br>$$</p>
-<p>$$<br>W_t = W_{t-1} - \alpha \frac{\hat m_t}{\sqrt{\hat v_t}}<br>$$</p>
-<p>​    Adam会设置3个超参数。一个是学习率（论文中以α出现），另外两个是一次momentum系数$\beta_1$和二次momentum系数$\beta_2$。根据论文，标准的设定值是$\beta_1$为0.9， $\beta_2$ 为0.999。设置了这些值后，大多数情况下都能顺利运行。</p>
-<p>其中，$m_t$和$v_t$分别是对梯度的一阶和二阶矩估计，即对期望$E|g_t|$和$E|g_t^2|$的估计, $\hat m_t$、$\hat v_t$是对$m_t$和$v_t$的校正，近似为对期望的无偏估计。由公式可得，Adam算法可以根据梯度进行动态调整，对学习率有一个动态约束。<br>Adam算法的优点主要在于经过偏置校正后，每一次迭代学习率都有个确定的范围，使参数比较平稳；对内存需求较小，适用于大多数非凸优化问题，尤其适合处理大数据集和高维空间问题。</p>
-<p>原文： <a href="https://arxiv.org/abs/1412.6980" target="_blank" rel="noopener">https://arxiv.org/abs/1412.6980</a></p>
-<h1 id="十、Nadam"><a href="#十、Nadam" class="headerlink" title="十、Nadam"></a>十、Nadam</h1><p>Nadam类似于带有Nesterov动量项的Adam。对学习率有了更强的约束，同时对梯度的更新也有更直接的影响。一般而言，使用带动量的RMSprop或者Adam的情况下，大多可以使用Nadam取得更好的效果。</p>
-<h1 id="十一、不同算法比较"><a href="#十一、不同算法比较" class="headerlink" title="十一、不同算法比较"></a>十一、不同算法比较</h1><p>​    <img src="v1.webp" alt></p>
-<p><img src="v2.webp" alt></p>
-<ol>
-<li>如果数据是稀疏的，就用自适应算法, 即Adagrad, Adadelta, RMSProp, Adam</li>
-<li>RMSProp, Adadelta, Adam 在很多情况下的效果是相似的。</li>
-<li>Adam 就是在 RMSprop 的基础上加了 bias-correction 和 momentum，随着梯度变的稀疏，Adam 比 RMSprop 效果会好。</li>
-<li>SGD 虽然能达到极小值，但是比其它算法用的时间长，而且可能会被困在鞍点。</li>
-</ol>
-<h1 id="十二、参考"><a href="#十二、参考" class="headerlink" title="十二、参考"></a>十二、参考</h1><p>《深度学习入门: 基于Python的理论与实现》</p>
-<p>《深度学习之图像识别：核心技术与案例实战》</p>
-<p><a href="https://blog.csdn.net/qq_28031525/article/details/79535942" target="_blank" rel="noopener">https://blog.csdn.net/qq_28031525/article/details/79535942</a></p>
-<p><a href="https://www.cnblogs.com/guoyaohua/p/8542554.html" target="_blank" rel="noopener">https://www.cnblogs.com/guoyaohua/p/8542554.html</a></p>
+                <h1 id="一、单位向量"><a href="#一、单位向量" class="headerlink" title="一、单位向量"></a>一、单位向量</h1><p>单位向量是指模等于1的向量，由于是非零向量，单位向量具有确定的方向。单位向量有无数个。</p>
+<p>一个非零向量除以它的模，可得所需单位向量。设原来的向量是$\vec{AB}$，则与它方向相同的单位向量$e = \frac{\vec{AB}}{|AB|}$。一个单位向量的平面直角坐标系上的坐标表示可以是：$(n, k)$, 则有 $n^2 + k^2 = 1$。</p>
+<h1 id="二、点乘和叉乘"><a href="#二、点乘和叉乘" class="headerlink" title="二、点乘和叉乘"></a>二、点乘和叉乘</h1><p><strong>向量的点乘</strong></p>
+<p>向量的点乘又称为内积，设两个向量为 $\vec{A} = \{ x_1, x_2, x_3,…,x_n \}$，$\vec{B} = \{y_1,y_2,y_3,…,y_n\}$，</p>
+<p>向量的点乘结果为对应子项的乘积和，也就是<br>$$<br>\vec{A} \cdot \vec{B} = x_1 <em> y_1 + x_2 </em> y_2 + x_3 <em> y_3 +,…, + x_n </em> y_n<br>$$<br>点乘结果为一个数值。向量点乘的另一种表达式为 $\vec{A} \cdot \vec{B} = |A||B|cos\theta$。该形式表明，当两个向量的夹角为90度时，两向量的点乘结果为0，此时两向量互相垂直，或者也可以称为两向量正交（0向量和任何向量都正交）。从第二种表达式中，还可以发现$|A|cos\theta$ 就是 A 在 B 上的投影，那么点乘就是 A 在 B 上的投影乘以 B 的长度，可以理解为用来体现两个向量平行程度的大小，当两向量垂直时，平行度最小，值为0。</p>
+<p><strong>向量的叉乘</strong></p>
+<p>设向量$\vec{A} = \{a_1, a_2, a_3\}, \vec{B}=\{b_1, b_2, b_3\}$<br>$$<br>\vec{A} \times \vec{B} =\begin{vmatrix} i &amp; j &amp; k \\ a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3 \end{vmatrix} = \begin{vmatrix} a_2 &amp; a_3 \\ b_2 &amp; b_3\end{vmatrix}i - \begin{vmatrix} a_1 &amp; a_3 \\ b_1 &amp; b_3\end{vmatrix}j + \begin{vmatrix} a_1 &amp; a_2 \\ b_1 &amp; b_2\end{vmatrix}k<br>$$<br>叉乘的向量是一个向量，向量的模是向量A，B组成平行四边形的面积；向量方向是垂直于向量A，B组成的平面。向量叉乘的模另一种表达式为$|\vec{A} \times \vec{B}| = |A||B|sin\theta$, 类似的$|A|sin\theta$就是A在B垂直方向上的分量，所以两向量的叉乘可以表示向量的垂直程度。当两个向量平行时，叉乘值为0，也就是垂直程度最小。</p>
+<p>假设 <strong>A</strong> 和 <strong>B</strong> 的叉乘结果为 <strong>C</strong>，则 <strong>C</strong> 向量分别和 <strong>A</strong> ，<strong>B</strong> 正交，<strong>C</strong> 的方向可以由右手守则来判定。用右手食指指向 <strong>A</strong>，中指指向 <strong>B</strong>，此时大拇指的方向就是 <strong>C</strong> 的方向。</p>
+<h1 id="三、正交矩阵"><a href="#三、正交矩阵" class="headerlink" title="三、正交矩阵"></a>三、正交矩阵</h1><p>如果：$AA^T = E$ 或 $A^T A=E$，则n阶实矩阵A称为正交矩阵，若A为正交矩阵，则满足以下条件：</p>
+<p>1）$A^t是正交矩阵$</p>
+<p>2）A的各行是单位向量且两两正交。</p>
+<p>3）A的各列是单位矩阵且两两正交。</p>
+<p>4）$|A|=1 或 -1$</p>
 
             </div>
             <hr />
@@ -783,9 +636,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《深度学习之优化算法》
+                    《线性代数笔记》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/28/shen-du-xue-xi-zhi-you-hua-suan-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/18/xian-xing-dai-shu-bi-ji/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Ace
             </a> 采用
@@ -826,7 +679,7 @@
         repo: '981935539.github.io',
         owner: '981935539',
         admin: 981935539,
-        id: '2019/11/28/shen-du-xue-xi-zhi-you-hua-suan-fa/',
+        id: '2020/07/18/xian-xing-dai-shu-bi-ji/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1109,30 +962,74 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/29/shen-du-xue-xi-zhi-guo-ni-he/">
+                <a href="/2020/07/18/xian-xing-dai-shu-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="深度学习之过拟合">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="线性代数笔记">
                         
-                        <span class="card-title">深度学习之过拟合</span>
+                        <span class="card-title">线性代数笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、过拟合机器学习的问题中，过拟合是一个很常见的问题。过拟合指的是只能拟合训练数据，但不能很好地拟合不包含在训练数据中的其他数据的状态。机器学习的目标是提高泛化能力，即便是没有包含在训练数据里的未观测数据，也希望模型可以进行正确的识别。
-发
+                            一、单位向量单位向量是指模等于1的向量，由于是非零向量，单位向量具有确定的方向。单位向量有无数个。
+一个非零向量除以它的模，可得所需单位向量。设原来的向量是$\vec{AB}$，则与它方向相同的单位向量$e = \frac{\vec{AB}
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-29
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/高数/" class="post-category" target="_blank">
+                                    高数
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/18/shen-du-xue-xi-zhi-ji-huo-han-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="深度学习之激活函数">
+                        
+                        <span class="card-title">深度学习之激活函数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、为什么要使用激活函数​    神经网络与感知机的一个最大区别是它使用了“阶跃函数”之外的其他激活函数，比如sigmoid函数。sigmoid函数相比”阶跃函数”更佳平滑.
+​    阶跃函数和sigmoid函数均为非线性函数, 线性函数
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1150,63 +1047,6 @@
                     
                     <a href="/tags/DL/" target="_blank">
                         <span class="chip bg-color">DL</span>
-                    </a>
-                    
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/11/28/python-zhong-with-de-yong-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Python中with的用法">
-                        
-                        <span class="card-title">Python中with的用法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一、什么是with语句​    对于系统资源如文件、数据库连接、socket 而言，应用程序打开这些资源并执行完业务逻辑之后，必须做的一件事就是要关闭（断开）该资源。
-# 操作文件的方式
-
-# 普通方式操作文件
-f = open('test
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
